@@ -27,8 +27,8 @@
   "tier": 1,
   "name": "Orere Point",
   "short": "Orere Point",
-  "lat": -36.95898,
-  "lon": 175.24313,
+  "lat": -36.957,
+  "lon": 175.248,
   "secl": 4.5,
   "traffic": 1.0,
   "fly": 4.3,
@@ -41,11 +41,11 @@
   "dist_cbd_km": 44.2,
   "merit": 8.6,
   "fpv_score": 8.6,
-  "maps_url": "https://maps.google.com/?q=-36.958980,175.243130",
+  "maps_url": "https://maps.google.com/?q=-36.957000,175.248000",
   "drive_min": 67,
   "drive_km": 67.9,
   "num": 2,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.958980,175.243130"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.957000,175.248000"
  },
  {
   "tier": 2,
@@ -75,8 +75,8 @@
   "tier": 2,
   "name": "Clarks Beach",
   "short": "Clarks Beach",
-  "lat": -37.13687,
-  "lon": 174.70449,
+  "lat": -37.134049,
+  "lon": 174.703718,
   "secl": 4.0,
   "traffic": 1.8,
   "fly": 3.8,
@@ -89,11 +89,11 @@
   "dist_cbd_km": 32.5,
   "merit": 7.5,
   "fpv_score": 7.5,
-  "maps_url": "https://maps.google.com/?q=-37.136870,174.704490",
+  "maps_url": "https://maps.google.com/?q=-37.134049,174.703718",
   "drive_min": 50,
   "drive_km": 55.6,
   "num": 9,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.136870,174.704490"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.134049,174.703718"
  },
  {
   "tier": 2,

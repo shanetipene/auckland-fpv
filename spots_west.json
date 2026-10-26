@@ -3,8 +3,8 @@
   "tier": 1,
   "name": "French Bay, Titirangi",
   "short": "French Bay",
-  "lat": -36.94777,
-  "lon": 174.6615,
+  "lat": -36.951039,
+  "lon": 174.660549,
   "secl": 4.2,
   "traffic": 2.0,
   "fly": 4.0,
@@ -17,18 +17,18 @@
   "dist_cbd_km": 14.3,
   "merit": 7.7,
   "fpv_score": 7.7,
-  "maps_url": "https://maps.google.com/?q=-36.947770,174.661500",
+  "maps_url": "https://maps.google.com/?q=-36.951039,174.660549",
   "drive_min": 26,
   "drive_km": 17.8,
   "num": 3,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.947770,174.661500"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.951039,174.660549"
  },
  {
   "tier": 1,
   "name": "Titirangi Beach",
   "short": "Titirangi Beach",
-  "lat": -36.95079,
-  "lon": 174.6568,
+  "lat": -36.95136,
+  "lon": 174.658926,
   "secl": 3.5,
   "traffic": 2.5,
   "fly": 3.8,
@@ -41,11 +41,11 @@
   "dist_cbd_km": 14.9,
   "merit": 6.9,
   "fpv_score": 6.9,
-  "maps_url": "https://maps.google.com/?q=-36.950790,174.656800",
+  "maps_url": "https://maps.google.com/?q=-36.951360,174.658926",
   "drive_min": 26,
   "drive_km": 17.9,
   "num": 6,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.950790,174.656800"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.951360,174.658926"
  },
  {
   "tier": 1,
@@ -243,8 +243,8 @@
   "tier": 2,
   "name": "Lynfield Cove",
   "short": "Lynfield Cove",
-  "lat": -36.9268,
-  "lon": 174.7115,
+  "lat": -36.927243,
+  "lon": 174.711221,
   "secl": 4.0,
   "traffic": 1.5,
   "fly": 3.6,
@@ -257,11 +257,11 @@
   "dist_cbd_km": 9.0,
   "merit": 7.4,
   "fpv_score": 7.4,
-  "maps_url": "https://maps.google.com/?q=-36.926800,174.711500",
+  "maps_url": "https://maps.google.com/?q=-36.927243,174.711221",
   "drive_min": 17,
   "drive_km": 15.2,
   "num": 4,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.926800,174.711500"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.927243,174.711221"
  },
  {
   "short": "Ceramco Park",

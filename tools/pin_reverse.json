@@ -1,0 +1,625 @@
+[
+ {
+  "short": "Musick Point",
+  "cls": "place",
+  "typ": "suburb",
+  "nm": "Bucklands Beach",
+  "disp": "Bucklands Beach, Howick, Auckland, 2012, New Zealand / Aotea"
+ },
+ {
+  "short": "Waitawa",
+  "cls": "place",
+  "typ": "farm",
+  "nm": "The McCallum Residence",
+  "disp": "The McCallum Residence, Franklin, Auckland, 2585, New Zealan"
+ },
+ {
+  "short": "Kawakawa Bay",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "Clevedon-Kawakawa Road",
+  "disp": "Clevedon-Kawakawa Road, Kawakawa Bay, Franklin, Auckland, 25"
+ },
+ {
+  "short": "Maraetai",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "Whitford-Maraetai Road",
+  "disp": "Whitford-Maraetai Road, Spinnaker Bay, Beachlands, Franklin,"
+ },
+ {
+  "short": "Stonefields",
+  "cls": "highway",
+  "typ": "construction",
+  "nm": "Sarsen Place",
+  "disp": "Sarsen Place, Stonefields, \u014cr\u0101kei, Auckland, 1741, New Zeala"
+ },
+ {
+  "short": "Panmure Basin",
+  "cls": "highway",
+  "typ": "tertiary",
+  "nm": "Queens Road",
+  "disp": "Queens Road, T\u0101maki, Panmure, Maungakiekie-T\u0101maki, Auckland,"
+ },
+ {
+  "short": "Pt England",
+  "cls": "highway",
+  "typ": "unclassified",
+  "nm": "Point England Road",
+  "disp": "Point England Road, Point England, Maungakiekie-T\u0101maki, Auck"
+ },
+ {
+  "short": "Waiatarua",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Towle Place",
+  "disp": "Towle Place, Meadowbank, \u014cr\u0101kei, Auckland, 1972, New Zealand"
+ },
+ {
+  "short": "Glendowie",
+  "cls": "highway",
+  "typ": "tertiary",
+  "nm": "Riddell Road",
+  "disp": "Riddell Road, Beverley Hills, Glendowie, \u014cr\u0101kei, Auckland, 1"
+ },
+ {
+  "short": "Monte Cecilia",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Budock Road",
+  "disp": "Budock Road, Three Kings, Puket\u0101papa, Auckland, 1440, New Ze"
+ },
+ {
+  "short": "Coyle Park",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "Point Chevalier Road",
+  "disp": "Point Chevalier Road, Point Chevalier, Albert-Eden, Auckland"
+ },
+ {
+  "short": "Mangemangeroa",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "Somerville Road",
+  "disp": "Somerville Road, Shamrock Park, Howick, Auckland, 2014, New "
+ },
+ {
+  "short": "Eastern Beach",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "The Esplanade",
+  "disp": "The Esplanade, Eastern Beach, Howick, Auckland, 2012, New Ze"
+ },
+ {
+  "short": "Sunkist Bay",
+  "cls": "highway",
+  "typ": "tertiary",
+  "nm": "First View Avenue",
+  "disp": "First View Avenue, Pine Harbour, Beachlands, Franklin, Auckl"
+ },
+ {
+  "short": "Orakei Basin",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Grace Street",
+  "disp": "Grace Street, \u014cr\u0101kei, Auckland, 1074, New Zealand / Aotearoa"
+ },
+ {
+  "short": "Omana",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Omana Esplanade",
+  "disp": "Omana Esplanade, \u014cmana Beach, Maraetai, Franklin, Auckland, "
+ },
+ {
+  "short": "Whitford",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "",
+  "disp": "Whitford Manor Estate, Whitford, Franklin, Auckland, 2571, N"
+ },
+ {
+  "short": "Lloyd Elsmore",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Lady Marie Drive",
+  "disp": "Lady Marie Drive, Pakuranga Heights, Howick, Auckland, 2143,"
+ },
+ {
+  "short": "Fearon Park",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Cleghorn Avenue",
+  "disp": "Cleghorn Avenue, Mount Roskill, Puket\u0101papa, Auckland, 1041, "
+ },
+ {
+  "short": "Cockle Bay",
+  "cls": "highway",
+  "typ": "tertiary",
+  "nm": "Granger Road",
+  "disp": "Granger Road, Howick East, Cockle Bay, Howick, Auckland, 201"
+ },
+ {
+  "short": "Shelly Park",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Sandspit Road",
+  "disp": "Sandspit Road, Shelly Park, Howick, Auckland, 2571, New Zeal"
+ },
+ {
+  "short": "Mellons Bay",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Pleasant Place",
+  "disp": "Pleasant Place, Mellons Bay, Howick, Auckland, 2014, New Zea"
+ },
+ {
+  "short": "Howick Beach",
+  "cls": "highway",
+  "typ": "tertiary",
+  "nm": "Granger Road",
+  "disp": "Granger Road, Howick East, Cockle Bay, Howick, Auckland, 201"
+ },
+ {
+  "short": "Macleans Park",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Wycherley Drive",
+  "disp": "Wycherley Drive, Howick West, Eastern Beach, Howick, Aucklan"
+ },
+ {
+  "short": "Umupuia",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "Maraetai Coast Road",
+  "disp": "Maraetai Coast Road, Maraetai, Franklin, Auckland, New Zeala"
+ },
+ {
+  "short": "Duder",
+  "cls": "place",
+  "typ": "town",
+  "nm": "Maraetai",
+  "disp": "Maraetai, Franklin, Auckland, 2018, New Zealand / Aotearoa"
+ },
+ {
+  "short": "Meola Reef",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Newell Street",
+  "disp": "Newell Street, Point Chevalier, Albert-Eden, Auckland, 1022,"
+ },
+ {
+  "short": "Eric Armishaw",
+  "cls": "highway",
+  "typ": "living_street",
+  "nm": "Kenneth Small Crescent",
+  "disp": "Kenneth Small Crescent, Selwyn Village, Waterview, Albert-Ed"
+ },
+ {
+  "short": "Western Springs",
+  "cls": "highway",
+  "typ": "primary",
+  "nm": "Great North Road",
+  "disp": "Great North Road, Grey Lynn, Auckland, Waitemat\u0101, Auckland, "
+ },
+ {
+  "short": "Keith Hay Park",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Arundel Street",
+  "disp": "Arundel Street, Roskill South, Hillsborough, Puket\u0101papa, Auc"
+ },
+ {
+  "short": "French Bay",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "T\u0101nekaha Road",
+  "disp": "T\u0101nekaha Road, French Bay, Titirangi Beach, Wait\u0101kere Ranges"
+ },
+ {
+  "short": "Titirangi Beach",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Tinopai Road",
+  "disp": "Tinopai Road, French Bay, Titirangi Beach, Wait\u0101kere Ranges,"
+ },
+ {
+  "short": "Laingholm",
+  "cls": "highway",
+  "typ": "tertiary",
+  "nm": "Sandys Parade",
+  "disp": "Sandys Parade, South Titirangi, Laingholm, Wait\u0101kere Ranges,"
+ },
+ {
+  "short": "Blockhouse Bay",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Rathlin Street",
+  "disp": "Rathlin Street, Blockhouse Bay, Whau, Auckland, 0600, New Ze"
+ },
+ {
+  "short": "Green Bay",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Portage Road",
+  "disp": "Portage Road, Green Bay, Whau, Auckland, 0643, New Zealand /"
+ },
+ {
+  "short": "Parrs Park",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "Seymour Road",
+  "disp": "Seymour Road, \u014cr\u0101tia, Wait\u0101kere Ranges, Auckland, 0650, New "
+ },
+ {
+  "short": "Olympic Park",
+  "cls": "highway",
+  "typ": "primary",
+  "nm": "Wolverton Street",
+  "disp": "Wolverton Street, New Lynn, Whau, Auckland, 0600, New Zealan"
+ },
+ {
+  "short": "Awhitu",
+  "cls": "highway",
+  "typ": "track",
+  "nm": "Settlers Valley Walk",
+  "disp": "Settlers Valley Walk, Franklin, Auckland, 2684, New Zealand "
+ },
+ {
+  "short": "Woodhill",
+  "cls": "highway",
+  "typ": "track",
+  "nm": "Inland Road",
+  "disp": "Inland Road, Rodney, Auckland, New Zealand / Aotearoa"
+ },
+ {
+  "short": "Waikowhai",
+  "cls": "highway",
+  "typ": "primary",
+  "nm": "Hillsborough Road",
+  "disp": "Hillsborough Road, Waik\u014dwhai, Puket\u0101papa, Auckland, 1042, Ne"
+ },
+ {
+  "short": "Lynfield Cove",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Gilletta Road",
+  "disp": "Gilletta Road, Lynfield, Puket\u0101papa, Auckland, 0600, New Zea"
+ },
+ {
+  "short": "Ceramco Park",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "Glendale Road",
+  "disp": "Glendale Road, K\u014dnini, Glen Eden, Wait\u0101kere Ranges, Auckland"
+ },
+ {
+  "short": "Wattle Bay",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Kauri Point Road",
+  "disp": "Kauri Point Road, Laingholm Central, Laingholm, Wait\u0101kere Ra"
+ },
+ {
+  "short": "Pakiri",
+  "cls": "highway",
+  "typ": "unclassified",
+  "nm": "",
+  "disp": "P\u0101kiri, Rodney, Auckland, 0972, New Zealand / Aotearoa"
+ },
+ {
+  "short": "Leigh",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "P\u0101kiri Road",
+  "disp": "P\u0101kiri Road, Leigh, Rodney, Auckland, 0986, New Zealand / Ao"
+ },
+ {
+  "short": "Mahurangi West",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Opahi Bay Road",
+  "disp": "Opahi Bay Road, Mahurangi West, Rodney, Auckland, 0983, New "
+ },
+ {
+  "short": "Algies Bay",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "Mahurangi East Road",
+  "disp": "Mahurangi East Road, Algies Bay, Rodney, Auckland, 0982, New"
+ },
+ {
+  "short": "Sandspit",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "Sandspit Road",
+  "disp": "Sandspit Road, Sandspit, Rodney, Auckland, 0920, New Zealand"
+ },
+ {
+  "short": "Omaha",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Taiawa Place",
+  "disp": "Taiawa Place, \u014cmaha, Rodney, Auckland, 0986, New Zealand / A"
+ },
+ {
+  "short": "Wenderholm",
+  "cls": "highway",
+  "typ": "primary",
+  "nm": "Hibiscus Coast Highway",
+  "disp": "Hibiscus Coast Highway, Rodney, Auckland, 8073, New Zealand "
+ },
+ {
+  "short": "Puhoi",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "P\u016bhoi Road",
+  "disp": "P\u016bhoi Road, P\u016bhoi, Rodney, Auckland, 0951, New Zealand / Aot"
+ },
+ {
+  "short": "Waiwera",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "The Strand",
+  "disp": "The Strand, Waiwera, Hibiscus and Bays, Auckland, 8073, New "
+ },
+ {
+  "short": "Manly",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "The Circle",
+  "disp": "The Circle, Big Manly, Arkles Bay, Whangapar\u0101oa, Hibiscus an"
+ },
+ {
+  "short": "Stanmore Bay",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "Vipond Road",
+  "disp": "Vipond Road, Stanmore Bay, Whangapar\u0101oa, Hibiscus and Bays, "
+ },
+ {
+  "short": "Tindalls",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Tindalls Bay Road",
+  "disp": "Tindalls Bay Road, Matakatia, Tindalls Beach, Whangapar\u0101oa, "
+ },
+ {
+  "short": "Hatfields",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Ocean View Road",
+  "disp": "Ocean View Road, Hatfields Beach, \u014crewa, Hibiscus and Bays, "
+ },
+ {
+  "short": "Orewa",
+  "cls": "highway",
+  "typ": "primary",
+  "nm": "Hibiscus Coast Highway",
+  "disp": "Hibiscus Coast Highway, Hatfields Beach, \u014crewa, Hibiscus and"
+ },
+ {
+  "short": "Browns Bay",
+  "cls": "highway",
+  "typ": "living_street",
+  "nm": "Beach Front Lane",
+  "disp": "Beach Front Lane, Browns Bay, Hibiscus Coast, Hibiscus and B"
+ },
+ {
+  "short": "Long Bay",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Beach Road",
+  "disp": "Beach Road, Torbay, Hibiscus Coast, Hibiscus and Bays, Auckl"
+ },
+ {
+  "short": "Devonport",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Fleet Street",
+  "disp": "Fleet Street, Devonport, Devonport-Takapuna, Auckland, 0624,"
+ },
+ {
+  "short": "Narrow Neck",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "Old Lake Road",
+  "disp": "Old Lake Road, Vauxhall, Narrow Neck, Devonport-Takapuna, Au"
+ },
+ {
+  "short": "Little Manly",
+  "cls": "highway",
+  "typ": "primary",
+  "nm": "Whangaparaoa Road",
+  "disp": "Whangaparaoa Road, Little Manly, Arkles Bay, Whangapar\u0101oa, H"
+ },
+ {
+  "short": "Matakatia",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Matakatia Parade",
+  "disp": "Matakatia Parade, Matakatia, Matakatia Bay, Whangapar\u0101oa, Hi"
+ },
+ {
+  "short": "Arkles Bay",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Arkles Strand",
+  "disp": "Arkles Strand, Little Manly, Arkles Bay, Whangapar\u0101oa, Hibis"
+ },
+ {
+  "short": "Army Bay",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "Whangaparaoa Road",
+  "disp": "Whangaparaoa Road, Tindalls Beach, Whangapar\u0101oa, Hibiscus an"
+ },
+ {
+  "short": "Shakespear",
+  "cls": "highway",
+  "typ": "unclassified",
+  "nm": "Bruce Harvey Drive",
+  "disp": "Bruce Harvey Drive, Army Bay, Hibiscus Coast, Hibiscus and B"
+ },
+ {
+  "short": "Scandrett",
+  "cls": "highway",
+  "typ": "unclassified",
+  "nm": "Scandrett Road",
+  "disp": "Scandrett Road, Rodney, Auckland, 0982, New Zealand / Aotear"
+ },
+ {
+  "short": "Ti Point",
+  "cls": "highway",
+  "typ": "tertiary",
+  "nm": "Ti Point Road",
+  "disp": "Ti Point Road, T\u012b Point, Rodney, Auckland, 0986, New Zealand"
+ },
+ {
+  "short": "Te Arai",
+  "cls": "highway",
+  "typ": "unclassified",
+  "nm": "",
+  "disp": "Rodney, Auckland, New Zealand / Aotearoa"
+ },
+ {
+  "short": "Karioitahi",
+  "cls": "highway",
+  "typ": "unclassified",
+  "nm": "Karioitahi Road",
+  "disp": "Karioitahi Road, Waiuku, Franklin, Waikato District, Aucklan"
+ },
+ {
+  "short": "Orere Point",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "Orere Point Road",
+  "disp": "Orere Point Road, \u014crere Point, Franklin, Auckland, New Zeala"
+ },
+ {
+  "short": "Waiau Pa",
+  "cls": "highway",
+  "typ": "tertiary",
+  "nm": "Waiau Pa Road",
+  "disp": "Waiau Pa Road, Waiau P\u0101, Franklin, Auckland, 2679, New Zeala"
+ },
+ {
+  "short": "Clarks Beach",
+  "cls": "highway",
+  "typ": "tertiary",
+  "nm": "Stevenson Road",
+  "disp": "Stevenson Road, Waiau Beach, Clarks Beach, Franklin, Aucklan"
+ },
+ {
+  "short": "Clevedon",
+  "cls": "highway",
+  "typ": "unclassified",
+  "nm": "Twilight Road",
+  "disp": "Twilight Road, Clevedon, Franklin, Auckland, 2582, New Zeala"
+ },
+ {
+  "short": "Waiuku",
+  "cls": "highway",
+  "typ": "pedestrian",
+  "nm": "",
+  "disp": "Waiuku, Franklin, Auckland, 2123, New Zealand / Aotearoa"
+ },
+ {
+  "short": "Glenbrook",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Ronald Avenue",
+  "disp": "Ronald Avenue, Glenbrook Beach, Franklin, Auckland, 2681, Ne"
+ },
+ {
+  "short": "Matakawau",
+  "cls": "highway",
+  "typ": "unclassified",
+  "nm": "Matakawau Road",
+  "disp": "Matakawau Road, Matakawau Point, Clarks Beach, Franklin, Auc"
+ },
+ {
+  "short": "Karaka",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "Linwood Road",
+  "disp": "Linwood Road, Karaka Village, Karaka, Franklin, Auckland, 25"
+ },
+ {
+  "short": "Bombay",
+  "cls": "highway",
+  "typ": "tertiary",
+  "nm": "Paparata Road",
+  "disp": "Paparata Road, Bombay, Franklin, Auckland, 2675, New Zealand"
+ },
+ {
+  "short": "Kingseat",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "Linwood Road",
+  "disp": "Linwood Road, Kingseat, Franklin, Auckland, 2679, New Zealan"
+ },
+ {
+  "short": "Pukekohe",
+  "cls": "highway",
+  "typ": "tertiary",
+  "nm": "",
+  "disp": "Pukekohe, Franklin, Auckland, 2120, New Zealand / Aotearoa"
+ },
+ {
+  "short": "Ararimu",
+  "cls": "highway",
+  "typ": "unclassified",
+  "nm": "Steel Road",
+  "disp": "Steel Road, Ararimu, Franklin, Auckland, 2343, New Zealand /"
+ },
+ {
+  "short": "Pollok",
+  "cls": "highway",
+  "typ": "tertiary",
+  "nm": "Awhitu Road",
+  "disp": "Awhitu Road, Pollok, Franklin, Auckland, 2684, New Zealand /"
+ },
+ {
+  "short": "Ramarama",
+  "cls": "highway",
+  "typ": "unclassified",
+  "nm": "Kern Road",
+  "disp": "Kern Road, Hunua Views, Ramarama, Franklin, Auckland, 2579, "
+ },
+ {
+  "short": "Paerata",
+  "cls": "highway",
+  "typ": "residential",
+  "nm": "Te Pae Raataa Place",
+  "disp": "Te Pae Raataa Place, Paer\u0101t\u0101, Franklin, Auckland, 2676, New "
+ },
+ {
+  "short": "Mauku",
+  "cls": "highway",
+  "typ": "tertiary",
+  "nm": "Mauku Road",
+  "disp": "Mauku Road, Mauku, Patum\u0101hoe, Franklin, Auckland, 2678, New "
+ },
+ {
+  "short": "Kohekohe",
+  "cls": "highway",
+  "typ": "unclassified",
+  "nm": "Kohekohe Karioitahi Road",
+  "disp": "Kohekohe Karioitahi Road, Franklin, Auckland, 2683, New Zeal"
+ },
+ {
+  "short": "Patumahoe",
+  "cls": "highway",
+  "typ": "tertiary",
+  "nm": "Patumahoe Road",
+  "disp": "Patumahoe Road, Patum\u0101hoe Hill, Patum\u0101hoe, Franklin, Aucklan"
+ },
+ {
+  "short": "Puni",
+  "cls": "highway",
+  "typ": "secondary",
+  "nm": "Waiuku Road",
+  "disp": "Waiuku Road, Puni, Patum\u0101hoe, Franklin, Auckland, 2678, New "
+ }
+]

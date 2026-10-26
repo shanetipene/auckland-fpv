@@ -27,8 +27,8 @@
   "tier": 1,
   "name": "Leigh / Leigh Harbour",
   "short": "Leigh",
-  "lat": -36.29042,
-  "lon": 174.80427,
+  "lat": -36.285856,
+  "lon": 174.809907,
   "secl": 4.5,
   "traffic": 1.2,
   "fly": 4.3,
@@ -41,11 +41,11 @@
   "dist_cbd_km": 62.2,
   "merit": 8.5,
   "fpv_score": 8.5,
-  "maps_url": "https://maps.google.com/?q=-36.290420,174.804270",
+  "maps_url": "https://maps.google.com/?q=-36.285856,174.809907",
   "drive_min": 72,
   "drive_km": 80.7,
   "num": 2,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.290420,174.804270"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.285856,174.809907"
  },
  {
   "tier": 1,
@@ -75,8 +75,8 @@
   "tier": 1,
   "name": "Algies Bay",
   "short": "Algies Bay",
-  "lat": -36.43268,
-  "lon": 174.73695,
+  "lat": -36.432075,
+  "lon": 174.742939,
   "secl": 4.2,
   "traffic": 1.5,
   "fly": 3.9,
@@ -89,11 +89,11 @@
   "dist_cbd_km": 46.4,
   "merit": 7.8,
   "fpv_score": 7.8,
-  "maps_url": "https://maps.google.com/?q=-36.432680,174.736950",
+  "maps_url": "https://maps.google.com/?q=-36.432075,174.742939",
   "drive_min": 60,
   "drive_km": 70.4,
   "num": 3,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.432680,174.736950"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.432075,174.742939"
  },
  {
   "tier": 1,
@@ -123,8 +123,8 @@
   "tier": 2,
   "name": "Omaha Beach",
   "short": "Omaha",
-  "lat": -36.3396123,
-  "lon": 174.7798838,
+  "lat": -36.339296,
+  "lon": 174.7808,
   "secl": 4.0,
   "traffic": 2.5,
   "fly": 4.5,
@@ -137,11 +137,11 @@
   "dist_cbd_km": 57.1,
   "merit": 7.8,
   "fpv_score": 5.9,
-  "maps_url": "https://maps.google.com/?q=-36.339612,174.779884",
+  "maps_url": "https://maps.google.com/?q=-36.339296,174.780800",
   "drive_min": 66,
   "drive_km": 75.3,
   "num": 15,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.339612,174.779884"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.339296,174.780800"
  },
  {
   "tier": 2,
@@ -219,8 +219,8 @@
   "tier": 2,
   "name": "Manly / Big Manly Beach",
   "short": "Manly",
-  "lat": -36.6317582,
-  "lon": 174.7595596,
+  "lat": -36.626336,
+  "lon": 174.76499,
   "secl": 3.6,
   "traffic": 2.0,
   "fly": 3.6,
@@ -233,18 +233,18 @@
   "dist_cbd_km": 24.8,
   "merit": 7.0,
   "fpv_score": 7.0,
-  "maps_url": "https://maps.google.com/?q=-36.631758,174.759560",
+  "maps_url": "https://maps.google.com/?q=-36.626336,174.764990",
   "drive_min": 44,
   "drive_km": 41.8,
   "num": 9,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.631758,174.759560"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.626336,174.764990"
  },
  {
   "tier": 2,
   "name": "Stanmore Bay",
   "short": "Stanmore Bay",
-  "lat": -36.621851,
-  "lon": 174.733826,
+  "lat": -36.6218,
+  "lon": 174.7327,
   "secl": 3.2,
   "traffic": 2.5,
   "fly": 3.8,
@@ -257,11 +257,11 @@
   "dist_cbd_km": 24.0,
   "merit": 6.7,
   "fpv_score": 6.7,
-  "maps_url": "https://maps.google.com/?q=-36.621851,174.733826",
+  "maps_url": "https://maps.google.com/?q=-36.621800,174.732700",
   "drive_min": 42,
   "drive_km": 40.2,
   "num": 12,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.621851,174.733826"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.621800,174.732700"
  },
  {
   "tier": 2,
@@ -339,8 +339,8 @@
   "tier": 3,
   "name": "Browns Bay",
   "short": "Browns Bay",
-  "lat": -36.71473,
-  "lon": 174.74991,
+  "lat": -36.7145,
+  "lon": 174.7494,
   "secl": 3.0,
   "traffic": 3.0,
   "fly": 3.9,
@@ -353,11 +353,11 @@
   "dist_cbd_km": 15.0,
   "merit": 6.4,
   "fpv_score": 6.4,
-  "maps_url": "https://maps.google.com/?q=-36.714730,174.749910",
+  "maps_url": "https://maps.google.com/?q=-36.714500,174.749400",
   "drive_min": 22,
   "drive_km": 20.4,
   "num": 13,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.714730,174.749910"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.714500,174.749400"
  },
  {
   "tier": 3,
