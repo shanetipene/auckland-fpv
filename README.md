@@ -1,5 +1,7 @@
 # Auckland FPV Spots
 
+**Live site:** https://auckland-fpv.pages.dev
+
 A guide to 59 legally flyable FPV drone locations across Auckland, split into five regions: Central, East, North, West and South.
 
 Every location was checked against live AirShare airspace data — control zones (CTR), 4 km aerodrome and helipad buffers, restricted areas, danger areas and VFR transit lanes — rather than copied from a "best drone spots" listicle. Sites inside a control zone are included only where a legitimate authorisation path exists, and are marked accordingly.
