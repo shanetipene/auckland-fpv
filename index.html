@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Auckland FPV spots</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
 :root{--bg:#0b0e13;--panel:#131820;--line:#232c39;--txt:#e8eef6;--dim:#94a3b4;--ok:#1fb35a}
 *{box-sizing:border-box}
@@ -20,12 +21,29 @@ header p{color:var(--dim);max-width:760px;margin:0}
 .rfoot{display:flex;justify-content:space-between;font-size:13px;color:var(--dim);border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
 .rfoot b{color:#fff}
 .go{color:#7cc4ff;font-weight:700}
+.sechead{font-size:22px;margin:26px 0 4px}
+.leghint{color:var(--dim);font-size:14px;margin:0 0 12px}
+#allmap{height:520px;border-radius:16px;border:1px solid var(--line);margin:0 0 34px;z-index:1;background:#0b0e13}
+.rlabel{background:none;border:0}
+.rlabel span{display:inline-block;position:absolute;left:0;top:0;width:max-content;transform:translate(-50%,-50%);background:rgba(11,14,19,.9);border:1px solid var(--line);color:#fff;font:700 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:7px 11px;border-radius:999px;white-space:nowrap;box-shadow:0 2px 10px rgba(0,0,0,.45)}
+.rules{border-top:1px solid var(--line);padding:38px 0 20px;margin-top:10px}
+.rules h2{font-size:22px;margin:0 0 8px}
+.rules p{color:var(--dim);font-size:14px;margin:0 0 20px;max-width:760px}
+.rlink{display:flex;gap:16px;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:12px;transition:.15s}
+.rlink:hover{border-color:#3a4757;transform:translateY(-1px)}
+.rlink b{display:block;font-size:16px;margin-bottom:3px}
+.rlink small{color:var(--dim);font-size:13px;line-height:1.55;display:block}
+.rlink .who{color:#7cc4ff;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;min-width:132px;padding-top:3px}
+@media (max-width:640px){#allmap{height:400px} .rlink{flex-direction:column;gap:6px}}
 footer{border-top:1px solid var(--line);padding:24px 0 60px;color:#6b7889;font-size:13px}
 </style></head><body><div class="wrap">
 <header>
   <h1>Auckland <span>FPV</span> spots</h1>
   <p>59 locations across five regions, each checked against live AirShare airspace data - control zones, 4 km aerodrome buffers, restricted areas and VFR transit lanes. Every spot carries a seclusion, quiet and flying rating (all higher = better), plus the quietest time and days to go.</p>
 </header>
+<h2 class="sechead">Auckland at a glance</h2>
+<p class="leghint">All 59 spots, coloured by region. Click one of the five regions to open it.</p>
+<div id="allmap"></div>
 <div class="grid">
 <a class="region" href="central.html">
       <div class="rhead"><h2>Central Auckland</h2><span class="pill">9 spots</span></div>
@@ -49,5 +67,64 @@ footer{border-top:1px solid var(--line);padding:24px 0 60px;color:#6b7889;font-s
       <div class="rfoot"><span>Top pick: <b>Karioitahi</b> (9.5/10)</span><span class="go">Open &rarr;</span></div>
     </a>
 </div>
+
+<section class="rules">
+  <h2>Rules and regulations</h2>
+  <p>Every spot here assumes you are flying under Part 101. These are the three rule sets that decide where you can legally launch, and each one can override the others.</p>
+  <a class="rlink" href="https://www.aviation.govt.nz/drones" target="_blank" rel="noopener">
+    <span class="who">CAA</span>
+    <span><b>Drone rules and pilot requirements</b><small>Part 101 and Part 102, pilot registration and competency, airspace classes, 120 m ceiling, and the FPV and night-flying conditions. This is the rule set everything else sits on top of.</small></span>
+  </a>
+  <a class="rlink" href="https://www.aucklandcouncil.govt.nz/en/parks-recreation/get-outdoors/drones-unmanned-aerial-vehicles.html" target="_blank" rel="noopener">
+    <span class="who">Auckland Council</span>
+    <span><b>Council rules and guidelines</b><small>Where you can and can't fly on council land, the regional park permit process, the 2.5 kg limit without council permission, and the code of conduct for flying over parks and reserves.</small></span>
+  </a>
+  <a class="rlink" href="https://www.doc.govt.nz/get-involved/apply-for-permits/all-permissions/drone-use-on-conservation-land/" target="_blank" rel="noopener">
+    <span class="who">DOC</span>
+    <span><b>Department of Conservation rules</b><small>Public conservation land needs a concession (permit) to take off, land or hover. Also the wildlife separation rules: 100 m to take off near wildlife, 50 m in flight, and 150 m from marine mammals.</small></span>
+  </a>
+</section>
+
 <footer>Scores are 0-10 and weighted toward flying quality and seclusion, with permit/authorisation requirements applied as a penalty. Numbers restart at 1 in each region. Airspace data: AirShare / Airways NZ, October 2026. Always re-check NOTAMs and the AirShare map on the day.</footer>
-</div></body></html>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const A = {"regions": [{"key": "central", "name": "Central", "n": 9, "colour": "#7cc4ff", "hull": [[174.69973, -36.85025], [174.74357, -36.90367], [174.76224, -36.91398], [174.85843, -36.90088], [174.87512, -36.88289], [174.87936, -36.85988]], "c": [174.8107, -36.88274], "off": [0, -6]}, {"key": "east", "name": "East", "n": 10, "colour": "#2fd28a", "hull": [[174.89482, -36.90651], [174.9612, -36.94723], [175.1599, -36.95076], [175.14503, -36.93892], [175.03572, -36.87473], [174.89531, -36.84317]], "c": [174.99486, -36.90196], "off": [58, 16]}, {"key": "north", "name": "North", "n": 17, "colour": "#f2b544", "hull": [[174.65669, -36.51417], [174.79993, -36.84769], [174.807, -36.28141], [174.7352, -36.23887]], "c": [174.7364, -36.53258], "off": [0, 0]}, {"key": "west", "name": "West", "n": 11, "colour": "#b98bff", "hull": [[174.37162, -36.71008], [174.65408, -37.10258], [174.74299, -36.93454]], "c": [174.65086, -36.92755], "off": [-60, 16]}, {"key": "south", "name": "South", "n": 12, "colour": "#ff7a90", "hull": [[174.64161, -37.29208], [174.99542, -37.19087], [175.25939, -36.95163], [175.04281, -36.98525], [174.65089, -37.11003]], "c": [174.83958, -37.13678], "off": [0, 0]}], "spots": [{"n": "Stonefields", "la": -36.89005, "lo": 174.83692, "r": "central", "rn": "Central", "sc": 6.6}, {"n": "Panmure Basin", "la": -36.90014, "lo": 174.85579, "r": "central", "rn": "Central", "sc": 5.9}, {"n": "Pt England", "la": -36.883, "lo": 174.87169, "r": "central", "rn": "Central", "sc": 6.7}, {"n": "Waiatarua", "la": -36.88245, "lo": 174.82633, "r": "central", "rn": "Central", "sc": 6.2}, {"n": "Glendowie", "la": -36.86109, "lo": 174.87573, "r": "central", "rn": "Central", "sc": 6.5}, {"n": "Monte Cecilia", "la": -36.91261, "lo": 174.76418, "r": "central", "rn": "Central", "sc": 7.2}, {"n": "Coyle Park", "la": -36.85192, "lo": 174.70465, "r": "central", "rn": "Central", "sc": 6.7}, {"n": "Orakei Basin", "la": -36.86065, "lo": 174.81458, "r": "central", "rn": "Central", "sc": 4.6}, {"n": "Fearon Park", "la": -36.90279, "lo": 174.7464, "r": "central", "rn": "Central", "sc": 5.8}, {"n": "Musick Point", "la": -36.84636, "lo": 174.90103, "r": "east", "rn": "East", "sc": 8.9}, {"n": "Waitawa", "la": -36.93755, "lo": 175.13885, "r": "east", "rn": "East", "sc": 8.2}, {"n": "Kawakawa Bay", "la": -36.94883, "lo": 175.15302, "r": "east", "rn": "East", "sc": 8.2}, {"n": "Maraetai", "la": -36.88373, "lo": 175.01682, "r": "east", "rn": "East", "sc": 7.0}, {"n": "Mangemangeroa", "la": -36.91966, "lo": 174.93439, "r": "east", "rn": "East", "sc": 7.7}, {"n": "Eastern Beach", "la": -36.87357, "lo": 174.91454, "r": "east", "rn": "East", "sc": 7.2}, {"n": "Sunkist Bay", "la": -36.88133, "lo": 174.99088, "r": "east", "rn": "East", "sc": 7.3}, {"n": "Omana", "la": -36.87642, "lo": 175.03475, "r": "east", "rn": "East", "sc": 7.2}, {"n": "Whitford", "la": -36.94547, "lo": 174.96378, "r": "east", "rn": "East", "sc": 6.3}, {"n": "Lloyd Elsmore", "la": -36.90669, "lo": 174.90056, "r": "east", "rn": "East", "sc": 4.7}, {"n": "Pakiri", "la": -36.2499, "lo": 174.73589, "r": "north", "rn": "North", "sc": 9.3}, {"n": "Leigh", "la": -36.29042, "lo": 174.80427, "r": "north", "rn": "North", "sc": 8.5}, {"n": "Mahurangi West", "la": -36.49816, "lo": 174.71289, "r": "north", "rn": "North", "sc": 7.5}, {"n": "Algies Bay", "la": -36.43268, "lo": 174.73695, "r": "north", "rn": "North", "sc": 7.8}, {"n": "Sandspit", "la": -36.39308, "lo": 174.72758, "r": "north", "rn": "North", "sc": 6.8}, {"n": "Omaha", "la": -36.33961, "lo": 174.77988, "r": "north", "rn": "North", "sc": 5.9}, {"n": "Wenderholm", "la": -36.53471, "lo": 174.70154, "r": "north", "rn": "North", "sc": 7.3}, {"n": "Puhoi", "la": -36.51209, "lo": 174.66112, "r": "north", "rn": "North", "sc": 7.8}, {"n": "Waiwera", "la": -36.54459, "lo": 174.70849, "r": "north", "rn": "North", "sc": 7.0}, {"n": "Manly", "la": -36.63176, "lo": 174.75956, "r": "north", "rn": "North", "sc": 7.0}, {"n": "Stanmore Bay", "la": -36.62185, "lo": 174.73383, "r": "north", "rn": "North", "sc": 6.7}, {"n": "Tindalls", "la": -36.62164, "lo": 174.7689, "r": "north", "rn": "North", "sc": 7.0}, {"n": "Hatfields", "la": -36.5685, "lo": 174.6945, "r": "north", "rn": "North", "sc": 7.3}, {"n": "Orewa", "la": -36.58589, "lo": 174.69532, "r": "north", "rn": "North", "sc": 6.2}, {"n": "Browns Bay", "la": -36.71473, "lo": 174.74991, "r": "north", "rn": "North", "sc": 6.4}, {"n": "Long Bay", "la": -36.68458, "lo": 174.75059, "r": "north", "rn": "North", "sc": 5.3}, {"n": "Devonport", "la": -36.82973, "lo": 174.79754, "r": "north", "rn": "North", "sc": 4.1}, {"n": "French Bay", "la": -36.94777, "lo": 174.6615, "r": "west", "rn": "West", "sc": 7.7}, {"n": "Titirangi Beach", "la": -36.95079, "lo": 174.6568, "r": "west", "rn": "West", "sc": 6.9}, {"n": "Laingholm", "la": -36.96663, "lo": 174.64191, "r": "west", "rn": "West", "sc": 8.5}, {"n": "Blockhouse Bay", "la": -36.91884, "lo": 174.70582, "r": "west", "rn": "West", "sc": 6.7}, {"n": "Green Bay", "la": -36.93148, "lo": 174.69003, "r": "west", "rn": "West", "sc": 6.6}, {"n": "Parrs Park", "la": -36.90436, "lo": 174.6306, "r": "west", "rn": "West", "sc": 5.8}, {"n": "Olympic Park", "la": -36.90914, "lo": 174.69264, "r": "west", "rn": "West", "sc": 4.5}, {"n": "Awhitu", "la": -37.09368, "lo": 174.65101, "r": "west", "rn": "West", "sc": 8.4}, {"n": "Woodhill", "la": -36.71987, "lo": 174.382, "r": "west", "rn": "West", "sc": 6.7}, {"n": "Waikowhai", "la": -36.93365, "lo": 174.73569, "r": "west", "rn": "West", "sc": 7.2}, {"n": "Lynfield Cove", "la": -36.9268, "lo": 174.7115, "r": "west", "rn": "West", "sc": 7.4}, {"n": "Karioitahi", "la": -37.28322, "lo": 174.65478, "r": "south", "rn": "South", "sc": 9.5}, {"n": "Orere Point", "la": -36.95898, "lo": 175.24313, "r": "south", "rn": "South", "sc": 8.6}, {"n": "Waiau Pa", "la": -37.13837, "lo": 174.75441, "r": "south", "rn": "South", "sc": 7.8}, {"n": "Clarks Beach", "la": -37.13687, "lo": 174.70449, "r": "south", "rn": "South", "sc": 7.5}, {"n": "Clevedon", "la": -36.991, "lo": 175.03687, "r": "south", "rn": "South", "sc": 7.6}, {"n": "Waiuku", "la": -37.24919, "lo": 174.73034, "r": "south", "rn": "South", "sc": 6.7}, {"n": "Glenbrook", "la": -37.16167, "lo": 174.71126, "r": "south", "rn": "South", "sc": 7.8}, {"n": "Matakawau", "la": -37.10984, "lo": 174.66361, "r": "south", "rn": "South", "sc": 7.7}, {"n": "Karaka", "la": -37.0996, "lo": 174.87899, "r": "south", "rn": "South", "sc": 7.3}, {"n": "Bombay", "la": -37.18683, "lo": 174.99173, "r": "south", "rn": "South", "sc": 7.8}, {"n": "Kingseat", "la": -37.1251, "lo": 174.80168, "r": "south", "rn": "South", "sc": 7.6}, {"n": "Pukekohe", "la": -37.20064, "lo": 174.90369, "r": "south", "rn": "South", "sc": 6.0}]};
+const map = L.map('allmap', {scrollWheelZoom: true, zoomSnap: 0.25});
+const topo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {maxZoom:19, attribution:'Basemap &copy; Esri, HERE, Garmin, OpenStreetMap'}).addTo(map);
+const imagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom:19, attribution:'Imagery &copy; Esri, Maxar'});
+const streets = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:19, attribution:'&copy; OpenStreetMap'});
+L.control.layers({'Topographic': topo, 'Satellite': imagery, 'Streets': streets}).addTo(map);
+
+const bounds = [];
+A.regions.forEach(r => {
+  const poly = L.polygon(r.hull.map(p => [p[1], p[0]]), {
+    color: r.colour, weight: 2, dashArray: '5 5',
+    fillColor: r.colour, fillOpacity: 0.16
+  }).addTo(map);
+  poly.bindTooltip(r.name + ' — ' + r.n + ' spots · click to open', {sticky: true});
+  poly.on('mouseover', () => poly.setStyle({fillOpacity: 0.26, weight: 3}));
+  poly.on('mouseout', () => poly.setStyle({fillOpacity: 0.16, weight: 2}));
+  poly.on('click', () => { window.location.href = r.key + '.html'; });
+
+  L.marker([r.c[1], r.c[0]], {
+    icon: L.divIcon({className: 'rlabel', html: '<span style="transform:translate(calc(-50% + ' + r.off[0] + 'px), calc(-50% + ' + r.off[1] + 'px))">' + r.name + ' &rarr;</span>', iconSize: [0, 0]}),
+    keyboard: false
+  }).addTo(map)
+    .on('click', () => { window.location.href = r.key + '.html'; })
+    .bindTooltip('Open ' + r.name + ' Auckland');
+});
+
+A.spots.forEach(s => {
+  bounds.push([s.la, s.lo]);
+  const reg = A.regions.find(r => r.key === s.r) || {colour: '#7cc4ff'};
+  L.circleMarker([s.la, s.lo], {radius: 5, weight: 1, color: '#0b0e13', fillColor: reg.colour, fillOpacity: 0.95})
+    .addTo(map)
+    .bindPopup('<b>' + s.n + '</b><br>' + s.sc + '/10 &middot; <a href="' + s.r + '.html">' + s.rn + ' Auckland &rarr;</a>');
+});
+
+map.fitBounds(bounds, {padding: [34, 34]});
+</script>
+
+</body></html>

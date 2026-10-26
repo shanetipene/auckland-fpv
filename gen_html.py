@@ -96,6 +96,73 @@ META = {
 }
 ORDER = ["central","east","north","west","south"]
 
+REGION_COLOUR = {
+ "central": "#7cc4ff", "east": "#2fd28a", "north": "#f2b544",
+ "west": "#b98bff", "south": "#ff7a90",
+}
+
+def _hull(points):
+    """Convex hull (monotone chain). Points are (lon, lat)."""
+    pts = sorted(set(points))
+    if len(pts) < 3:
+        return pts
+
+    def cross(o, a, b):
+        return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])
+
+    lower = []
+    for p in pts:
+        while len(lower) >= 2 and cross(lower[-2], lower[-1], p) <= 0:
+            lower.pop()
+        lower.append(p)
+    upper = []
+    for p in reversed(pts):
+        while len(upper) >= 2 and cross(upper[-2], upper[-1], p) <= 0:
+            upper.pop()
+        upper.append(p)
+    return lower[:-1] + upper[:-1]
+
+
+def _buffered_hull(spots, factor=1.05):
+    """Hull around a region's spots, nudged out from the centroid so the
+    clickable area is a touch larger than the outermost pins."""
+    h = _hull([(s["lon"], s["lat"]) for s in spots])
+    if not h:
+        return [], [0, 0]
+    cx = sum(p[0] for p in h) / len(h)
+    cy = sum(p[1] for p in h) / len(h)
+    out = [[round(cx + (x - cx) * factor, 5), round(cy + (y - cy) * factor, 5)] for x, y in h]
+    return out, [round(cx, 5), round(cy, 5)]
+
+
+# screen-space nudge so the Central/East/West labels don't sit on top of each other
+_LABEL_OFF = {
+ "central": [0, -6], "east": [58, 16], "west": [-60, 16],
+ "north": [0, 0], "south": [0, 0],
+}
+
+_map_regions = []
+_map_spots = []
+for _k in ORDER:
+    _hull_pts, _centre = _buffered_hull(regions[_k])
+    # label sits at the average of the region's spots, not the hull centroid:
+    # hull centroids bunch up on the isthmus and overlap each other
+    _sp = regions[_k]
+    _centre = [round(sum(s["lon"] for s in _sp) / len(_sp), 5),
+               round(sum(s["lat"] for s in _sp) / len(_sp), 5)]
+    _map_regions.append({
+        "key": _k, "name": META[_k]["short"], "n": len(regions[_k]),
+        "colour": REGION_COLOUR[_k], "hull": _hull_pts, "c": _centre,
+        "off": _LABEL_OFF[_k],
+    })
+    for _s in regions[_k]:
+        _map_spots.append({
+            "n": _s["short"], "la": round(_s["lat"], 5), "lo": round(_s["lon"], 5),
+            "r": _k, "rn": META[_k]["short"], "sc": _s["fpv_score"],
+        })
+
+MAPDATA = json.dumps({"regions": _map_regions, "spots": _map_spots}, ensure_ascii=False)
+
 STATUS_LABEL = {"clear":"Clean - no permit","permit":"Regional park - permit","restricted":"Restricted - cert / ATC / private"}
 STATUS_CLASS = {"clear":"ok","permit":"permit","restricted":"warn"}
 
@@ -407,6 +474,67 @@ for key, spots in regions.items():
     open(os.path.join(OUT, f"{key}.html"), "w", encoding="utf-8").write(page)
     print("wrote", key, len(spots), "spots", len(page), "bytes")
 
+# index map: all 59 spots plus one clickable shape per region
+MAPJS = """
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const A = __DATA__;
+const map = L.map('allmap', {scrollWheelZoom: true, zoomSnap: 0.25});
+const topo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {maxZoom:19, attribution:'Basemap &copy; Esri, HERE, Garmin, OpenStreetMap'}).addTo(map);
+const imagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom:19, attribution:'Imagery &copy; Esri, Maxar'});
+const streets = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:19, attribution:'&copy; OpenStreetMap'});
+L.control.layers({'Topographic': topo, 'Satellite': imagery, 'Streets': streets}).addTo(map);
+
+const bounds = [];
+A.regions.forEach(r => {
+  const poly = L.polygon(r.hull.map(p => [p[1], p[0]]), {
+    color: r.colour, weight: 2, dashArray: '5 5',
+    fillColor: r.colour, fillOpacity: 0.16
+  }).addTo(map);
+  poly.bindTooltip(r.name + ' — ' + r.n + ' spots · click to open', {sticky: true});
+  poly.on('mouseover', () => poly.setStyle({fillOpacity: 0.26, weight: 3}));
+  poly.on('mouseout', () => poly.setStyle({fillOpacity: 0.16, weight: 2}));
+  poly.on('click', () => { window.location.href = r.key + '.html'; });
+
+  L.marker([r.c[1], r.c[0]], {
+    icon: L.divIcon({className: 'rlabel', html: '<span style="transform:translate(calc(-50% + ' + r.off[0] + 'px), calc(-50% + ' + r.off[1] + 'px))">' + r.name + ' &rarr;</span>', iconSize: [0, 0]}),
+    keyboard: false
+  }).addTo(map)
+    .on('click', () => { window.location.href = r.key + '.html'; })
+    .bindTooltip('Open ' + r.name + ' Auckland');
+});
+
+A.spots.forEach(s => {
+  bounds.push([s.la, s.lo]);
+  const reg = A.regions.find(r => r.key === s.r) || {colour: '#7cc4ff'};
+  L.circleMarker([s.la, s.lo], {radius: 5, weight: 1, color: '#0b0e13', fillColor: reg.colour, fillOpacity: 0.95})
+    .addTo(map)
+    .bindPopup('<b>' + s.n + '</b><br>' + s.sc + '/10 &middot; <a href="' + s.r + '.html">' + s.rn + ' Auckland &rarr;</a>');
+});
+
+map.fitBounds(bounds, {padding: [34, 34]});
+</script>
+""".replace("__DATA__", MAPDATA)
+
+RULES = """
+<section class="rules">
+  <h2>Rules and regulations</h2>
+  <p>Every spot here assumes you are flying under Part 101. These are the three rule sets that decide where you can legally launch, and each one can override the others.</p>
+  <a class="rlink" href="https://www.aviation.govt.nz/drones" target="_blank" rel="noopener">
+    <span class="who">CAA</span>
+    <span><b>Drone rules and pilot requirements</b><small>Part 101 and Part 102, pilot registration and competency, airspace classes, 120 m ceiling, and the FPV and night-flying conditions. This is the rule set everything else sits on top of.</small></span>
+  </a>
+  <a class="rlink" href="https://www.aucklandcouncil.govt.nz/en/parks-recreation/get-outdoors/drones-unmanned-aerial-vehicles.html" target="_blank" rel="noopener">
+    <span class="who">Auckland Council</span>
+    <span><b>Council rules and guidelines</b><small>Where you can and can't fly on council land, the regional park permit process, the 2.5 kg limit without council permission, and the code of conduct for flying over parks and reserves.</small></span>
+  </a>
+  <a class="rlink" href="https://www.doc.govt.nz/get-involved/apply-for-permits/all-permissions/drone-use-on-conservation-land/" target="_blank" rel="noopener">
+    <span class="who">DOC</span>
+    <span><b>Department of Conservation rules</b><small>Public conservation land needs a concession (permit) to take off, land or hover. Also the wildlife separation rules: 100 m to take off near wildlife, 50 m in flight, and 150 m from marine mammals.</small></span>
+  </a>
+</section>
+"""
+
 # index
 total = sum(len(v) for v in regions.values())
 rows = []
@@ -422,6 +550,7 @@ for k in ORDER:
 index = f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Auckland FPV spots</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
 :root{{--bg:#0b0e13;--panel:#131820;--line:#232c39;--txt:#e8eef6;--dim:#94a3b4;--ok:#1fb35a}}
 *{{box-sizing:border-box}}
@@ -441,17 +570,37 @@ header p{{color:var(--dim);max-width:760px;margin:0}}
 .rfoot{{display:flex;justify-content:space-between;font-size:13px;color:var(--dim);border-top:1px solid var(--line);padding-top:12px;margin-top:auto}}
 .rfoot b{{color:#fff}}
 .go{{color:#7cc4ff;font-weight:700}}
+.sechead{{font-size:22px;margin:26px 0 4px}}
+.leghint{{color:var(--dim);font-size:14px;margin:0 0 12px}}
+#allmap{{height:520px;border-radius:16px;border:1px solid var(--line);margin:0 0 34px;z-index:1;background:#0b0e13}}
+.rlabel{{background:none;border:0}}
+.rlabel span{{display:inline-block;position:absolute;left:0;top:0;width:max-content;transform:translate(-50%,-50%);background:rgba(11,14,19,.9);border:1px solid var(--line);color:#fff;font:700 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:7px 11px;border-radius:999px;white-space:nowrap;box-shadow:0 2px 10px rgba(0,0,0,.45)}}
+.rules{{border-top:1px solid var(--line);padding:38px 0 20px;margin-top:10px}}
+.rules h2{{font-size:22px;margin:0 0 8px}}
+.rules p{{color:var(--dim);font-size:14px;margin:0 0 20px;max-width:760px}}
+.rlink{{display:flex;gap:16px;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:12px;transition:.15s}}
+.rlink:hover{{border-color:#3a4757;transform:translateY(-1px)}}
+.rlink b{{display:block;font-size:16px;margin-bottom:3px}}
+.rlink small{{color:var(--dim);font-size:13px;line-height:1.55;display:block}}
+.rlink .who{{color:#7cc4ff;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;min-width:132px;padding-top:3px}}
+@media (max-width:640px){{#allmap{{height:400px}} .rlink{{flex-direction:column;gap:6px}}}}
 footer{{border-top:1px solid var(--line);padding:24px 0 60px;color:#6b7889;font-size:13px}}
 </style></head><body><div class="wrap">
 <header>
   <h1>Auckland <span>FPV</span> spots</h1>
   <p>{total} locations across five regions, each checked against live AirShare airspace data - control zones, 4 km aerodrome buffers, restricted areas and VFR transit lanes. Every spot carries a seclusion, quiet and flying rating (all higher = better), plus the quietest time and days to go.</p>
 </header>
+<h2 class="sechead">Auckland at a glance</h2>
+<p class="leghint">All {total} spots, coloured by region. Click one of the five regions to open it.</p>
+<div id="allmap"></div>
 <div class="grid">
 {''.join(rows)}
 </div>
+{RULES}
 <footer>Scores are 0-10 and weighted toward flying quality and seclusion, with permit/authorisation requirements applied as a penalty. Numbers restart at 1 in each region. Airspace data: AirShare / Airways NZ, October 2026. Always re-check NOTAMs and the AirShare map on the day.</footer>
-</div></body></html>"""
+</div>
+{MAPJS}
+</body></html>"""
 open(os.path.join(OUT, "index.html"), "w", encoding="utf-8").write(index)
 print("wrote index")
 print("OUT:", OUT)
