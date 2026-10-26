@@ -1,0 +1,40 @@
+[
+ {
+  "short": "Patumahoe",
+  "region": "south",
+  "q": "Patumahoe, Auckland",
+  "lat": -37.187739,
+  "lon": 174.828225,
+  "ok": true,
+  "codes": [],
+  "near_km": 10.62,
+  "near": "Pukekohe",
+  "disp": "Patum\u0101hoe, Franklin, Auckland, 2678, New Zealand / Aotearoa"
+ },
+ {
+  "short": "Puni",
+  "region": "south",
+  "q": "Puni, Auckland",
+  "lat": -37.231086,
+  "lon": 174.85634,
+  "ok": true,
+  "codes": [],
+  "near_km": 5.52,
+  "near": "Pukekohe",
+  "disp": "Puni, Franklin, Auckland, 2678, New Zealand / Aotearoa"
+ },
+ {
+  "short": "Whangateau",
+  "region": "north",
+  "q": "Whangateau, Auckland",
+  "lat": -36.31343,
+  "lon": 174.767025,
+  "ok": false,
+  "codes": [
+   "ad"
+  ],
+  "near_km": 3.69,
+  "near": "Omaha Flats",
+  "disp": "Whangateau, Rodney, Auckland, 0986, New Zealand / Aotearoa"
+ }
+]

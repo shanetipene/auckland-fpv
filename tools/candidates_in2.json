@@ -1,0 +1,19 @@
+[
+ {"short":"Meola Reef","region":"central","q":"Meola Reef, Point Chevalier, Auckland"},
+ {"short":"Okahu Bay","region":"central","q":"Okahu Bay Reserve, Orakei, Auckland"},
+ {"short":"Macleans Park","region":"east","q":"Macleans Park, Bucklands Beach, Auckland"},
+ {"short":"Duder","region":"east","q":"Duder Regional Park, Maraetai, Auckland"},
+ {"short":"Twilight Beach","region":"east","q":"Twilight Beach, Kawakawa Bay, Auckland"},
+ {"short":"Shakespear","region":"north","q":"Shakespear Regional Park, Auckland"},
+ {"short":"Te Arai","region":"north","q":"Te Arai Point, Auckland"},
+ {"short":"Point Wells","region":"north","q":"Point Wells, Omaha, Auckland"},
+ {"short":"Scandrett","region":"north","q":"Scandrett Regional Park, Mahurangi East, Auckland"},
+ {"short":"Armour Bay","region":"west","q":"Armour Bay Road, Titirangi, Auckland"},
+ {"short":"Ceramco Park","region":"west","q":"Ceramco Park, Glendene, Auckland"},
+ {"short":"Orua Bay","region":"west","q":"Orua Bay, Awhitu, Auckland"},
+ {"short":"Grahams Beach","region":"west","q":"Grahams Beach, Awhitu, Auckland"},
+ {"short":"Big Bay","region":"west","q":"Big Bay, Awhitu Peninsula, Auckland"},
+ {"short":"South Head","region":"west","q":"Kaipara South Head, Auckland"},
+ {"short":"Ramarama","region":"south","q":"Ramarama, Auckland"},
+ {"short":"Paerata","region":"south","q":"Paerata, Auckland"}
+]
