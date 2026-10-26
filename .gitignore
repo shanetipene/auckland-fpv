@@ -1,0 +1,15 @@
+# Cloudflare deploy cache (holds account/state details)
+.wrangler/
+
+# Build output — rebuilt by deploy-cloudflare.sh from the six HTML pages
+dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Local env and logs
+.env
+*.log
+.DS_Store

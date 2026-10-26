@@ -1,0 +1,8 @@
+name = "auckland-fpv"
+compatibility_date = "2026-10-01"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "fpv_community"
+database_name = "fpv-community"
+database_id = "1f7883d4-a6c2-4561-b5fd-d05663fe2518"

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auckland FPV spots</title>
+<style>
+:root{--bg:#0b0e13;--panel:#131820;--line:#232c39;--txt:#e8eef6;--dim:#94a3b4;--ok:#1fb35a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{padding:70px 0 30px}
+h1{margin:0 0 10px;font-size:clamp(30px,5vw,48px);letter-spacing:-1px}
+h1 span{color:var(--ok)}
+header p{color:var(--dim);max-width:760px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;padding:20px 0 60px}
+.region{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;transition:.15s}
+.region:hover{border-color:#3a4757;transform:translateY(-2px)}
+.rhead{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.rhead h2{margin:0;font-size:21px}
+.pill{font-size:12px;font-weight:700;color:var(--dim);border:1px solid var(--line);padding:3px 10px;border-radius:999px}
+.region p{color:var(--dim);font-size:14px;margin:10px 0 16px;flex:1}
+.rfoot{display:flex;justify-content:space-between;font-size:13px;color:var(--dim);border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
+.rfoot b{color:#fff}
+.go{color:#7cc4ff;font-weight:700}
+footer{border-top:1px solid var(--line);padding:24px 0 60px;color:#6b7889;font-size:13px}
+</style></head><body><div class="wrap">
+<header>
+  <h1>Auckland <span>FPV</span> spots</h1>
+  <p>59 locations across five regions, each checked against live AirShare airspace data - control zones, 4 km aerodrome buffers, restricted areas and VFR transit lanes. Every spot carries a seclusion, quiet and flying rating (all higher = better), plus the quietest time and days to go.</p>
+</header>
+<div class="grid">
+<a class="region" href="central.html">
+      <div class="rhead"><h2>Central Auckland</h2><span class="pill">9 spots</span></div>
+      <p>Isthmus parks and harbour reserves, 10-21 minutes from the CBD. Airspace is clean except Orakei Basin.</p>
+      <div class="rfoot"><span>Top pick: <b>Monte Cecilia</b> (7.2/10)</span><span class="go">Open &rarr;</span></div>
+    </a><a class="region" href="east.html">
+      <div class="rhead"><h2>East Auckland</h2><span class="pill">10 spots</span></div>
+      <p>Bucklands Beach out to the Pohutukawa Coast. Clean airspace the whole way; two sites need a regional-park permit.</p>
+      <div class="rfoot"><span>Top pick: <b>Musick Point</b> (8.9/10)</span><span class="go">Open &rarr;</span></div>
+    </a><a class="region" href="north.html">
+      <div class="rhead"><h2>North Auckland</h2><span class="pill">17 spots</span></div>
+      <p>Hibiscus Coast, Mahurangi and Matakana. The North Shore is locked up by the control zone - the good flying starts north of Silverdale.</p>
+      <div class="rfoot"><span>Top pick: <b>Pakiri</b> (9.3/10)</span><span class="go">Open &rarr;</span></div>
+    </a><a class="region" href="west.html">
+      <div class="rhead"><h2>West Auckland</h2><span class="pill">11 spots</span></div>
+      <p>The Manukau Harbour side. The Waitakere Ranges and the Whenuapai control zone take out most of the west, so these are what&#x27;s left.</p>
+      <div class="rfoot"><span>Top pick: <b>Laingholm</b> (8.5/10)</span><span class="go">Open &rarr;</span></div>
+    </a><a class="region" href="south.html">
+      <div class="rhead"><h2>South Auckland</h2><span class="pill">12 spots</span></div>
+      <p>Franklin. The airport control zone plus four aerodrome buffers cover the entire urban south, so everything legal is rural or coastal.</p>
+      <div class="rfoot"><span>Top pick: <b>Karioitahi</b> (9.5/10)</span><span class="go">Open &rarr;</span></div>
+    </a>
+</div>
+<footer>Scores are 0-10 and weighted toward flying quality and seclusion, with permit/authorisation requirements applied as a penalty. Numbers restart at 1 in each region. Airspace data: AirShare / Airways NZ, October 2026. Always re-check NOTAMs and the AirShare map on the day.</footer>
+</div></body></html>

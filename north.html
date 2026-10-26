@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>North Auckland FPV spots - Auckland</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+:root{--bg:#0b0e13;--panel:#131820;--panel2:#0f141b;--line:#232c39;--txt:#e8eef6;--dim:#94a3b4;--ok:#1fb35a;--permit:#2f6fd0;--warn:#e08a00;--bad:#e5484d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:#7cc4ff}
+.wrap{max-width:1280px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:1000;background:rgba(11,14,19,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:6px;align-items:center;height:56px;overflow-x:auto}
+nav .brand{font-weight:800;letter-spacing:.3px;margin-right:10px;white-space:nowrap}
+nav .brand span{color:var(--ok)}
+nav a{padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--dim);font-size:14px;font-weight:600;white-space:nowrap}
+nav a:hover{background:#1a212b;color:#fff}
+nav a.on{background:#1e2836;color:#fff}
+header.hero{padding:44px 0 26px}
+header.hero h1{margin:0 0 8px;font-size:clamp(26px,4vw,40px);letter-spacing:-.5px}
+header.hero p{margin:0;color:var(--dim);max-width:820px}
+.statline{display:flex;gap:22px;flex-wrap:wrap;margin-top:18px;color:var(--dim);font-size:14px}
+.statline b{color:#fff}
+#map{height:540px;border-radius:16px;border:1px solid var(--line);margin:8px 0 10px;z-index:1}
+.leaflet-popup-content{font:14px/1.5 -apple-system,Segoe UI,Roboto,sans-serif}
+.leaflet-popup-content b{font-size:15px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 6px}
+.chip{border:1px solid var(--line);background:var(--panel);color:var(--dim);padding:8px 14px;border-radius:999px;font-size:14px;font-weight:600;cursor:pointer}
+.chip.on{background:#e8eef6;color:#0b0e13;border-color:#e8eef6}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:18px;padding:16px 0 40px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
+.cardhead{display:flex;gap:12px;align-items:flex-start}
+.num{width:38px;height:38px;flex:0 0 38px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;font-size:17px}
+.num.ok{background:var(--ok)} .num.permit{background:var(--permit)} .num.warn{background:var(--warn)}
+.titles{min-width:0}.titles h3{margin:0;font-size:19px;letter-spacing:-.2px;overflow-wrap:anywhere}
+.meta{color:var(--dim);font-size:13px}
+.score{margin-left:auto;text-align:right;line-height:1;padding-left:10px;flex:0 0 auto}
+.score strong{font-size:24px} .score span{color:var(--dim);font-size:13px}
+.badges{margin:12px 0 6px}
+.badge{display:inline-block;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;border:1px solid}
+.badge.ok{color:#7ee2a8;border-color:#1c6b3f;background:#10241a}
+.badge.permit{color:#9dc0ff;border-color:#234d8a;background:#101a2b}
+.badge.warn{color:#ffc978;border-color:#7a4f10;background:#241a0d}
+.bars{display:grid;gap:6px;margin:12px 0}
+.bar{display:grid;grid-template-columns:92px 1fr 22px;gap:10px;align-items:center;font-size:13px;color:var(--dim)}
+.bar b{color:#fff;text-align:right}
+.track{height:6px;background:#1d2632;border-radius:999px;overflow:hidden}
+.track i{display:block;height:100%;border-radius:999px}
+.track i.good{background:var(--ok)} .track i.bad{background:var(--warn)}
+.quiet{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;display:grid;gap:6px;font-size:14px}
+.quiet div{display:grid;grid-template-columns:120px 1fr;gap:8px}
+.quiet span{color:var(--dim);font-size:13px}
+.quiet b{font-weight:600}
+.quiet .avoid b{color:#ffb4a2}
+p{margin:10px 0;font-size:14.5px;color:#c9d4e1}
+p strong{color:#fff}
+.note{color:var(--dim);font-size:13.5px;border-left:2px solid var(--line);padding-left:12px}
+.links{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px}
+.coords{color:#5f6c7d;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+section.rules{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;margin:6px 0 40px}
+section.rules h2{margin:0 0 10px;font-size:20px}
+section.rules li{margin:6px 0;color:#c9d4e1;font-size:14.5px}
+footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#6b7889;font-size:13px}
+@media (max-width:640px){#map{height:400px}.grid{grid-template-columns:1fr}.quiet div{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="brand">AKL <span>FPV</span></div>
+  <a href="index.html">Index</a>
+  <a href="central.html">Central</a>
+  <a href="east.html">East</a>
+  <a href="north.html" class="on">North</a>
+  <a href="west.html">West</a>
+  <a href="south.html">South</a>
+  <button class="navcta" id="suggestBtn" type="button">+ Suggest a spot</button>
+</div></nav>
+
+<div class="wrap">
+  <header class="hero">
+    <h1>North Auckland - FPV spots</h1>
+    <p>Hibiscus Coast, Mahurangi and Matakana. The North Shore is locked up by the control zone - the good flying starts north of Silverdale.</p>
+    <div class="statline">
+      <div><b>17</b> spots</div>
+      <div><b>12</b> no permit</div>
+      <div><b>2</b> regional park</div>
+      <div><b>3</b> restricted</div>
+      <div>Airspace checked against live AirShare data, Oct 2026</div>
+    </div>
+  </header>
+
+  <div id="map"></div>
+
+  <div class="pinsnote">
+    <div><b>About the pins and the names.</b> Each marker is a <b>reference point, not the launch spot</b> — usually the nearest car park, reserve entrance or road end, so it can sit 100–300 m from where you'll actually stand. Names are the official or most widely used name for the place; local signage, iwi names and some map apps differ, and a few spots go by more than one name. Navigate to the pin, then walk the last bit.</div>
+  </div>
+
+  <div class="filters">
+    <button class="chip on" data-f="all">All spots</button>
+    <button class="chip" data-f="clear">No permit</button>
+    <button class="chip" data-f="permit">Regional park</button>
+    <button class="chip" data-f="restricted">Restricted</button>
+  </div>
+
+  <main class="grid" id="cards">
+
+      <article class="card" data-status="clear" data-spot="pakiri">
+        <div class="cardhead">
+          <div class="num ok">1</div>
+          <div class="titles">
+            <h3>Pakiri Beach</h3>
+            <div class="meta">92 min from CBD &middot; 90.3 km &middot; ocean beach + dunes</div>
+          </div>
+          <div class="score"><strong>9.3</strong><span>/10</span></div>
+        </div>
+        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="5.0"><span>Seclusion</span><div class="track"><i class="good" style="width:100%"></i></div><b>5.0</b></div><div class="bar" data-metric="quiet" data-editorial="4.5"><span>Quiet</span><div class="track"><i class="good" style="width:90%"></i></div><b>4.5</b></div><div class="bar" data-metric="flying" data-editorial="4.5"><span>Flying</span><div class="track"><i class="good" style="width:90%"></i></div><b>4.5</b></div></div>
+        <div class="quiet">
+          <div><span>Quietest time</span><b>Weekday 07:00-11:00</b></div>
+          <div><span>Quietest days</span><b>Mon-Thu</b></div>
+          <div class="avoid"><span>Avoid</span><b>Summer weekends 10:00-16:00 (surfers)</b></div>
+        </div>
+        <p class="best"><strong>Best for:</strong> Twenty kilometres of empty white sand with dunes and no one on it. The best &#x27;alone&#x27; flying in the region.</p>
+        <p class="haz"><strong>Hazards:</strong> Private farmland behind the beach (no crossing without permission), surf and rips, no phone coverage, very exposed to wind.</p>
+        <p class="note">Airspace is clean - 10.9 km from Omaha Flats. Take water, tell someone where you are, and don&#x27;t stray onto the farm.</p>
+        <div class="community" hidden><span class="cnote"></span></div>
+        <div class="ratebox">
+          <button class="ratebtn" type="button">Rate this spot</button>
+          <form class="rateform" hidden>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="5.0"><output>5.0</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="4.5"><output>4.5</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="4.5"><output>4.5</output></label>
+            <div class="row"><button type="submit">Submit rating</button></div>
+          </form>
+          <p class="ratemsg" role="status"></p>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?q=-36.249900,174.735890" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.24990, 174.73589</span>
+        </div>
+      </article>
+
+      <article class="card" data-status="clear" data-spot="leigh">
+        <div class="cardhead">
+          <div class="num ok">2</div>
+          <div class="titles">
+            <h3>Leigh / Leigh Harbour</h3>
+            <div class="meta">72 min from CBD &middot; 80.7 km &middot; harbour + surf beach</div>
+          </div>
+          <div class="score"><strong>8.5</strong><span>/10</span></div>
+        </div>
+        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.5"><span>Seclusion</span><div class="track"><i class="good" style="width:90%"></i></div><b>4.5</b></div><div class="bar" data-metric="quiet" data-editorial="3.8"><span>Quiet</span><div class="track"><i class="good" style="width:76%"></i></div><b>3.8</b></div><div class="bar" data-metric="flying" data-editorial="4.3"><span>Flying</span><div class="track"><i class="good" style="width:86%"></i></div><b>4.3</b></div></div>
+        <div class="quiet">
+          <div><span>Quietest time</span><b>Weekday 06:30-09:30</b></div>
+          <div><span>Quietest days</span><b>Mon-Thu</b></div>
+          <div class="avoid"><span>Avoid</span><b>Summer weekends 09:00-16:00 (boats, divers)</b></div>
+        </div>
+        <p class="best"><strong>Best for:</strong> Two completely different looks in one village: sheltered harbour with boats and bush, and open surf beach with cliffs north.</p>
+        <p class="haz"><strong>Hazards:</strong> Charter boats and divers at the harbour, swimmers at the beach, the Leigh cemetery is a no-fly polygon inside the village.</p>
+        <p class="note">7.3 km from Omaha Flats so no aerodrome consent needed. Log the flight on AirShare.</p>
+        <div class="community" hidden><span class="cnote"></span></div>
+        <div class="ratebox">
+          <button class="ratebtn" type="button">Rate this spot</button>
+          <form class="rateform" hidden>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.5"><output>4.5</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="3.8"><output>3.8</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="4.3"><output>4.3</output></label>
+            <div class="row"><button type="submit">Submit rating</button></div>
+          </form>
+          <p class="ratemsg" role="status"></p>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?q=-36.290420,174.804270" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.29042, 174.80427</span>
+        </div>
+      </article>
+
+      <article class="card" data-status="clear" data-spot="algies-bay">
+        <div class="cardhead">
+          <div class="num ok">3</div>
+          <div class="titles">
+            <h3>Algies Bay</h3>
+            <div class="meta">60 min from CBD &middot; 70.4 km &middot; quiet bay</div>
+          </div>
+          <div class="score"><strong>7.8</strong><span>/10</span></div>
+        </div>
+        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.2"><span>Seclusion</span><div class="track"><i class="good" style="width:84%"></i></div><b>4.2</b></div><div class="bar" data-metric="quiet" data-editorial="3.5"><span>Quiet</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div><div class="bar" data-metric="flying" data-editorial="3.9"><span>Flying</span><div class="track"><i class="good" style="width:78%"></i></div><b>3.9</b></div></div>
+        <div class="quiet">
+          <div><span>Quietest time</span><b>Weekday 07:00-10:00</b></div>
+          <div><span>Quietest days</span><b>Mon-Thu</b></div>
+          <div class="avoid"><span>Avoid</span><b>Summer weekends 10:00-16:00</b></div>
+        </div>
+        <p class="best"><strong>Best for:</strong> Quiet bay, moorings, bush-clad points and Kawau Island across the water - good long-range line of sight.</p>
+        <p class="haz"><strong>Hazards:</strong> Moorings and dinghies, swimmers in summer, tide</p>
+        <p class="note">No permit needed. 8 km from Warkworth heliport, so airspace is clean. Dawn is flat calm.</p>
+        <div class="community" hidden><span class="cnote"></span></div>
+        <div class="ratebox">
+          <button class="ratebtn" type="button">Rate this spot</button>
+          <form class="rateform" hidden>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.2"><output>4.2</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.9"><output>3.9</output></label>
+            <div class="row"><button type="submit">Submit rating</button></div>
+          </form>
+          <p class="ratemsg" role="status"></p>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?q=-36.432680,174.736950" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.43268, 174.73695</span>
+        </div>
+      </article>
+
+      <article class="card" data-status="clear" data-spot="puhoi">
+        <div class="cardhead">
+          <div class="num ok">4</div>
+          <div class="titles">
+            <h3>Puhoi</h3>
+            <div class="meta">37 min from CBD &middot; 43.6 km &middot; river valley</div>
+          </div>
+          <div class="score"><strong>7.8</strong><span>/10</span></div>
+        </div>
+        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.2"><span>Seclusion</span><div class="track"><i class="good" style="width:84%"></i></div><b>4.2</b></div><div class="bar" data-metric="quiet" data-editorial="3.5"><span>Quiet</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div><div class="bar" data-metric="flying" data-editorial="3.8"><span>Flying</span><div class="track"><i class="good" style="width:76%"></i></div><b>3.8</b></div></div>
+        <div class="quiet">
+          <div><span>Quietest time</span><b>Weekday 07:00-09:30</b></div>
+          <div><span>Quietest days</span><b>Mon-Thu</b></div>
+          <div class="avoid"><span>Avoid</span><b>Summer weekends 10:00-15:00 (kayakers)</b></div>
+        </div>
+        <p class="best"><strong>Best for:</strong> River, bush valley, the old stone church and the bridge - tight, scenic flying with real character.</p>
+        <p class="haz"><strong>Hazards:</strong> Kayak traffic on the river in summer, dense bush limits LOS, narrow valley wind.</p>
+        <p class="note">No permit. Fly the river corridor early; the valley is shaded and calm before 9am.</p>
+        <div class="community" hidden><span class="cnote"></span></div>
+        <div class="ratebox">
+          <button class="ratebtn" type="button">Rate this spot</button>
+          <form class="rateform" hidden>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.2"><output>4.2</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.8"><output>3.8</output></label>
+            <div class="row"><button type="submit">Submit rating</button></div>
+          </form>
+          <p class="ratemsg" role="status"></p>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?q=-36.512090,174.661120" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.51209, 174.66112</span>
+        </div>
+      </article>
+
+      <article class="card" data-status="permit" data-spot="mahurangi-west">
+        <div class="cardhead">
+          <div class="num permit">5</div>
+          <div class="titles">
+            <h3>Mahurangi West / Opahi Bay</h3>
+            <div class="meta">49 min from CBD &middot; 52.5 km &middot; harbour bays</div>
+          </div>
+          <div class="score"><strong>7.5</strong><span>/10</span></div>
+        </div>
+        <div class="badges"><span class="badge permit">Regional park - permit</span></div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.5"><span>Seclusion</span><div class="track"><i class="good" style="width:90%"></i></div><b>4.5</b></div><div class="bar" data-metric="quiet" data-editorial="4.0"><span>Quiet</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="flying" data-editorial="4.0"><span>Flying</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div></div>
+        <div class="quiet">
+          <div><span>Quietest time</span><b>Weekday 08:00-11:00</b></div>
+          <div><span>Quietest days</span><b>Tue-Thu</b></div>
+          <div class="avoid"><span>Avoid</span><b>Sat-Sun 10:00-15:00</b></div>
+        </div>
+        <p class="best"><strong>Best for:</strong> Sheltered harbour bays, bush headlands, tidal flats and boats - classic Mahurangi postcard, almost nobody there.</p>
+        <p class="haz"><strong>Hazards:</strong> Tide (the flats are mud at low water), regional park permit conditions, narrow gravel road.</p>
+        <p class="note">Mahurangi is not on the banned list, so a regional-park drone permit is available through council. Apply first.</p>
+        <div class="community" hidden><span class="cnote"></span></div>
+        <div class="ratebox">
+          <button class="ratebtn" type="button">Rate this spot</button>
+          <form class="rateform" hidden>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.5"><output>4.5</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
+            <div class="row"><button type="submit">Submit rating</button></div>
+          </form>
+          <p class="ratemsg" role="status"></p>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?q=-36.498160,174.712890" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.49816, 174.71289</span>
+        </div>
+      </article>
+
+      <article class="card" data-status="permit" data-spot="wenderholm">
+        <div class="cardhead">
+          <div class="num permit">6</div>
+          <div class="titles">
+            <h3>Wenderholm Regional Park</h3>
+            <div class="meta">39 min from CBD &middot; 46.9 km &middot; bush + river mouth</div>
+          </div>
+          <div class="score"><strong>7.3</strong><span>/10</span></div>
+        </div>
+        <div class="badges"><span class="badge permit">Regional park - permit</span></div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.4"><span>Seclusion</span><div class="track"><i class="good" style="width:88%"></i></div><b>4.4</b></div><div class="bar" data-metric="quiet" data-editorial="3.2"><span>Quiet</span><div class="track"><i class="good" style="width:64%"></i></div><b>3.2</b></div><div class="bar" data-metric="flying" data-editorial="4.2"><span>Flying</span><div class="track"><i class="good" style="width:84%"></i></div><b>4.2</b></div></div>
+        <div class="quiet">
+          <div><span>Quietest time</span><b>Weekday 08:00-11:00</b></div>
+          <div><span>Quietest days</span><b>Tue-Thu</b></div>
+          <div class="avoid"><span>Avoid</span><b>Sat-Sun 10:00-16:00 (picnic crowds)</b></div>
+        </div>
+        <p class="best"><strong>Best for:</strong> Bush, beach and the Puhoi river mouth - a compact, sheltered spot with great light in the evening.</p>
+        <p class="haz"><strong>Hazards:</strong> Permit conditions, popular picnic spot on weekends, estuary birds, no flying over the campground when occupied.</p>
+        <p class="note">Regional park permit required. One of the few north parks where the permit is actually worth the paperwork.</p>
+        <div class="community" hidden><span class="cnote"></span></div>
+        <div class="ratebox">
+          <button class="ratebtn" type="button">Rate this spot</button>
+          <form class="rateform" hidden>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.4"><output>4.4</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="3.2"><output>3.2</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="4.2"><output>4.2</output></label>
+            <div class="row"><button type="submit">Submit rating</button></div>
+          </form>
+          <p class="ratemsg" role="status"></p>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?q=-36.534710,174.701540" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.53471, 174.70154</span>
+        </div>
+      </article>
+
+      <article class="card" data-status="clear" data-spot="hatfields">
+        <div class="cardhead">
+          <div class="num ok">7</div>
+          <div class="titles">
+            <h3>Hatfields Beach</h3>
+            <div class="meta">37 min from CBD &middot; 39.1 km &middot; beach + estuary</div>
+          </div>
+          <div class="score"><strong>7.3</strong><span>/10</span></div>
+        </div>
+        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.0"><span>Seclusion</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="quiet" data-editorial="3.5"><span>Quiet</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div><div class="bar" data-metric="flying" data-editorial="3.5"><span>Flying</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div></div>
+        <div class="quiet">
+          <div><span>Quietest time</span><b>Weekday 07:00-09:30</b></div>
+          <div><span>Quietest days</span><b>Mon-Fri</b></div>
+          <div class="avoid"><span>Avoid</span><b>Weekends 10:00-15:00</b></div>
+        </div>
+        <p class="best"><strong>Best for:</strong> Quiet beach with a rocky northern end and the Orewa estuary behind - the overflow option when Orewa is packed.</p>
+        <p class="haz"><strong>Hazards:</strong> Highway-adjacent, small parking, shorebirds at the estuary.</p>
+        <p class="note">No permit. Pairs with Orewa or Waiwera in one run. 1 km inland. Pin is on the sand at the northern end of the beach.</p>
+        <div class="community" hidden><span class="cnote"></span></div>
+        <div class="ratebox">
+          <button class="ratebtn" type="button">Rate this spot</button>
+          <form class="rateform" hidden>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
+            <div class="row"><button type="submit">Submit rating</button></div>
+          </form>
+          <p class="ratemsg" role="status"></p>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?q=-36.568500,174.694500" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.56850, 174.69450</span>
+        </div>
+      </article>
+
+      <article class="card" data-status="clear" data-spot="waiwera">
+        <div class="cardhead">
+          <div class="num ok">8</div>
+          <div class="titles">
+            <h3>Waiwera</h3>
+            <div class="meta">42 min from CBD &middot; 48.5 km &middot; river mouth beach</div>
+          </div>
+          <div class="score"><strong>7.0</strong><span>/10</span></div>
+        </div>
+        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="3.8"><span>Seclusion</span><div class="track"><i class="good" style="width:76%"></i></div><b>3.8</b></div><div class="bar" data-metric="quiet" data-editorial="3.0"><span>Quiet</span><div class="track"><i class="good" style="width:60%"></i></div><b>3.0</b></div><div class="bar" data-metric="flying" data-editorial="3.5"><span>Flying</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div></div>
+        <div class="quiet">
+          <div><span>Quietest time</span><b>Weekday 07:00-10:00</b></div>
+          <div><span>Quietest days</span><b>Mon-Fri</b></div>
+          <div class="avoid"><span>Avoid</span><b>Weekends 10:00-15:00</b></div>
+        </div>
+        <p class="best"><strong>Best for:</strong> Small beach at the mouth of the Waiwera river, cliffs either side, easy parking off the highway.</p>
+        <p class="haz"><strong>Hazards:</strong> Highway noise and traffic, swimmers, small beach so keep clear of people.</p>
+        <p class="note">No permit. Quick stop on the way north rather than a destination. Pin is the river-mouth beach.</p>
+        <div class="community" hidden><span class="cnote"></span></div>
+        <div class="ratebox">
+          <button class="ratebtn" type="button">Rate this spot</button>
+          <form class="rateform" hidden>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="3.8"><output>3.8</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="3.0"><output>3.0</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
+            <div class="row"><button type="submit">Submit rating</button></div>
+          </form>
+          <p class="ratemsg" role="status"></p>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?q=-36.544588,174.708489" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.54459, 174.70849</span>
+        </div>
+      </article>
+
+      <article class="card" data-status="clear" data-spot="manly">
+        <div class="cardhead">
+          <div class="num ok">9</div>
+          <div class="titles">
+            <h3>Manly / Big Manly Beach</h3>
+            <div class="meta">44 min from CBD &middot; 41.8 km &middot; sheltered beach</div>
+          </div>
+          <div class="score"><strong>7.0</strong><span>/10</span></div>
+        </div>
+        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="3.6"><span>Seclusion</span><div class="track"><i class="good" style="width:72%"></i></div><b>3.6</b></div><div class="bar" data-metric="quiet" data-editorial="3.0"><span>Quiet</span><div class="track"><i class="good" style="width:60%"></i></div><b>3.0</b></div><div class="bar" data-metric="flying" data-editorial="3.6"><span>Flying</span><div class="track"><i class="good" style="width:72%"></i></div><b>3.6</b></div></div>
+        <div class="quiet">
+          <div><span>Quietest time</span><b>Weekday 06:30-09:00</b></div>
+          <div><span>Quietest days</span><b>Mon-Thu</b></div>
+          <div class="avoid"><span>Avoid</span><b>Summer weekends 09:30-16:00</b></div>
+        </div>
+        <p class="best"><strong>Best for:</strong> Sheltered beach with a headland at each end and Whangaparaoa harbour behind - good for smooth coastal passes.</p>
+        <p class="haz"><strong>Hazards:</strong> Swimmers and boat ramp traffic in summer, residential overlooks.</p>
+        <p class="note">No permit. Clean airspace, 10 km from North Shore aerodrome. Pin is the beach frontage at Big Manly.</p>
+        <div class="community" hidden><span class="cnote"></span></div>
+        <div class="ratebox">
+          <button class="ratebtn" type="button">Rate this spot</button>
+          <form class="rateform" hidden>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="3.6"><output>3.6</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="3.0"><output>3.0</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.6"><output>3.6</output></label>
+            <div class="row"><button type="submit">Submit rating</button></div>
+          </form>
+          <p class="ratemsg" role="status"></p>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?q=-36.631758,174.759560" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.63176, 174.75956</span>
+        </div>
+      </article>
+
+      <article class="card" data-status="clear" data-spot="tindalls">
+        <div class="cardhead">
+          <div class="num ok">10</div>
+          <div class="titles">
+            <h3>Tindalls Beach</h3>
+            <div class="meta">46 min from CBD &middot; 43.1 km &middot; small bay</div>
+          </div>
+          <div class="score"><strong>7.0</strong><span>/10</span></div>
+        </div>
+        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="3.8"><span>Seclusion</span><div class="track"><i class="good" style="width:76%"></i></div><b>3.8</b></div><div class="bar" data-metric="quiet" data-editorial="3.2"><span>Quiet</span><div class="track"><i class="good" style="width:64%"></i></div><b>3.2</b></div><div class="bar" data-metric="flying" data-editorial="3.4"><span>Flying</span><div class="track"><i class="good" style="width:68%"></i></div><b>3.4</b></div></div>
+        <div class="quiet">
+          <div><span>Quietest time</span><b>Weekday 07:00-09:30</b></div>
+          <div><span>Quietest days</span><b>Mon-Fri</b></div>
+          <div class="avoid"><span>Avoid</span><b>Weekends 10:00-15:00</b></div>
+        </div>
+        <p class="best"><strong>Best for:</strong> Small sheltered bay with a tidal inlet - quiet, pretty, limited space.</p>
+        <p class="haz"><strong>Hazards:</strong> Residential bay with houses close on both sides, swimmers, small launch area.</p>
+        <p class="note">No permit, but it&#x27;s a small stage - good for a 30-minute session, not a full day.</p>
+        <div class="community" hidden><span class="cnote"></span></div>
+        <div class="ratebox">
+          <button class="ratebtn" type="button">Rate this spot</button>
+          <form class="rateform" hidden>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="3.8"><output>3.8</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="3.2"><output>3.2</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.4"><output>3.4</output></label>
+            <div class="row"><button type="submit">Submit rating</button></div>
+          </form>
+          <p class="ratemsg" role="status"></p>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?q=-36.621640,174.768900" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.62164, 174.76890</span>
+        </div>
+      </article>
+
+      <article class="card" data-status="clear" data-spot="sandspit">
+        <div class="cardhead">
+          <div class="num ok">11</div>
+          <div class="titles">
+            <h3>Sandspit</h3>
+            <div class="meta">57 min from CBD &middot; 67.6 km &middot; estuary + marina</div>
+          </div>
+          <div class="score"><strong>6.8</strong><span>/10</span></div>
+        </div>
+        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="3.3"><span>Seclusion</span><div class="track"><i class="good" style="width:66%"></i></div><b>3.3</b></div><div class="bar" data-metric="quiet" data-editorial="2.8"><span>Quiet</span><div class="track"><i class="good" style="width:56%"></i></div><b>2.8</b></div><div class="bar" data-metric="flying" data-editorial="3.8"><span>Flying</span><div class="track"><i class="good" style="width:76%"></i></div><b>3.8</b></div></div>
+        <div class="quiet">
+          <div><span>Quietest time</span><b>Weekday 08:00-10:30</b></div>
+          <div><span>Quietest days</span><b>Mon-Thu</b></div>
+          <div class="avoid"><span>Avoid</span><b>Weekends 09:00-16:00 (ferry, boats)</b></div>
+        </div>
+        <p class="best"><strong>Best for:</strong> Estuary, marina masts, sandspit and the Matakana river mouth - lots of interesting structure to fly.</p>
+        <p class="haz"><strong>Hazards:</strong> Marina is private property (don&#x27;t launch from the pontoons), ferry and boat traffic, estuary birds.</p>
+        <p class="note">5.9 km from Omaha Flats - just outside the 4 km ring. Launch from the reserve, not the marina.</p>
+        <div class="community" hidden><span class="cnote"></span></div>
+        <div class="ratebox">
+          <button class="ratebtn" type="button">Rate this spot</button>
+          <form class="rateform" hidden>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="3.3"><output>3.3</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="2.8"><output>2.8</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.8"><output>3.8</output></label>
+            <div class="row"><button type="submit">Submit rating</button></div>
+          </form>
+          <p class="ratemsg" role="status"></p>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?q=-36.393080,174.727580" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.39308, 174.72758</span>
+        </div>
+      </article>
+
+      <article class="card" data-status="clear" data-spot="stanmore-bay">
+        <div class="cardhead">
+          <div class="num ok">12</div>
+          <div class="titles">
+            <h3>Stanmore Bay</h3>
+            <div class="meta">42 min from CBD &middot; 40.2 km &middot; beach + park</div>
+          </div>
+          <div class="score"><strong>6.7</strong><span>/10</span></div>
+        </div>
+        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="3.2"><span>Seclusion</span><div class="track"><i class="good" style="width:64%"></i></div><b>3.2</b></div><div class="bar" data-metric="quiet" data-editorial="2.5"><span>Quiet</span><div class="track"><i class="good" style="width:50%"></i></div><b>2.5</b></div><div class="bar" data-metric="flying" data-editorial="3.8"><span>Flying</span><div class="track"><i class="good" style="width:76%"></i></div><b>3.8</b></div></div>
+        <div class="quiet">
+          <div><span>Quietest time</span><b>Weekday 07:00-09:30</b></div>
+          <div><span>Quietest days</span><b>Mon-Thu</b></div>
+          <div class="avoid"><span>Avoid</span><b>Weekends 09:00-16:00</b></div>
+        </div>
+        <p class="best"><strong>Best for:</strong> Long beach, rocks at the northern end and a big open park behind - easy launch with room to breathe.</p>
+        <p class="haz"><strong>Hazards:</strong> Busy in summer, sports fields and playground, swimmers.</p>
+        <p class="note">No permit. The northern rocks are the interesting end. The old pin was 1 km south on Scott Road, away from the bay. Pin is the northern end of the beach by the boat ramp; the old pin was 650 m inland in the housing.</p>
+        <div class="community" hidden><span class="cnote"></span></div>
+        <div class="ratebox">
+          <button class="ratebtn" type="button">Rate this spot</button>
+          <form class="rateform" hidden>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="3.2"><output>3.2</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="2.5"><output>2.5</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.8"><output>3.8</output></label>
+            <div class="row"><button type="submit">Submit rating</button></div>
+          </form>
+          <p class="ratemsg" role="status"></p>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?q=-36.621851,174.733826" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.62185, 174.73383</span>
+        </div>
+      </article>
+
+      <article class="card" data-status="clear" data-spot="browns-bay">
+        <div class="cardhead">
+          <div class="num ok">13</div>
+          <div class="titles">
+            <h3>Browns Bay</h3>
+            <div class="meta">22 min from CBD &middot; 20.4 km &middot; beach + reef</div>
+          </div>
+          <div class="score"><strong>6.4</strong><span>/10</span></div>
+        </div>
+        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="3.0"><span>Seclusion</span><div class="track"><i class="good" style="width:60%"></i></div><b>3.0</b></div><div class="bar" data-metric="quiet" data-editorial="2.0"><span>Quiet</span><div class="track"><i class="bad" style="width:40%"></i></div><b>2.0</b></div><div class="bar" data-metric="flying" data-editorial="3.9"><span>Flying</span><div class="track"><i class="good" style="width:78%"></i></div><b>3.9</b></div></div>
+        <div class="quiet">
+          <div><span>Quietest time</span><b>Weekday 06:30-09:00 (daylight only)</b></div>
+          <div><span>Quietest days</span><b>Mon-Thu</b></div>
+          <div class="avoid"><span>Avoid</span><b>Weekends 09:00-17:00; after dark (transit lane ends)</b></div>
+        </div>
+        <p class="best"><strong>Best for:</strong> Beach, reef at low tide and the islands offshore - the best North Shore option if you&#x27;re not certificated.</p>
+        <p class="haz"><strong>Hazards:</strong> Inside Whenuapai CTR but within the Whangaparaoa VFR transit lane: no ATC authorisation needed in daylight, but you must be on the ground before dark.</p>
+        <p class="note">This one is a daylight-only exception. The transit lane is uncontrolled during daylight hours - night ops need ATC authorisation. Busy beach in summer.</p>
+        <div class="community" hidden><span class="cnote"></span></div>
+        <div class="ratebox">
+          <button class="ratebtn" type="button">Rate this spot</button>
+          <form class="rateform" hidden>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="3.0"><output>3.0</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="2.0"><output>2.0</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.9"><output>3.9</output></label>
+            <div class="row"><button type="submit">Submit rating</button></div>
+          </form>
+          <p class="ratemsg" role="status"></p>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?q=-36.714730,174.749910" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.71473, 174.74991</span>
+        </div>
+      </article>
+
+      <article class="card" data-status="clear" data-spot="orewa">
+        <div class="cardhead">
+          <div class="num ok">14</div>
+          <div class="titles">
+            <h3>Orewa Beach</h3>
+            <div class="meta">35 min from CBD &middot; 37.5 km &middot; long beach</div>
+          </div>
+          <div class="score"><strong>6.2</strong><span>/10</span></div>
+        </div>
+        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="2.8"><span>Seclusion</span><div class="track"><i class="good" style="width:56%"></i></div><b>2.8</b></div><div class="bar" data-metric="quiet" data-editorial="1.5"><span>Quiet</span><div class="track"><i class="bad" style="width:30%"></i></div><b>1.5</b></div><div class="bar" data-metric="flying" data-editorial="4.0"><span>Flying</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div></div>
+        <div class="quiet">
+          <div><span>Quietest time</span><b>Weekday 06:00-08:30</b></div>
+          <div><span>Quietest days</span><b>Tue-Thu</b></div>
+          <div class="avoid"><span>Avoid</span><b>Sat-Sun 08:00-18:00 (busiest beach in the north)</b></div>
+        </div>
+        <p class="best"><strong>Best for:</strong> Three kilometres of beach, estuary mouth and the Whangaparaoa headland in the distance - the easiest big-stage beach in the north.</p>
+        <p class="haz"><strong>Hazards:</strong> Busiest beach in the north: swimmers, kite surfers, events, estuary shorebirds.</p>
+        <p class="note">No permit, clean airspace, but you&#x27;ll be flying around people. Dawn or a weekday evening.</p>
+        <div class="community" hidden><span class="cnote"></span></div>
+        <div class="ratebox">
+          <button class="ratebtn" type="button">Rate this spot</button>
+          <form class="rateform" hidden>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="2.8"><output>2.8</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="1.5"><output>1.5</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
+            <div class="row"><button type="submit">Submit rating</button></div>
+          </form>
+          <p class="ratemsg" role="status"></p>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?q=-36.585890,174.695320" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.58589, 174.69532</span>
+        </div>
+      </article>
+
+      <article class="card" data-status="restricted" data-spot="omaha">
+        <div class="cardhead">
+          <div class="num warn">15</div>
+          <div class="titles">
+            <h3>Omaha Beach</h3>
+            <div class="meta">66 min from CBD &middot; 75.3 km &middot; white sand beach</div>
+          </div>
+          <div class="score"><strong>5.9</strong><span>/10</span></div>
+        </div>
+        <div class="badges"><span class="badge warn">Restricted - cert / ATC / private</span></div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.0"><span>Seclusion</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="quiet" data-editorial="2.5"><span>Quiet</span><div class="track"><i class="good" style="width:50%"></i></div><b>2.5</b></div><div class="bar" data-metric="flying" data-editorial="4.5"><span>Flying</span><div class="track"><i class="good" style="width:90%"></i></div><b>4.5</b></div></div>
+        <div class="quiet">
+          <div><span>Quietest time</span><b>Weekday 06:30-09:30</b></div>
+          <div><span>Quietest days</span><b>Mon-Thu</b></div>
+          <div class="avoid"><span>Avoid</span><b>Summer weekends 09:00-17:00</b></div>
+        </div>
+        <p class="best"><strong>Best for:</strong> White sand, surf, dunes and the inlet - the most photogenic beach in the north.</p>
+        <p class="haz"><strong>Hazards:</strong> Inside the Omaha Flats aerodrome 4 km ring: needs a Part 101 certificate and aerodrome operator consent. Also busy in summer.</p>
+        <p class="note">Legal only with a qualification and consent; without it, drive 10 minutes to Leigh instead. Pin is the main beach access; the old pin was 500 m up the beach.</p>
+        <div class="community" hidden><span class="cnote"></span></div>
+        <div class="ratebox">
+          <button class="ratebtn" type="button">Rate this spot</button>
+          <form class="rateform" hidden>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="2.5"><output>2.5</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="4.5"><output>4.5</output></label>
+            <div class="row"><button type="submit">Submit rating</button></div>
+          </form>
+          <p class="ratemsg" role="status"></p>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?q=-36.339612,174.779884" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.33961, 174.77988</span>
+        </div>
+      </article>
+
+      <article class="card" data-status="restricted" data-spot="long-bay">
+        <div class="cardhead">
+          <div class="num warn">16</div>
+          <div class="titles">
+            <h3>Long Bay</h3>
+            <div class="meta">28 min from CBD &middot; 24.1 km &middot; long beach + cliffs</div>
+          </div>
+          <div class="score"><strong>5.3</strong><span>/10</span></div>
+        </div>
+        <div class="badges"><span class="badge warn">Restricted - cert / ATC / private</span></div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="3.5"><span>Seclusion</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div><div class="bar" data-metric="quiet" data-editorial="2.5"><span>Quiet</span><div class="track"><i class="good" style="width:50%"></i></div><b>2.5</b></div><div class="bar" data-metric="flying" data-editorial="4.0"><span>Flying</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div></div>
+        <div class="quiet">
+          <div><span>Quietest time</span><b>Weekday 07:00-09:00</b></div>
+          <div><span>Quietest days</span><b>Mon-Thu</b></div>
+          <div class="avoid"><span>Avoid</span><b>Weekends 10:00-16:00</b></div>
+        </div>
+        <p class="best"><strong>Best for:</strong> Long sandy beach, cliffs and the regional park headland at the northern end.</p>
+        <p class="haz"><strong>Hazards:</strong> Inside the Whenuapai CTR (outside the transit lane) and a regional park - two separate permissions.</p>
+        <p class="note">Not worth it when Browns Bay is 4 km south and needs neither. Skip unless you&#x27;re doing the paperwork anyway.</p>
+        <div class="community" hidden><span class="cnote"></span></div>
+        <div class="ratebox">
+          <button class="ratebtn" type="button">Rate this spot</button>
+          <form class="rateform" hidden>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="2.5"><output>2.5</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
+            <div class="row"><button type="submit">Submit rating</button></div>
+          </form>
+          <p class="ratemsg" role="status"></p>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?q=-36.684580,174.750590" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.68458, 174.75059</span>
+        </div>
+      </article>
+
+      <article class="card" data-status="restricted" data-spot="devonport">
+        <div class="cardhead">
+          <div class="num warn">17</div>
+          <div class="titles">
+            <h3>Devonport / North Head</h3>
+            <div class="meta">20 min from CBD &middot; 14.2 km &middot; clifftop + harbour</div>
+          </div>
+          <div class="score"><strong>4.1</strong><span>/10</span></div>
+        </div>
+        <div class="badges"><span class="badge warn">Restricted - cert / ATC / private</span></div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="2.5"><span>Seclusion</span><div class="track"><i class="good" style="width:50%"></i></div><b>2.5</b></div><div class="bar" data-metric="quiet" data-editorial="1.5"><span>Quiet</span><div class="track"><i class="bad" style="width:30%"></i></div><b>1.5</b></div><div class="bar" data-metric="flying" data-editorial="3.5"><span>Flying</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div></div>
+        <div class="quiet">
+          <div><span>Quietest time</span><b>Weekday 06:30-08:30</b></div>
+          <div><span>Quietest days</span><b>Mon-Thu</b></div>
+          <div class="avoid"><span>Avoid</span><b>Weekends 09:00-17:00 (ferry crowds)</b></div>
+        </div>
+        <p class="best"><strong>Best for:</strong> The best city skyline and harbour shot in Auckland - cliffs, gun emplacements, Rangitoto and the CBD across the water.</p>
+        <p class="haz"><strong>Hazards:</strong> Inside the Mechanics Bay and Auckland Harbour 4 km rings, plus North Shore Hospital. North Head itself is DOC land needing a separate concession.</p>
+        <p class="note">Sits in the Northern Automatic Authorisation Area: automatic approval ONLY with a Part 101 qualification from a Part 141 provider plus an observer. Without the cert, no.</p>
+        <div class="community" hidden><span class="cnote"></span></div>
+        <div class="ratebox">
+          <button class="ratebtn" type="button">Rate this spot</button>
+          <form class="rateform" hidden>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="2.5"><output>2.5</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="1.5"><output>1.5</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
+            <div class="row"><button type="submit">Submit rating</button></div>
+          </form>
+          <p class="ratemsg" role="status"></p>
+        </div>
+        <div class="links">
+          <a href="https://maps.google.com/?q=-36.829730,174.797540" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.82973, 174.79754</span>
+        </div>
+      </article>
+  </main>
+
+  <section class="rules">
+    <h2>Before you fly</h2>
+    <ul>
+      <li>Log the flight on AirShare - required on council land, and it's how you request ATC or aerodrome approval.</li>
+      <li>Stay 30 m from people and dogs, 20 m from buildings, 50 m from playgrounds in use and infrastructure.</li>
+      <li>Nothing over 2.5 kg on council land without council permission.</li>
+      <li>FPV needs a spotter maintaining unaided line of sight - that's the CAA position, not optional.</li>
+      <li>Sept-March: stay 30 m off shorebirds on beaches, and don't take off within 100 m of them.</li>
+      <li>Inside a control zone or 4 km ring, the only recreational route is a Part 101 certificate plus approval - or a shielded operation.</li>
+    </ul>
+  </section>
+
+  <footer>
+    North Auckland &middot; 17 spots &middot; numbers are ranked within this region by overall score.
+    Scores weight flying quality and seclusion; read the sub-scores for your own priorities.
+    Basemap imagery &copy; Esri, Maxar, Earthstar Geographics. Airspace data &copy; AirShare / Airways NZ.
+  </footer>
+</div>
+
+<dialog id="suggestModal" aria-labelledby="smodalTitle">
+  <div class="smodal">
+    <h2 id="smodalTitle">Suggest a spot</h2>
+    <p class="sub">Reviewed once a day. Airspace, access and legality get checked before anything is added, so include anything you know about getting in.</p>
+    <form id="suggestForm">
+      <label class="field"><span>Spot name</span><input name="name" maxlength="90" required placeholder="e.g. Kaiaua Point"></label>
+      <div class="grid2">
+        <label class="field"><span>Region</span>
+          <select name="region" required>
+            <option value="">Choose…</option>
+            <option value="central">Central</option>
+            <option value="east">East</option>
+            <option value="north">North</option>
+            <option value="west">West</option>
+            <option value="south">South</option>
+          </select>
+        </label>
+        <label class="field"><span>Google Maps link (optional)</span><input name="maps_url" placeholder="https://maps.app.goo.gl/…"></label>
+      </div>
+      <div class="grid2">
+        <label class="field"><span>Latitude</span><input name="lat" id="fLat" type="number" step="any" required placeholder="-36.84890"></label>
+        <label class="field"><span>Longitude</span><input name="lon" id="fLon" type="number" step="any" required placeholder="174.76520"></label>
+      </div>
+      <div class="row"><button type="button" class="ghost" id="geoBtn">Use my location</button><span class="smsg" id="geoHint">Or paste a Maps link above and we'll pull the coordinates.</span></div>
+      <label class="field"><span>Access</span><textarea name="access" maxlength="500" placeholder="Parking, track, gate, land owner, tide…"></textarea></label>
+      <label class="field"><span>Why is it good?</span><textarea name="why" maxlength="1200" required placeholder="What makes it worth flying? Terrain, lines, sightlines, what's around."></textarea></label>
+      <label class="field"><span>Hazards</span><textarea name="hazards" maxlength="500" placeholder="Powerlines, wind, people, wildlife, airspace…"></textarea></label>
+      <label class="field"><span>Your name or handle (optional)</span><input name="submitter" maxlength="90"></label>
+      <label class="hp"><span>Website</span><input name="website" tabindex="-1" autocomplete="off"></label>
+      <div class="sactions">
+        <button type="submit">Send for review</button>
+        <button type="button" class="ghost" id="closeModal">Cancel</button>
+      </div>
+      <p class="smsg" id="suggestMsg" role="status"></p>
+    </form>
+  </div>
+</dialog>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const SPOTS = [{"tier": 1, "name": "Pakiri Beach", "short": "Pakiri", "lat": -36.2499, "lon": 174.73589, "secl": 5.0, "traffic": 0.5, "fly": 4.5, "land": "Council reserve / beach + private farmland access", "access": "Pakiri Rd north of Leigh, ~1 h 30 from CBD. Park at the beach access; the dunes and farmland behind are private.", "best": "Twenty kilometres of empty white sand with dunes and no one on it. The best 'alone' flying in the region.", "hazards": "Private farmland behind the beach (no crossing without permission), surf and rips, no phone coverage, very exposed to wind.", "note": "Airspace is clean - 10.9 km from Omaha Flats. Take water, tell someone where you are, and don't stray onto the farm.", "status": "clear", "dist_cbd_km": 66.7, "merit": 9.3, "fpv_score": 9.3, "maps_url": "https://maps.google.com/?q=-36.249900,174.735890", "drive_min": 92, "drive_km": 90.3, "num": 1, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.249900,174.735890", "id": "pakiri", "kind": "ocean beach + dunes", "quiet_time": "Weekday 07:00-11:00", "quiet_days": "Mon-Thu", "avoid": "Summer weekends 10:00-16:00 (surfers)"}, {"tier": 1, "name": "Leigh / Leigh Harbour", "short": "Leigh", "lat": -36.29042, "lon": 174.80427, "secl": 4.5, "traffic": 1.2, "fly": 4.3, "land": "Council reserve / beach + harbour", "access": "Leigh village, ~70 min from CBD. Harbour launch at the wharf end, beach at the surf side.", "best": "Two completely different looks in one village: sheltered harbour with boats and bush, and open surf beach with cliffs north.", "hazards": "Charter boats and divers at the harbour, swimmers at the beach, the Leigh cemetery is a no-fly polygon inside the village.", "note": "7.3 km from Omaha Flats so no aerodrome consent needed. Log the flight on AirShare.", "status": "clear", "dist_cbd_km": 62.2, "merit": 8.5, "fpv_score": 8.5, "maps_url": "https://maps.google.com/?q=-36.290420,174.804270", "drive_min": 72, "drive_km": 80.7, "num": 2, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.290420,174.804270", "id": "leigh", "kind": "harbour + surf beach", "quiet_time": "Weekday 06:30-09:30", "quiet_days": "Mon-Thu", "avoid": "Summer weekends 09:00-16:00 (boats, divers)"}, {"tier": 1, "name": "Algies Bay", "short": "Algies Bay", "lat": -36.43268, "lon": 174.73695, "secl": 4.2, "traffic": 1.5, "fly": 3.9, "land": "Council reserve / beach", "access": "Algies Bay Rd, ~1 h from CBD. Beach reserve with parking.", "best": "Quiet bay, moorings, bush-clad points and Kawau Island across the water - good long-range line of sight.", "hazards": "Moorings and dinghies, swimmers in summer, tide", "note": "No permit needed. 8 km from Warkworth heliport, so airspace is clean. Dawn is flat calm.", "status": "clear", "dist_cbd_km": 46.4, "merit": 7.8, "fpv_score": 7.8, "maps_url": "https://maps.google.com/?q=-36.432680,174.736950", "drive_min": 60, "drive_km": 70.4, "num": 3, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.432680,174.736950", "id": "algies-bay", "kind": "quiet bay", "quiet_time": "Weekday 07:00-10:00", "quiet_days": "Mon-Thu", "avoid": "Summer weekends 10:00-16:00"}, {"tier": 2, "name": "Puhoi", "short": "Puhoi", "lat": -36.51209, "lon": 174.66112, "secl": 4.2, "traffic": 1.5, "fly": 3.8, "land": "Council reserve / river village", "access": "Puhoi village off SH1, ~40 min from CBD. Park at the domain or the pub.", "best": "River, bush valley, the old stone church and the bridge - tight, scenic flying with real character.", "hazards": "Kayak traffic on the river in summer, dense bush limits LOS, narrow valley wind.", "note": "No permit. Fly the river corridor early; the valley is shaded and calm before 9am.", "status": "clear", "dist_cbd_km": 38.6, "merit": 7.8, "fpv_score": 7.8, "maps_url": "https://maps.google.com/?q=-36.512090,174.661120", "drive_min": 37, "drive_km": 43.6, "num": 4, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.512090,174.661120", "id": "puhoi", "kind": "river valley", "quiet_time": "Weekday 07:00-09:30", "quiet_days": "Mon-Thu", "avoid": "Summer weekends 10:00-15:00 (kayakers)"}, {"tier": 1, "name": "Mahurangi West / Opahi Bay", "short": "Mahurangi West", "lat": -36.49816, "lon": 174.71289, "secl": 4.5, "traffic": 1.0, "fly": 4.0, "land": "Auckland Council regional park - PERMIT required", "access": "Mahurangi West Rd off SH1, ~45 min from CBD. Park at Opahi Bay or Sullivan's Bay.", "best": "Sheltered harbour bays, bush headlands, tidal flats and boats - classic Mahurangi postcard, almost nobody there.", "hazards": "Tide (the flats are mud at low water), regional park permit conditions, narrow gravel road.", "note": "Mahurangi is not on the banned list, so a regional-park drone permit is available through council. Apply first.", "status": "permit", "dist_cbd_km": 39.3, "merit": 8.3, "fpv_score": 7.5, "maps_url": "https://maps.google.com/?q=-36.498160,174.712890", "drive_min": 49, "drive_km": 52.5, "num": 5, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.498160,174.712890", "id": "mahurangi-west", "kind": "harbour bays", "quiet_time": "Weekday 08:00-11:00", "quiet_days": "Tue-Thu", "avoid": "Sat-Sun 10:00-15:00"}, {"tier": 2, "name": "Wenderholm Regional Park", "short": "Wenderholm", "lat": -36.53471, "lon": 174.70154, "secl": 4.4, "traffic": 1.8, "fly": 4.2, "land": "Auckland Council regional park - PERMIT required", "access": "Wenderholm off SH1 just north of Puhoi, ~45 min from CBD.", "best": "Bush, beach and the Puhoi river mouth - a compact, sheltered spot with great light in the evening.", "hazards": "Permit conditions, popular picnic spot on weekends, estuary birds, no flying over the campground when occupied.", "note": "Regional park permit required. One of the few north parks where the permit is actually worth the paperwork.", "status": "permit", "dist_cbd_km": 35.4, "merit": 8.1, "fpv_score": 7.3, "maps_url": "https://maps.google.com/?q=-36.534710,174.701540", "drive_min": 39, "drive_km": 46.9, "num": 6, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.534710,174.701540", "id": "wenderholm", "kind": "bush + river mouth", "quiet_time": "Weekday 08:00-11:00", "quiet_days": "Tue-Thu", "avoid": "Sat-Sun 10:00-16:00 (picnic crowds)"}, {"tier": 2, "name": "Hatfields Beach", "short": "Hatfields", "lat": -36.5685, "lon": 174.6945, "secl": 4.0, "traffic": 1.5, "fly": 3.5, "land": "Council reserve / beach", "access": "Hatfields Beach off SH1, ~40 min from CBD.", "best": "Quiet beach with a rocky northern end and the Orewa estuary behind - the overflow option when Orewa is packed.", "hazards": "Highway-adjacent, small parking, shorebirds at the estuary.", "note": "No permit. Pairs with Orewa or Waiwera in one run. 1 km inland. Pin is on the sand at the northern end of the beach.", "status": "clear", "dist_cbd_km": 31.6, "merit": 7.3, "fpv_score": 7.3, "maps_url": "https://maps.google.com/?q=-36.568500,174.694500", "drive_min": 37, "drive_km": 39.1, "num": 7, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.568500,174.694500", "id": "hatfields", "kind": "beach + estuary", "quiet_time": "Weekday 07:00-09:30", "quiet_days": "Mon-Fri", "avoid": "Weekends 10:00-15:00"}, {"tier": 2, "name": "Waiwera", "short": "Waiwera", "lat": -36.5445884, "lon": 174.7084891, "secl": 3.8, "traffic": 2.0, "fly": 3.5, "land": "Council reserve / beach", "access": "Waiwera off SH1, ~40 min from CBD.", "best": "Small beach at the mouth of the Waiwera river, cliffs either side, easy parking off the highway.", "hazards": "Highway noise and traffic, swimmers, small beach so keep clear of people.", "note": "No permit. Quick stop on the way north rather than a destination. Pin is the river-mouth beach.", "status": "clear", "dist_cbd_km": 34.2, "merit": 7.0, "fpv_score": 7.0, "maps_url": "https://maps.google.com/?q=-36.544588,174.708489", "drive_min": 42, "drive_km": 48.5, "num": 8, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.544588,174.708489", "id": "waiwera", "kind": "river mouth beach", "quiet_time": "Weekday 07:00-10:00", "quiet_days": "Mon-Fri", "avoid": "Weekends 10:00-15:00"}, {"tier": 2, "name": "Manly / Big Manly Beach", "short": "Manly", "lat": -36.6317582, "lon": 174.7595596, "secl": 3.6, "traffic": 2.0, "fly": 3.6, "land": "Council reserve / beach", "access": "Manly, Whangaparaoa, ~45 min from CBD.", "best": "Sheltered beach with a headland at each end and Whangaparaoa harbour behind - good for smooth coastal passes.", "hazards": "Swimmers and boat ramp traffic in summer, residential overlooks.", "note": "No permit. Clean airspace, 10 km from North Shore aerodrome. Pin is the beach frontage at Big Manly.", "status": "clear", "dist_cbd_km": 24.8, "merit": 7.0, "fpv_score": 7.0, "maps_url": "https://maps.google.com/?q=-36.631758,174.759560", "drive_min": 44, "drive_km": 41.8, "num": 9, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.631758,174.759560", "id": "manly", "kind": "sheltered beach", "quiet_time": "Weekday 06:30-09:00", "quiet_days": "Mon-Thu", "avoid": "Summer weekends 09:30-16:00"}, {"tier": 2, "name": "Tindalls Beach", "short": "Tindalls", "lat": -36.62164, "lon": 174.7689, "secl": 3.8, "traffic": 1.8, "fly": 3.4, "land": "Council reserve / beach", "access": "Tindalls Beach Rd, Whangaparaoa, ~45 min from CBD.", "best": "Small sheltered bay with a tidal inlet - quiet, pretty, limited space.", "hazards": "Residential bay with houses close on both sides, swimmers, small launch area.", "note": "No permit, but it's a small stage - good for a 30-minute session, not a full day.", "status": "clear", "dist_cbd_km": 25.3, "merit": 7.0, "fpv_score": 7.0, "maps_url": "https://maps.google.com/?q=-36.621640,174.768900", "drive_min": 46, "drive_km": 43.1, "num": 10, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.621640,174.768900", "id": "tindalls", "kind": "small bay", "quiet_time": "Weekday 07:00-09:30", "quiet_days": "Mon-Fri", "avoid": "Weekends 10:00-15:00"}, {"tier": 1, "name": "Sandspit", "short": "Sandspit", "lat": -36.39308, "lon": 174.72758, "secl": 3.3, "traffic": 2.2, "fly": 3.8, "land": "Council reserve / beach + marina", "access": "Sandspit Rd, ~55 min from CBD. Marina at the end of the road.", "best": "Estuary, marina masts, sandspit and the Matakana river mouth - lots of interesting structure to fly.", "hazards": "Marina is private property (don't launch from the pontoons), ferry and boat traffic, estuary birds.", "note": "5.9 km from Omaha Flats - just outside the 4 km ring. Launch from the reserve, not the marina.", "status": "clear", "dist_cbd_km": 50.8, "merit": 6.8, "fpv_score": 6.8, "maps_url": "https://maps.google.com/?q=-36.393080,174.727580", "drive_min": 57, "drive_km": 67.6, "num": 11, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.393080,174.727580", "id": "sandspit", "kind": "estuary + marina", "quiet_time": "Weekday 08:00-10:30", "quiet_days": "Mon-Thu", "avoid": "Weekends 09:00-16:00 (ferry, boats)"}, {"tier": 2, "name": "Stanmore Bay", "short": "Stanmore Bay", "lat": -36.621851, "lon": 174.733826, "secl": 3.2, "traffic": 2.5, "fly": 3.8, "land": "Council reserve / beach", "access": "Stanmore Bay Rd, Whangaparaoa, ~45 min from CBD.", "best": "Long beach, rocks at the northern end and a big open park behind - easy launch with room to breathe.", "hazards": "Busy in summer, sports fields and playground, swimmers.", "note": "No permit. The northern rocks are the interesting end. The old pin was 1 km south on Scott Road, away from the bay. Pin is the northern end of the beach by the boat ramp; the old pin was 650 m inland in the housing.", "status": "clear", "dist_cbd_km": 24.0, "merit": 6.7, "fpv_score": 6.7, "maps_url": "https://maps.google.com/?q=-36.621851,174.733826", "drive_min": 42, "drive_km": 40.2, "num": 12, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.621851,174.733826", "id": "stanmore-bay", "kind": "beach + park", "quiet_time": "Weekday 07:00-09:30", "quiet_days": "Mon-Thu", "avoid": "Weekends 09:00-16:00"}, {"tier": 3, "name": "Browns Bay", "short": "Browns Bay", "lat": -36.71473, "lon": 174.74991, "secl": 3.0, "traffic": 3.0, "fly": 3.9, "land": "Council reserve / beach", "access": "Browns Bay, ~22 min from CBD.", "best": "Beach, reef at low tide and the islands offshore - the best North Shore option if you're not certificated.", "hazards": "Inside Whenuapai CTR but within the Whangaparaoa VFR transit lane: no ATC authorisation needed in daylight, but you must be on the ground before dark.", "note": "This one is a daylight-only exception. The transit lane is uncontrolled during daylight hours - night ops need ATC authorisation. Busy beach in summer.", "status": "clear", "dist_cbd_km": 15.0, "merit": 6.4, "fpv_score": 6.4, "maps_url": "https://maps.google.com/?q=-36.714730,174.749910", "drive_min": 22, "drive_km": 20.4, "num": 13, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.714730,174.749910", "id": "browns-bay", "kind": "beach + reef", "quiet_time": "Weekday 06:30-09:00 (daylight only)", "quiet_days": "Mon-Thu", "avoid": "Weekends 09:00-17:00; after dark (transit lane ends)"}, {"tier": 3, "name": "Orewa Beach", "short": "Orewa", "lat": -36.58589, "lon": 174.69532, "secl": 2.8, "traffic": 3.5, "fly": 4.0, "land": "Council reserve / beach", "access": "Orewa, ~35 min from CBD. Beach car parks along Orewa Beach Rd.", "best": "Three kilometres of beach, estuary mouth and the Whangaparaoa headland in the distance - the easiest big-stage beach in the north.", "hazards": "Busiest beach in the north: swimmers, kite surfers, events, estuary shorebirds.", "note": "No permit, clean airspace, but you'll be flying around people. Dawn or a weekday evening.", "status": "clear", "dist_cbd_km": 29.9, "merit": 6.2, "fpv_score": 6.2, "maps_url": "https://maps.google.com/?q=-36.585890,174.695320", "drive_min": 35, "drive_km": 37.5, "num": 14, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.585890,174.695320", "id": "orewa", "kind": "long beach", "quiet_time": "Weekday 06:00-08:30", "quiet_days": "Tue-Thu", "avoid": "Sat-Sun 08:00-18:00 (busiest beach in the north)"}, {"tier": 2, "name": "Omaha Beach", "short": "Omaha", "lat": -36.3396123, "lon": 174.7798838, "secl": 4.0, "traffic": 2.5, "fly": 4.5, "land": "Council reserve / beach", "access": "Omaha Dr, ~65 min from CBD.", "best": "White sand, surf, dunes and the inlet - the most photogenic beach in the north.", "hazards": "Inside the Omaha Flats aerodrome 4 km ring: needs a Part 101 certificate and aerodrome operator consent. Also busy in summer.", "note": "Legal only with a qualification and consent; without it, drive 10 minutes to Leigh instead. Pin is the main beach access; the old pin was 500 m up the beach.", "status": "restricted", "dist_cbd_km": 57.1, "merit": 7.8, "fpv_score": 5.9, "maps_url": "https://maps.google.com/?q=-36.339612,174.779884", "drive_min": 66, "drive_km": 75.3, "num": 15, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.339612,174.779884", "id": "omaha", "kind": "white sand beach", "quiet_time": "Weekday 06:30-09:30", "quiet_days": "Mon-Thu", "avoid": "Summer weekends 09:00-17:00"}, {"tier": 3, "name": "Long Bay", "short": "Long Bay", "lat": -36.68458, "lon": 174.75059, "secl": 3.5, "traffic": 2.5, "fly": 4.0, "land": "Auckland Council regional park - PERMIT + ATC authorisation", "access": "Long Bay, ~30 min from CBD.", "best": "Long sandy beach, cliffs and the regional park headland at the northern end.", "hazards": "Inside the Whenuapai CTR (outside the transit lane) and a regional park - two separate permissions.", "note": "Not worth it when Browns Bay is 4 km south and needs neither. Skip unless you're doing the paperwork anyway.", "status": "restricted", "dist_cbd_km": 18.3, "merit": 7.0, "fpv_score": 5.3, "maps_url": "https://maps.google.com/?q=-36.684580,174.750590", "drive_min": 28, "drive_km": 24.1, "num": 16, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.684580,174.750590", "id": "long-bay", "kind": "long beach + cliffs", "quiet_time": "Weekday 07:00-09:00", "quiet_days": "Mon-Thu", "avoid": "Weekends 10:00-16:00"}, {"tier": 3, "name": "Devonport / North Head", "short": "Devonport", "lat": -36.82973, "lon": 174.79754, "secl": 2.5, "traffic": 3.5, "fly": 3.5, "land": "Council reserve + DOC historic reserve (North Head)", "access": "Devonport, 20 min from CBD by ferry or 30 by road.", "best": "The best city skyline and harbour shot in Auckland - cliffs, gun emplacements, Rangitoto and the CBD across the water.", "hazards": "Inside the Mechanics Bay and Auckland Harbour 4 km rings, plus North Shore Hospital. North Head itself is DOC land needing a separate concession.", "note": "Sits in the Northern Automatic Authorisation Area: automatic approval ONLY with a Part 101 qualification from a Part 141 provider plus an observer. Without the cert, no.", "status": "restricted", "dist_cbd_km": 3.6, "merit": 5.5, "fpv_score": 4.1, "maps_url": "https://maps.google.com/?q=-36.829730,174.797540", "drive_min": 20, "drive_km": 14.2, "num": 17, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.829730,174.797540", "id": "devonport", "kind": "clifftop + harbour", "quiet_time": "Weekday 06:30-08:30", "quiet_days": "Mon-Thu", "avoid": "Weekends 09:00-17:00 (ferry crowds)"}];
+const COL = {clear:"#1fb35a", permit:"#2f6fd0", restricted:"#e08a00"};
+const map = L.map('map', {scrollWheelZoom:true});
+const topo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {maxZoom:19, attribution:'Basemap &copy; Esri, HERE, Garmin, OpenStreetMap'}).addTo(map);
+const imagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom:19, attribution:'Imagery &copy; Esri, Maxar'});
+const labels = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {maxZoom:19, opacity:0.9});
+const satellite = L.layerGroup([imagery, labels]);
+const streets = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:19, attribution:'&copy; OpenStreetMap'});
+L.control.layers({"Topographic": topo, "Satellite": satellite, "Streets": streets}, null, {position:'topright'}).addTo(map);
+L.control.scale({imperial:false, position:'bottomleft'}).addTo(map);
+
+const markers = {};
+const bounds = [];
+for (const s of SPOTS) {
+  const icon = L.divIcon({className:'', iconSize:[27,27], iconAnchor:[13.5,13.5],
+    html:`<div style="width:27px;height:27px;border-radius:50%;background:${COL[s.status]};color:#fff;font:800 12.5px/27px -apple-system,Segoe UI,Roboto,sans-serif;text-align:center;box-shadow:0 0 0 3px rgba(255,255,255,.92),0 4px 12px rgba(0,0,0,.55)">${s.num}</div>`});
+  const m = L.marker([s.lat, s.lon], {icon}).addTo(map);
+  m.bindPopup(`<b>${s.num}. ${s.name}</b><br>${s.fpv_score}/10 &middot; ${s.drive_min} min from CBD<br>
+    <span style="color:#555">Quietest:</span> ${s.quiet_time}<br>
+    <span style="color:#555">Days:</span> ${s.quiet_days}<br>
+    <a href="${s.maps_url}" target="_blank" rel="noopener">Google Maps</a>`);
+  markers[s.num] = m;
+  bounds.push([s.lat, s.lon]);
+}
+if (bounds.length) map.fitBounds(bounds, {padding:[40,40]});
+
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+    chip.classList.add('on');
+    const f = chip.dataset.f;
+    document.querySelectorAll('.card').forEach(c => {
+      c.style.display = (f === 'all' || c.dataset.status === f) ? '' : 'none';
+    });
+    for (const s of SPOTS) {
+      const show = (f === 'all' || s.status === f);
+      if (show) markers[s.num].addTo(map); else map.removeLayer(markers[s.num]);
+    }
+  });
+});
+</script>
+<script src="assets/site.js"></script>
+</body></html>

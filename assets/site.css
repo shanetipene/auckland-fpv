@@ -1,0 +1,168 @@
+/* Community features: suggest-a-spot, ratings, pins disclaimer */
+
+.navcta {
+  margin-left: auto;
+  background: var(--ok);
+  color: #06210f;
+  border: 0;
+  padding: 9px 14px;
+  border-radius: 9px;
+  font-weight: 800;
+  font-size: 13.5px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: inherit;
+}
+.navcta:hover { filter: brightness(1.08); }
+
+.pinsnote {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: #101822;
+  border: 1px solid var(--line);
+  border-left: 3px solid #2f6fd0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin: 0 0 18px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #b9c6d6;
+}
+.pinsnote b { color: #fff; }
+
+.community {
+  font-size: 12.5px;
+  color: #7f8ea3;
+  margin: 0 0 10px;
+}
+.community .cnote::before {
+  content: "●";
+  color: var(--ok);
+  margin-right: 6px;
+  font-size: 9px;
+  vertical-align: middle;
+}
+
+.ratebox {
+  border-top: 1px solid var(--line);
+  margin-top: 12px;
+  padding-top: 12px;
+}
+.ratebtn {
+  background: #1b2431;
+  border: 1px solid var(--line);
+  color: #cfe0f2;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+}
+.ratebtn:hover { border-color: #3a4757; }
+
+.rateform {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+.rateform label {
+  display: grid;
+  grid-template-columns: 78px 1fr 34px;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--dim);
+}
+.rateform input[type=range] { width: 100%; accent-color: var(--ok); }
+.rateform output { color: #fff; font-weight: 700; text-align: right; }
+.rateform .row { display: flex; gap: 8px; align-items: center; }
+.rateform button {
+  background: var(--ok);
+  border: 0;
+  color: #06210f;
+  font-weight: 800;
+  padding: 9px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13.5px;
+  font-family: inherit;
+}
+.ratemsg { font-size: 12.5px; color: #8fa2b8; margin: 8px 0 0; min-height: 1em; }
+
+/* Suggest-a-spot dialog */
+dialog#suggestModal {
+  background: var(--panel);
+  color: var(--txt);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 0;
+  width: min(580px, 94vw);
+  max-height: 88vh;
+  overflow: auto;
+}
+dialog#suggestModal::backdrop {
+  background: rgba(4, 7, 11, 0.72);
+  backdrop-filter: blur(3px);
+}
+.smodal { padding: 22px; }
+.smodal h2 { margin: 0 0 4px; font-size: 21px; }
+.smodal p.sub { margin: 0 0 16px; color: var(--dim); font-size: 13.5px; }
+.smodal form { display: grid; gap: 12px; }
+.field { display: grid; gap: 5px; }
+.field > span { font-size: 12.5px; color: var(--dim); font-weight: 600; }
+.field input, .field select, .field textarea {
+  background: #0d1219;
+  border: 1px solid var(--line);
+  color: var(--txt);
+  border-radius: 8px;
+  padding: 10px;
+  font: 14px/1.45 inherit;
+  font-family: inherit;
+  width: 100%;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: 2px solid #2f6fd0;
+  outline-offset: 1px;
+}
+.field textarea { min-height: 66px; resize: vertical; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.hp { position: absolute; left: -9999px; height: 0; overflow: hidden; }
+.sactions { display: flex; gap: 10px; align-items: center; margin-top: 4px; flex-wrap: wrap; }
+.sactions button[type=submit] {
+  background: var(--ok);
+  color: #06210f;
+  border: 0;
+  font-weight: 800;
+  padding: 11px 16px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+}
+.ghost {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--dim);
+  padding: 10px 14px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 13.5px;
+  font-family: inherit;
+}
+.smsg { font-size: 13px; color: #8fa2b8; margin: 2px 0 0; min-height: 1em; }
+.okmsg {
+  background: #10241a;
+  border: 1px solid #1c6b3f;
+  color: #a8e9c3;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+  .grid2 { grid-template-columns: 1fr; }
+  .navcta { font-size: 12.5px; padding: 8px 11px; }
+}
