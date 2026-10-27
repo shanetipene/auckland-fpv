@@ -156,6 +156,7 @@ for _k in ORDER:
         _map_spots.append({
             "n": _s["short"], "la": round(_s["lat"], 5), "lo": round(_s["lon"], 5),
             "r": _k, "rn": META[_k]["short"], "sc": _s["fpv_score"],
+            "id": re.sub(r"[^a-z0-9]+", "-", _s["short"].lower()).strip("-"),
         })
 
 MAPDATA = json.dumps({"regions": _map_regions, "spots": _map_spots}, ensure_ascii=False)
@@ -299,6 +300,9 @@ header.hero p{{margin:0;color:var(--dim);max-width:820px}}
 .quiet{{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;display:grid;gap:6px;font-size:14px}}
 .launch{{background:rgba(124,196,255,.07);border:1px solid rgba(124,196,255,.22);border-left:3px solid #7cc4ff;border-radius:10px;padding:10px 12px;margin:12px 0 4px;font-size:13.5px;line-height:1.45;color:var(--fg)}}
 .launch span{{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:#7cc4ff;font-weight:700;margin-bottom:3px}}
+.card{{scroll-margin-top:86px}}
+.card.flash{{animation:spotflash 1.9s ease}}
+@keyframes spotflash{{0%{{box-shadow:0 0 0 0 rgba(124,196,255,0)}}12%{{box-shadow:0 0 0 3px rgba(124,196,255,.95)}}70%{{box-shadow:0 0 0 3px rgba(124,196,255,.75)}}100%{{box-shadow:0 0 0 3px rgba(124,196,255,0)}}}}
 .quiet div{{display:grid;grid-template-columns:120px 1fr;gap:8px}}
 .quiet span{{color:var(--dim);font-size:13px}}
 .quiet b{{font-weight:600}}
@@ -425,6 +429,17 @@ L.control.scale({{imperial:false, position:'bottomleft'}}).addTo(map);
 
 const markers = {{}};
 const bounds = [];
+function jumpToSpot(id) {{
+  const card = document.querySelector('.card[data-spot="' + id + '"]');
+  if (!card) return;
+  const y = Math.max(0, window.scrollY + card.getBoundingClientRect().top - 74);
+  window.scrollTo({{top: y, behavior: 'smooth'}});
+  setTimeout(() => {{ if (Math.abs(window.scrollY - y) > 8) window.scrollTo(0, y); }}, 420);
+  card.classList.remove('flash');
+  void card.offsetWidth;
+  card.classList.add('flash');
+  setTimeout(() => card.classList.remove('flash'), 1900);
+}}
 for (const s of SPOTS) {{
   const icon = L.divIcon({{className:'', iconSize:[27,27], iconAnchor:[13.5,13.5],
     html:`<div style="width:27px;height:27px;border-radius:50%;background:${{COL[s.status]}};color:#fff;font:800 12.5px/27px -apple-system,Segoe UI,Roboto,sans-serif;text-align:center;box-shadow:0 0 0 3px rgba(255,255,255,.92),0 4px 12px rgba(0,0,0,.55)">${{s.num}}</div>`}});
@@ -433,6 +448,7 @@ for (const s of SPOTS) {{
     <span style="color:#555">Quietest:</span> ${{s.quiet_time}}<br>
     <span style="color:#555">Days:</span> ${{s.quiet_days}}<br>
     <a href="${{s.maps_url}}" target="_blank" rel="noopener">Google Maps</a>`);
+  m.on('click', () => jumpToSpot(s.id));
   markers[s.num] = m;
   bounds.push([s.lat, s.lon]);
 }}
@@ -452,6 +468,10 @@ document.querySelectorAll('.chip').forEach(chip => {{
     }}
   }});
 }});
+if (location.hash.indexOf('#spot-') === 0) {{
+  const wanted = location.hash.slice(6);
+  setTimeout(() => jumpToSpot(wanted), 400);
+}}
 </script>
 <script src="assets/site.js"></script>
 </body></html>"""
@@ -509,7 +529,7 @@ A.spots.forEach(s => {
   const reg = A.regions.find(r => r.key === s.r) || {colour: '#7cc4ff'};
   L.circleMarker([s.la, s.lo], {radius: 5, weight: 1, color: '#0b0e13', fillColor: reg.colour, fillOpacity: 0.95})
     .addTo(map)
-    .bindPopup('<b>' + s.n + '</b><br>' + s.sc + '/10 &middot; <a href="' + s.r + '.html">' + s.rn + ' Auckland &rarr;</a>');
+    .bindPopup('<b>' + s.n + '</b><br>' + s.sc + '/10 &middot; <a href="' + s.r + '.html#spot-' + s.id + '">' + s.rn + ' Auckland &rarr;</a>');
 });
 
 map.fitBounds(bounds, {padding: [34, 34]});
