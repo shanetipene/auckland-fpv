@@ -75,16 +75,13 @@ QUIET = {
 
 "Karioitahi": ("Weekday 07:00-10:00 (before thermals)","Mon-Thu","Weekends 09:00-16:00 (surfers); midday thermals bring paragliders"),
 "Orere Point": ("Weekday 07:00-10:00","Mon-Thu","Summer weekends 09:00-16:00"),
-"Waiau Pa": ("Weekday 08:00-11:00","Mon-Fri","Weekends 09:00-15:00 (wharf fishermen)"),
 "Glenbrook": ("Weekday 09:00-15:00","Mon-Fri","Weekends 10:00-15:00"),
-"Bombay": ("Any weekday 08:00-16:00","Tue-Fri","Weekend afternoons (SH1 traffic)"),
 "Matakawau": ("Weekday 08:00-12:00","Mon-Thu","Weekends 10:00-15:00"),
-"Clevedon": ("Weekday 08:00-11:00","Tue-Fri","Sat 08:00-13:00 (farmers market)"),
-"Kingseat": ("Weekday 09:00-15:00","Mon-Fri","Weekends 10:00-15:00"),
 "Clarks Beach": ("Weekday 07:00-10:00","Mon-Thu","Summer weekends 09:00-16:00 (boat ramp)"),
-"Karaka": ("Weekday 08:00-16:00","Tue-Fri","Weekends (model aero club uses the danger area)"),
-"Waiuku": ("Weekday 08:00-11:00","Mon-Thu","Weekends 10:00-15:00"),
 "Pukekohe": ("Weekday 09:00-15:00","Tue-Thu","Sat morning (market, sport)"),
+"Martins Bay": ("Weekday 06:30-09:30","Mon-Thu","Summer weekends and school holidays (holiday park)"),
+"Tapapakanga": ("Any weekday","Tue-Thu","Summer weekends 10:00-16:00 (campers)"),
+"Waharau": ("Any day, early","Mon-Thu","Almost never busy - the quietest coast in Auckland"),
 }
 
 META = {
@@ -220,6 +217,7 @@ def cards_html(spots):
           <div class="score"><strong>{s['fpv_score']}</strong><span>/10</span></div>
         </div>
         <div class="badges"><span class="badge {STATUS_CLASS[s['status']]}">{STATUS_LABEL[s['status']]}</span></div>
+        <div class="launch"><span>Launch from</span>{html.escape(s['launch'])}</div>
         <div class="bars">{bars}</div>
         <div class="quiet">
           <div><span>Quietest time</span><b>{html.escape(s['quiet_time'])}</b></div>
@@ -299,6 +297,8 @@ header.hero p{{margin:0;color:var(--dim);max-width:820px}}
 .track i{{display:block;height:100%;border-radius:999px}}
 .track i.good{{background:var(--ok)}} .track i.bad{{background:var(--warn)}}
 .quiet{{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;display:grid;gap:6px;font-size:14px}}
+.launch{{background:rgba(124,196,255,.07);border:1px solid rgba(124,196,255,.22);border-left:3px solid #7cc4ff;border-radius:10px;padding:10px 12px;margin:12px 0 4px;font-size:13.5px;line-height:1.45;color:var(--fg)}}
+.launch span{{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:#7cc4ff;font-weight:700;margin-bottom:3px}}
 .quiet div{{display:grid;grid-template-columns:120px 1fr;gap:8px}}
 .quiet span{{color:var(--dim);font-size:13px}}
 .quiet b{{font-weight:600}}
@@ -339,7 +339,7 @@ footer{{border-top:1px solid var(--line);padding:22px 0 40px;color:#6b7889;font-
   <div id="map"></div>
 
   <div class="pinsnote">
-    <div><b>About the pins and the names.</b> Each marker is a <b>reference point, not the launch spot</b> — usually the nearest car park, reserve entrance or road end, so it can sit 100–300 m from where you'll actually stand. Names are the official or most widely used name for the place; local signage, iwi names and some map apps differ, and a few spots go by more than one name. Navigate to the pin, then walk the last bit.</div>
+    <div><b>Where to fly from.</b> Every marker sits on the actual launch point — the car park, beach access, reserve entrance or road end you drive to — and every card states exactly where to set up once you're there. Pins are accurate to the access point, not to the metre; if a gate is locked or a beach access is closed, use the nearest public entrance and stay inside the reserve or beach boundary. Names are the official or most widely used name; local signage and iwi names may differ.</div>
   </div>
 
   <div class="filters">

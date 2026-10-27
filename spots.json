@@ -21,7 +21,8 @@
   "maps_url": "https://maps.google.com/?q=-36.846360,174.901030",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.846360,174.901030",
   "drive_min": 31,
-  "drive_km": 24.6
+  "drive_km": 24.6,
+  "launch": "Car park at the end of Musick Point Rd; 2 min walk to the grass above the harbour."
  },
  {
   "tier": 1,
@@ -45,7 +46,8 @@
   "maps_url": "https://maps.google.com/?q=-36.937550,175.138850",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.937550,175.138850",
   "drive_min": 55,
-  "drive_km": 53.6
+  "drive_km": 53.6,
+  "launch": "Road-end car parks on Waitawa Bay Rd; fly from the MTB trailhead clearing."
  },
  {
   "tier": 1,
@@ -69,7 +71,8 @@
   "maps_url": "https://maps.google.com/?q=-36.948828,175.153019",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.948828,175.153019",
   "drive_min": 55,
-  "drive_km": 55.5
+  "drive_km": 55.5,
+  "launch": "Boat ramp car park at the end of Kawakawa Bay Rd; fly from the beach reserve beside it."
  },
  {
   "tier": 1,
@@ -93,7 +96,8 @@
   "maps_url": "https://maps.google.com/?q=-36.883730,175.016820",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.883730,175.016820",
   "drive_min": 39,
-  "drive_km": 37.7
+  "drive_km": 37.7,
+  "launch": "Te Puru Park car park off Maraetai Dr; fly from the field above the beach."
  },
  {
   "tier": 1,
@@ -117,7 +121,8 @@
   "maps_url": "https://maps.google.com/?q=-36.890047,174.836922",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.890047,174.836922",
   "drive_min": 16,
-  "drive_km": 11.2
+  "drive_km": 11.2,
+  "launch": "Street parking on Stonefields Ave or College Rd; fly from the path edge at the old quarry floor."
  },
  {
   "tier": 2,
@@ -141,7 +146,8 @@
   "maps_url": "https://maps.google.com/?q=-36.901600,174.851000",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.901600,174.851000",
   "drive_min": 16,
-  "drive_km": 12.6
+  "drive_km": 12.6,
+  "launch": "Car park at the Basin View / Ireland Rd end; fly from the reserve grass on the northern shore of the lagoon."
  },
  {
   "tier": 2,
@@ -165,7 +171,8 @@
   "maps_url": "https://maps.google.com/?q=-36.882998,174.871686",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.882998,174.871686",
   "drive_min": 20,
-  "drive_km": 13.4
+  "drive_km": 13.4,
+  "launch": "Grass car park off Point England Rd; fly from the open field facing the harbour."
  },
  {
   "tier": 2,
@@ -189,7 +196,8 @@
   "maps_url": "https://maps.google.com/?q=-36.882450,174.826330",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.882450,174.826330",
   "drive_min": 13,
-  "drive_km": 9.4
+  "drive_km": 9.4,
+  "launch": "Car park off Grand Dr; set up on the mown grass beside the wetland."
  },
  {
   "tier": 2,
@@ -213,7 +221,8 @@
   "maps_url": "https://maps.google.com/?q=-36.861090,174.875730",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.861090,174.875730",
   "drive_min": 21,
-  "drive_km": 12.3
+  "drive_km": 12.3,
+  "launch": "Park on Glendowie Rd or Riddell Rd; fly from the clifftop grass."
  },
  {
   "tier": 2,
@@ -237,7 +246,8 @@
   "maps_url": "https://maps.google.com/?q=-36.912610,174.764180",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.912610,174.764180",
   "drive_min": 14,
-  "drive_km": 8.4
+  "drive_km": 8.4,
+  "launch": "Park at the Pah Homestead car park on Hillsborough Rd; fly from the open parkland south of the house."
  },
  {
   "tier": 2,
@@ -261,7 +271,8 @@
   "maps_url": "https://maps.google.com/?q=-36.851920,174.704650",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.851920,174.704650",
   "drive_min": 13,
-  "drive_km": 8.6
+  "drive_km": 8.6,
+  "launch": "Car park inside Coyle Park off Point Chevalier Rd, then a 2 min walk to the grass above the cliff."
  },
  {
   "tier": 2,
@@ -285,7 +296,8 @@
   "maps_url": "https://maps.google.com/?q=-36.919662,174.934390",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.919662,174.934390",
   "drive_min": 26,
-  "drive_km": 22.7
+  "drive_km": 22.7,
+  "launch": "Somerville Rd entrance; walk the valley track about 10 min to the estuary boardwalk."
  },
  {
   "tier": 2,
@@ -309,7 +321,8 @@
   "maps_url": "https://maps.google.com/?q=-36.873570,174.914540",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.873570,174.914540",
   "drive_min": 26,
-  "drive_km": 22.2
+  "drive_km": 22.2,
+  "launch": "Car park on The Esplanade; fly from the sand at the northern end."
  },
  {
   "tier": 2,
@@ -333,7 +346,8 @@
   "maps_url": "https://maps.google.com/?q=-36.881330,174.990880",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.881330,174.990880",
   "drive_min": 42,
-  "drive_km": 39.3
+  "drive_km": 39.3,
+  "launch": "End of Sunkist Bay Rd, Beachlands; fly from the beach reserve."
  },
  {
   "tier": 3,
@@ -357,7 +371,8 @@
   "maps_url": "https://maps.google.com/?q=-36.860647,174.814582",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.860647,174.814582",
   "drive_min": 11,
-  "drive_km": 6.0
+  "drive_km": 6.0,
+  "launch": "Enter from Orakei Rd or Upland Rd; fly from the grass beside the boardwalk."
  },
  {
   "tier": 3,
@@ -381,31 +396,8 @@
   "maps_url": "https://maps.google.com/?q=-36.876420,175.034750",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.876420,175.034750",
   "drive_min": 42,
-  "drive_km": 39.9
- },
- {
-  "tier": 3,
-  "name": "Whitford / Clevedon back country",
-  "short": "Whitford",
-  "lat": -36.94547,
-  "lon": 174.96378,
-  "secl": 5.0,
-  "traffic": 0.5,
-  "fly": 3.5,
-  "land": "Private farmland / forestry - permission required",
-  "access": "Whitford-Maraetai Rd and side roads. Park legally on the verge and do not block gates.",
-  "best": "Forest blocks, rolling hills and long-range cruising with nobody around.",
-  "hazards": "Private land, forestry operations, and no legal launch without the landowner's OK.",
-  "note": "Only fly here with landowner permission - Part 101 also forbids flying over private land without consent. Good for long range if you have a contact.",
-  "dist_cbd_km": 20.7,
-  "status": "restricted",
-  "kind": "private farmland / forest",
-  "merit": 8.5,
-  "fpv_score": 6.3,
-  "maps_url": "https://maps.google.com/?q=-36.945470,174.963780",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.945470,174.963780",
-  "drive_min": 29,
-  "drive_km": 27.8
+  "drive_km": 39.9,
+  "launch": "Car park on Omana Dr; fly from the beach reserve."
  },
  {
   "tier": 3,
@@ -429,7 +421,8 @@
   "maps_url": "https://maps.google.com/?q=-36.906690,174.900560",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.906690,174.900560",
   "drive_min": 20,
-  "drive_km": 18.1
+  "drive_km": 18.1,
+  "launch": "Car park off Sir Lloyd Dr; fly from the edge of the sports fields."
  },
  {
   "short": "Fearon Park",
@@ -455,7 +448,8 @@
   "drive_km": 8,
   "maps_url": "https://maps.google.com/?q=-36.902790,174.746400",
   "fpv_score": 5.8,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.902790,174.746400"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.902790,174.746400",
+  "launch": "Car park off Fearon Ave by the tennis courts; fly from the top field."
  },
  {
   "short": "Cockle Bay",
@@ -481,7 +475,8 @@
   "dist_cbd_km": 16.5,
   "fpv_score": 6.6,
   "maps_url": "https://maps.google.com/?q=-36.893213,174.942749",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.893213,174.942749"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.893213,174.942749",
+  "launch": "Car park off Shelly Beach Parade; fly from the beach reserve."
  },
  {
   "short": "Shelly Park",
@@ -507,7 +502,8 @@
   "dist_cbd_km": 18.0,
   "fpv_score": 7.1,
   "maps_url": "https://maps.google.com/?q=-36.909940,174.952670",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.909940,174.952670"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.909940,174.952670",
+  "launch": "End of Sandspit Rd; fly from the estuary beach."
  },
  {
   "short": "Mellons Bay",
@@ -533,7 +529,8 @@
   "dist_cbd_km": 15.4,
   "fpv_score": 6.6,
   "maps_url": "https://maps.google.com/?q=-36.884510,174.932620",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.884510,174.932620"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.884510,174.932620",
+  "launch": "Car park off Bleakhouse Rd; fly from the beach."
  },
  {
   "short": "Howick Beach",
@@ -559,7 +556,8 @@
   "dist_cbd_km": 16.4,
   "fpv_score": 6.1,
   "maps_url": "https://maps.google.com/?q=-36.893010,174.941690",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.893010,174.941690"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.893010,174.941690",
+  "launch": "Car park at the end of Granger Rd; fly from the sand."
  },
  {
   "short": "Macleans Park",
@@ -585,7 +583,8 @@
   "dist_cbd_km": 13.8,
   "fpv_score": 5.7,
   "maps_url": "https://maps.google.com/?q=-36.889160,174.911680",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.889160,174.911680"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.889160,174.911680",
+  "launch": "Car park off Macleans Rd; fly from the top field."
  },
  {
   "short": "Umupuia",
@@ -611,7 +610,8 @@
   "dist_cbd_km": 27.5,
   "fpv_score": 8.5,
   "maps_url": "https://maps.google.com/?q=-36.903600,175.067200",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.903600,175.067200"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.903600,175.067200",
+  "launch": "Gravel car park at the end of Maraetai Coast Rd; fly from the beach."
  },
  {
   "short": "Duder",
@@ -637,7 +637,8 @@
   "dist_cbd_km": 28.8,
   "fpv_score": 8.4,
   "maps_url": "https://maps.google.com/?q=-36.907480,175.080820",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.907480,175.080820"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.907480,175.080820",
+  "launch": "Gate at the end of North Rd; walk 15 min to the beach, or fly from the open paddock by the car park."
  },
  {
   "short": "Meola Reef",
@@ -663,7 +664,8 @@
   "dist_cbd_km": 5.0,
   "fpv_score": 6.6,
   "maps_url": "https://maps.google.com/?q=-36.858160,174.710110",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.858160,174.710110"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.858160,174.710110",
+  "launch": "Reserve entrance car park on Meola Rd; fly from the grass above the reef."
  },
  {
   "short": "Eric Armishaw",
@@ -689,7 +691,8 @@
   "dist_cbd_km": 6.4,
   "fpv_score": 7.1,
   "maps_url": "https://maps.google.com/?q=-36.869230,174.697660",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.869230,174.697660"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.869230,174.697660",
+  "launch": "Car park off Great North Rd, Waterview; fly from the reserve grass by the inlet."
  },
  {
   "short": "Western Springs",
@@ -715,7 +718,8 @@
   "dist_cbd_km": 4.2,
   "fpv_score": 5.2,
   "maps_url": "https://maps.google.com/?q=-36.868060,174.724920",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.868060,174.724920"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.868060,174.724920",
+  "launch": "Stadium-end car park off Motions Rd; fly from the grass beside the lake."
  },
  {
   "short": "Keith Hay Park",
@@ -741,6 +745,7 @@
   "dist_cbd_km": 8.0,
   "fpv_score": 6.1,
   "maps_url": "https://maps.google.com/?q=-36.918784,174.743516",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.918784,174.743516"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.918784,174.743516",
+  "launch": "Car park off Hillsborough Rd; fly from the edge of the sports fields."
  }
 ]

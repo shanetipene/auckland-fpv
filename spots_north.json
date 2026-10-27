@@ -21,7 +21,8 @@
   "drive_min": 92,
   "drive_km": 90.3,
   "num": 1,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.249900,174.735890"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.249900,174.735890",
+  "launch": "Beach access car park on Pakiri Rd; walk over the dunes to the sand."
  },
  {
   "tier": 1,
@@ -45,19 +46,20 @@
   "drive_min": 72,
   "drive_km": 80.7,
   "num": 2,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.285856,174.809907"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.285856,174.809907",
+  "launch": "Wharf Rd, Leigh Harbour; fly from the wharf apron and grass beside it."
  },
  {
   "tier": 1,
   "name": "Mahurangi West / Opahi Bay",
   "short": "Mahurangi West",
-  "lat": -36.49816,
-  "lon": 174.71289,
+  "lat": -36.5038,
+  "lon": 174.7188,
   "secl": 4.5,
   "traffic": 1.0,
   "fly": 4.0,
   "land": "Auckland Council regional park - PERMIT required",
-  "access": "Mahurangi West Rd off SH1, ~45 min from CBD. Park at Opahi Bay or Sullivan's Bay.",
+  "access": "Opahi Bay, Mahurangi West Rd off SH1, ~45 min from CBD. Car park at the bay.",
   "best": "Sheltered harbour bays, bush headlands, tidal flats and boats - classic Mahurangi postcard, almost nobody there.",
   "hazards": "Tide (the flats are mud at low water), regional park permit conditions, narrow gravel road.",
   "note": "Mahurangi is not on the banned list, so a regional-park drone permit is available through council. Apply first.",
@@ -65,11 +67,12 @@
   "dist_cbd_km": 39.3,
   "merit": 8.3,
   "fpv_score": 7.5,
-  "maps_url": "https://maps.google.com/?q=-36.498160,174.712890",
+  "maps_url": "https://maps.google.com/?q=-36.503800,174.718800",
   "drive_min": 49,
   "drive_km": 52.5,
   "num": 5,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.498160,174.712890"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.503800,174.718800",
+  "launch": "Opahi Bay car park off Mahurangi West Rd; fly from the reserve above the bay."
  },
  {
   "tier": 1,
@@ -93,7 +96,8 @@
   "drive_min": 60,
   "drive_km": 70.4,
   "num": 3,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.432075,174.742939"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.432075,174.742939",
+  "launch": "Beach reserve car park at the end of Algies Bay Rd."
  },
  {
   "tier": 1,
@@ -117,7 +121,8 @@
   "drive_min": 57,
   "drive_km": 67.6,
   "num": 11,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.393080,174.727580"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.393080,174.727580",
+  "launch": "Marina car park at the end of Sandspit Rd."
  },
  {
   "tier": 2,
@@ -141,7 +146,8 @@
   "drive_min": 66,
   "drive_km": 75.3,
   "num": 15,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.339296,174.780800"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.339296,174.780800",
+  "launch": "Car park at the north end of Omaha Dr; fly from the beach access."
  },
  {
   "tier": 2,
@@ -165,19 +171,20 @@
   "drive_min": 39,
   "drive_km": 46.9,
   "num": 6,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.534710,174.701540"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.534710,174.701540",
+  "launch": "Main car park at the end of the Wenderholm access road; walk to the beach or the hill."
  },
  {
   "tier": 2,
   "name": "Puhoi",
   "short": "Puhoi",
-  "lat": -36.51209,
-  "lon": 174.66112,
+  "lat": -36.50855,
+  "lon": 174.66093,
   "secl": 4.2,
   "traffic": 1.5,
   "fly": 3.8,
   "land": "Council reserve / river village",
-  "access": "Puhoi village off SH1, ~40 min from CBD. Park at the domain or the pub.",
+  "access": "Puhoi Domain, off Puhoi Rd, ~40 min from CBD. Park in the domain car park beside the sports fields.",
   "best": "River, bush valley, the old stone church and the bridge - tight, scenic flying with real character.",
   "hazards": "Kayak traffic on the river in summer, dense bush limits LOS, narrow valley wind.",
   "note": "No permit. Fly the river corridor early; the valley is shaded and calm before 9am.",
@@ -185,11 +192,12 @@
   "dist_cbd_km": 38.6,
   "merit": 7.8,
   "fpv_score": 7.8,
-  "maps_url": "https://maps.google.com/?q=-36.512090,174.661120",
+  "maps_url": "https://maps.google.com/?q=-36.508550,174.660930",
   "drive_min": 37,
   "drive_km": 43.6,
   "num": 4,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.512090,174.661120"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.508550,174.660930",
+  "launch": "Puhoi Domain car park off Puhoi Rd; fly from the domain grass."
  },
  {
   "tier": 2,
@@ -213,7 +221,8 @@
   "drive_min": 42,
   "drive_km": 48.5,
   "num": 8,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.544588,174.708489"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.544588,174.708489",
+  "launch": "Beach reserve at the end of Waiwera Rd, beside the pools."
  },
  {
   "tier": 2,
@@ -237,7 +246,8 @@
   "drive_min": 44,
   "drive_km": 41.8,
   "num": 9,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.626336,174.764990"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.626336,174.764990",
+  "launch": "Big Manly Beach car park at the end of Manly Esplanade."
  },
  {
   "tier": 2,
@@ -261,7 +271,8 @@
   "drive_min": 42,
   "drive_km": 40.2,
   "num": 12,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.621800,174.732700"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.621800,174.732700",
+  "launch": "Beach reserve car park off Brightside Rd; fly from the grass above the sand."
  },
  {
   "tier": 2,
@@ -285,7 +296,8 @@
   "drive_min": 46,
   "drive_km": 43.1,
   "num": 10,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.621640,174.768900"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.621640,174.768900",
+  "launch": "Car park at the end of Tindalls Beach Rd."
  },
  {
   "tier": 2,
@@ -309,19 +321,20 @@
   "drive_min": 37,
   "drive_km": 39.1,
   "num": 7,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.568500,174.694500"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.568500,174.694500",
+  "launch": "Beach reserve car park off Hatfields Beach Rd."
  },
  {
   "tier": 3,
   "name": "Orewa Beach",
   "short": "Orewa",
-  "lat": -36.58589,
-  "lon": 174.69532,
+  "lat": -36.59026,
+  "lon": 174.698306,
   "secl": 2.8,
   "traffic": 3.5,
   "fly": 4.0,
   "land": "Council reserve / beach",
-  "access": "Orewa, ~35 min from CBD. Beach car parks along Orewa Beach Rd.",
+  "access": "Orewa Beach Reserve, Orewa Beach Rd, ~35 min from CBD. Beachfront car parks along the reserve.",
   "best": "Three kilometres of beach, estuary mouth and the Whangaparaoa headland in the distance - the easiest big-stage beach in the north.",
   "hazards": "Busiest beach in the north: swimmers, kite surfers, events, estuary shorebirds.",
   "note": "No permit, clean airspace, but you'll be flying around people. Dawn or a weekday evening.",
@@ -329,11 +342,12 @@
   "dist_cbd_km": 29.9,
   "merit": 6.2,
   "fpv_score": 6.2,
-  "maps_url": "https://maps.google.com/?q=-36.585890,174.695320",
+  "maps_url": "https://maps.google.com/?q=-36.590260,174.698306",
   "drive_min": 35,
   "drive_km": 37.5,
   "num": 14,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.585890,174.695320"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.590260,174.698306",
+  "launch": "Orewa Beach Reserve car park off Orewa Beach Rd; fly from the grass above the sand."
  },
  {
   "tier": 3,
@@ -357,7 +371,8 @@
   "drive_min": 22,
   "drive_km": 20.4,
   "num": 13,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.714500,174.749400"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.714500,174.749400",
+  "launch": "Car park at the end of Beach Rd; fly from the sand."
  },
  {
   "tier": 3,
@@ -381,31 +396,8 @@
   "drive_min": 28,
   "drive_km": 24.1,
   "num": 16,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.684580,174.750590"
- },
- {
-  "tier": 3,
-  "name": "Devonport / North Head",
-  "short": "Devonport",
-  "lat": -36.82973,
-  "lon": 174.79754,
-  "secl": 2.5,
-  "traffic": 3.5,
-  "fly": 3.5,
-  "land": "Council reserve + DOC historic reserve (North Head)",
-  "access": "Devonport, 20 min from CBD by ferry or 30 by road.",
-  "best": "The best city skyline and harbour shot in Auckland - cliffs, gun emplacements, Rangitoto and the CBD across the water.",
-  "hazards": "Inside the Mechanics Bay and Auckland Harbour 4 km rings, plus North Shore Hospital. North Head itself is DOC land needing a separate concession.",
-  "note": "Sits in the Northern Automatic Authorisation Area: automatic approval ONLY with a Part 101 qualification from a Part 141 provider plus an observer. Without the cert, no.",
-  "status": "restricted",
-  "dist_cbd_km": 3.6,
-  "merit": 5.5,
-  "fpv_score": 4.1,
-  "maps_url": "https://maps.google.com/?q=-36.829730,174.797540",
-  "drive_min": 20,
-  "drive_km": 14.2,
-  "num": 17,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.829730,174.797540"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.684580,174.750590",
+  "launch": "Long Bay Regional Park main car park at the end of Beach Rd."
  },
  {
   "short": "Narrow Neck",
@@ -431,7 +423,8 @@
   "dist_cbd_km": 5.2,
   "fpv_score": 7.0,
   "maps_url": "https://maps.google.com/?q=-36.812010,174.800810",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.812010,174.800810"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.812010,174.800810",
+  "launch": "Car park off Old Lake Rd; fly from the beach reserve."
  },
  {
   "short": "Little Manly",
@@ -457,7 +450,8 @@
   "dist_cbd_km": 23.6,
   "fpv_score": 7.1,
   "maps_url": "https://maps.google.com/?q=-36.637090,174.762120",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.637090,174.762120"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.637090,174.762120",
+  "launch": "Park on Ngaio St, Manly; 2 min walk to the beach."
  },
  {
   "short": "Matakatia",
@@ -483,7 +477,8 @@
   "dist_cbd_km": 24.9,
   "fpv_score": 7.3,
   "maps_url": "https://maps.google.com/?q=-36.625200,174.771200",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.625200,174.771200"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.625200,174.771200",
+  "launch": "Matakatia Pde beach access; fly from the reserve."
  },
  {
   "short": "Arkles Bay",
@@ -509,7 +504,8 @@
   "dist_cbd_km": 23.1,
   "fpv_score": 7.1,
   "maps_url": "https://maps.google.com/?q=-36.641750,174.747650",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.641750,174.747650"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.641750,174.747650",
+  "launch": "Boat ramp car park off Arkles Strand."
  },
  {
   "short": "Army Bay",
@@ -535,7 +531,8 @@
   "dist_cbd_km": 27.3,
   "fpv_score": 8.0,
   "maps_url": "https://maps.google.com/?q=-36.604200,174.790500",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.604200,174.790500"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.604200,174.790500",
+  "launch": "Car park at the end of Whangaparaoa Rd."
  },
  {
   "short": "Shakespear",
@@ -561,7 +558,8 @@
   "dist_cbd_km": 27.1,
   "fpv_score": 7.7,
   "maps_url": "https://maps.google.com/?q=-36.609950,174.826690",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.609950,174.826690"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.609950,174.826690",
+  "launch": "Main gate car park inside Shakespear Regional Park (gate opens 6am)."
  },
  {
   "short": "Scandrett",
@@ -587,7 +585,8 @@
   "dist_cbd_km": 45.0,
   "fpv_score": 7.9,
   "maps_url": "https://maps.google.com/?q=-36.443980,174.771240",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.443980,174.771240"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.443980,174.771240",
+  "launch": "Car park at the end of Scandrett Rd."
  },
  {
   "short": "Ti Point",
@@ -613,7 +612,8 @@
   "dist_cbd_km": 60.6,
   "fpv_score": 7.8,
   "maps_url": "https://maps.google.com/?q=-36.304730,174.790170",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.304730,174.790170"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.304730,174.790170",
+  "launch": "Reserve at the end of Ti Point Rd."
  },
  {
   "short": "Te Arai",
@@ -639,6 +639,33 @@
   "dist_cbd_km": 76.9,
   "fpv_score": 9.1,
   "maps_url": "https://maps.google.com/?q=-36.163530,174.651700",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.163530,174.651700"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.163530,174.651700",
+  "launch": "Gravel car park at Te Arai Point, end of Te Arai Point Rd."
+ },
+ {
+  "region": "north",
+  "name": "Martins Bay Beach",
+  "short": "Martins Bay",
+  "lat": -36.449645,
+  "lon": 174.764318,
+  "secl": 3.4,
+  "traffic": 2.6,
+  "fly": 3.2,
+  "kind": "sheltered beach",
+  "status": "clear",
+  "land": "Council beach reserve",
+  "access": "Martins Bay Rd, Mahurangi East, ~65 min from CBD. Beach car park at the end of the road.",
+  "launch": "Beach car park at the end of Martins Bay Rd; fly from the sand at the southern end.",
+  "best": "A sheltered east-facing beach with a holiday park at one end and open sand at the other. Good for low, fast passes along the waterline when the camp is quiet.",
+  "hazards": "Holiday park and baches at the northern end, swimmers in summer, the beach narrows at high tide.",
+  "note": "Airspace clean - nearest aerodrome Warkworth, 11.1 km. Stay south of the camp and keep clear of the rocky points.",
+  "drive_min": 75,
+  "drive_km": 64,
+  "dist_cbd_km": 44.4,
+  "fpv_score": 6.6,
+  "merit": 6.6,
+  "tier": 2,
+  "maps_url": "https://maps.google.com/?q=-36.449645,174.764318",
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.449645,174.764318"
  }
 ]

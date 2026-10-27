@@ -21,7 +21,8 @@
   "drive_min": 26,
   "drive_km": 17.8,
   "num": 3,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.951039,174.660549"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.951039,174.660549",
+  "launch": "Car park at the end of Otitori Bay Rd; fly from the beach."
  },
  {
   "tier": 1,
@@ -45,7 +46,8 @@
   "drive_min": 26,
   "drive_km": 17.9,
   "num": 6,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.951360,174.658926"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.951360,174.658926",
+  "launch": "End of Titirangi Beach Rd; fly from the sand beside the wharf."
  },
  {
   "tier": 1,
@@ -69,7 +71,8 @@
   "drive_min": 31,
   "drive_km": 21.6,
   "num": 1,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.966630,174.641910"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.966630,174.641910",
+  "launch": "Victory Rd is a no-exit road; fly from the beach at the end."
  },
  {
   "tier": 1,
@@ -93,7 +96,8 @@
   "drive_min": 17,
   "drive_km": 12.4,
   "num": 7,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.918840,174.705820"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.918840,174.705820",
+  "launch": "Reserve car park off Blockhouse Bay Rd; fly from the grass above the beach."
  },
  {
   "tier": 1,
@@ -117,7 +121,8 @@
   "drive_min": 19,
   "drive_km": 14.2,
   "num": 9,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.931484,174.690030"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.931484,174.690030",
+  "launch": "Beach reserve car park next to the shops on Green Bay Rd."
  },
  {
   "tier": 1,
@@ -141,7 +146,8 @@
   "drive_min": 23,
   "drive_km": 18.6,
   "num": 10,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.904360,174.630600"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.904360,174.630600",
+  "launch": "Car park off Parrs Park Dr; fly from the edge of the sports fields."
  },
  {
   "tier": 1,
@@ -165,7 +171,8 @@
   "drive_min": 16,
   "drive_km": 11.6,
   "num": 11,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.909140,174.692640"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.909140,174.692640",
+  "launch": "Car park off Portage Rd, New Lynn; fly from the stadium forecourt."
  },
  {
   "tier": 2,
@@ -189,7 +196,8 @@
   "drive_min": 96,
   "drive_km": 95.6,
   "num": 2,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.093680,174.651010"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.093680,174.651010",
+  "launch": "Awhitu Regional Park, end of Awhitu Rd; fly from the campground and beach car park."
  },
  {
   "tier": 2,
@@ -213,7 +221,8 @@
   "drive_min": 41,
   "drive_km": 45.9,
   "num": 8,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.719870,174.382000"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.719870,174.382000",
+  "launch": "Restall Rd forest access (commercial forest park, fee applies); fly from the trailhead clearing."
  },
  {
   "tier": 2,
@@ -237,7 +246,8 @@
   "drive_min": 16,
   "drive_km": 15.1,
   "num": 5,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.933647,174.735688"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.933647,174.735688",
+  "launch": "Park on Waikowhai Rd; walk the track down to the wharf and fly from the foreshore."
  },
  {
   "tier": 2,
@@ -261,7 +271,8 @@
   "drive_min": 17,
   "drive_km": 15.2,
   "num": 4,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.927243,174.711221"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.927243,174.711221",
+  "launch": "Park on The Avenue, Lynfield; walk the cove track to the beach."
  },
  {
   "short": "Ceramco Park",
@@ -287,7 +298,8 @@
   "dist_cbd_km": 12.9,
   "fpv_score": 5.7,
   "maps_url": "https://maps.google.com/?q=-36.920670,174.650800",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.920670,174.650800"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.920670,174.650800",
+  "launch": "Car park off Great North Rd, Glendene; fly from the sports fields."
  },
  {
   "short": "Wattle Bay",
@@ -313,6 +325,7 @@
   "dist_cbd_km": 17.8,
   "fpv_score": 7.9,
   "maps_url": "https://maps.google.com/?q=-36.971850,174.637000",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.971850,174.637000"
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.971850,174.637000",
+  "launch": "Reserve at the end of Wattle Bay Rd; fly from the grass above the bay."
  }
 ]

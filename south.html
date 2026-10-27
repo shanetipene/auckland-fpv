@@ -50,6 +50,8 @@ header.hero p{margin:0;color:var(--dim);max-width:820px}
 .track i{display:block;height:100%;border-radius:999px}
 .track i.good{background:var(--ok)} .track i.bad{background:var(--warn)}
 .quiet{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;display:grid;gap:6px;font-size:14px}
+.launch{background:rgba(124,196,255,.07);border:1px solid rgba(124,196,255,.22);border-left:3px solid #7cc4ff;border-radius:10px;padding:10px 12px;margin:12px 0 4px;font-size:13.5px;line-height:1.45;color:var(--fg)}
+.launch span{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:#7cc4ff;font-weight:700;margin-bottom:3px}
 .quiet div{display:grid;grid-template-columns:120px 1fr;gap:8px}
 .quiet span{color:var(--dim);font-size:13px}
 .quiet b{font-weight:600}
@@ -84,10 +86,10 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#6b7889;font-s
     <h1>South Auckland - FPV spots</h1>
     <p>Franklin. The airport control zone plus four aerodrome buffers cover the entire urban south, so everything legal is rural or coastal.</p>
     <div class="statline">
-      <div><b>20</b> spots</div>
-      <div><b>12</b> no permit</div>
-      <div><b>0</b> regional park</div>
-      <div><b>8</b> restricted</div>
+      <div><b>8</b> spots</div>
+      <div><b>6</b> no permit</div>
+      <div><b>2</b> regional park</div>
+      <div><b>0</b> restricted</div>
       <div>Airspace checked against live AirShare data, Oct 2026</div>
     </div>
   </header>
@@ -95,7 +97,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#6b7889;font-s
   <div id="map"></div>
 
   <div class="pinsnote">
-    <div><b>About the pins and the names.</b> Each marker is a <b>reference point, not the launch spot</b> — usually the nearest car park, reserve entrance or road end, so it can sit 100–300 m from where you'll actually stand. Names are the official or most widely used name for the place; local signage, iwi names and some map apps differ, and a few spots go by more than one name. Navigate to the pin, then walk the last bit.</div>
+    <div><b>Where to fly from.</b> Every marker sits on the actual launch point — the car park, beach access, reserve entrance or road end you drive to — and every card states exactly where to set up once you're there. Pins are accurate to the access point, not to the metre; if a gate is locked or a beach access is closed, use the nearest public entrance and stay inside the reserve or beach boundary. Names are the official or most widely used name; local signage and iwi names may differ.</div>
   </div>
 
   <div class="filters">
@@ -117,6 +119,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#6b7889;font-s
           <div class="score"><strong>9.5</strong><span>/10</span></div>
         </div>
         <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="launch"><span>Launch from</span>Surf club car park at the end of Karioitahi Rd.</div>
         <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="5.0"><span>Seclusion</span><div class="track"><i class="good" style="width:100%"></i></div><b>5.0</b></div><div class="bar" data-metric="quiet" data-editorial="4.5"><span>Quiet</span><div class="track"><i class="good" style="width:90%"></i></div><b>4.5</b></div><div class="bar" data-metric="flying" data-editorial="4.7"><span>Flying</span><div class="track"><i class="good" style="width:94%"></i></div><b>4.7</b></div></div>
         <div class="quiet">
           <div><span>Quietest time</span><b>Weekday 07:00-10:00 (before thermals)</b></div>
@@ -153,6 +156,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#6b7889;font-s
           <div class="score"><strong>8.6</strong><span>/10</span></div>
         </div>
         <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="launch"><span>Launch from</span>Beach reserve at the end of Orere Point Rd.</div>
         <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.5"><span>Seclusion</span><div class="track"><i class="good" style="width:90%"></i></div><b>4.5</b></div><div class="bar" data-metric="quiet" data-editorial="4.0"><span>Quiet</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="flying" data-editorial="4.3"><span>Flying</span><div class="track"><i class="good" style="width:86%"></i></div><b>4.3</b></div></div>
         <div class="quiet">
           <div><span>Quietest time</span><b>Weekday 07:00-10:00</b></div>
@@ -179,45 +183,9 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#6b7889;font-s
         </div>
       </article>
 
-      <article class="card" data-status="clear" data-spot="waiau-pa">
-        <div class="cardhead">
-          <div class="num ok">3</div>
-          <div class="titles">
-            <h3>Waiau Pa</h3>
-            <div class="meta">46 min from CBD &middot; 50.8 km &middot; harbour wharf</div>
-          </div>
-          <div class="score"><strong>7.8</strong><span>/10</span></div>
-        </div>
-        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
-        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.2"><span>Seclusion</span><div class="track"><i class="good" style="width:84%"></i></div><b>4.2</b></div><div class="bar" data-metric="quiet" data-editorial="3.8"><span>Quiet</span><div class="track"><i class="good" style="width:76%"></i></div><b>3.8</b></div><div class="bar" data-metric="flying" data-editorial="3.7"><span>Flying</span><div class="track"><i class="good" style="width:74%"></i></div><b>3.7</b></div></div>
-        <div class="quiet">
-          <div><span>Quietest time</span><b>Weekday 08:00-11:00</b></div>
-          <div><span>Quietest days</span><b>Mon-Fri</b></div>
-          <div class="avoid"><span>Avoid</span><b>Weekends 09:00-15:00 (wharf fishermen)</b></div>
-        </div>
-        <p class="best"><strong>Best for:</strong> Quiet Manukau Harbour settlement with a wharf, tidal flats and shell banks - flat water and big skies.</p>
-        <p class="haz"><strong>Hazards:</strong> Mudflats at low tide, shorebirds on the shell banks, wharf fishermen.</p>
-        <p class="note">No permit. One of the quietest accessible spots in the south.</p>
-        <div class="community" hidden><span class="cnote"></span></div>
-        <div class="ratebox">
-          <button class="ratebtn" type="button">Rate this spot</button>
-          <form class="rateform" hidden>
-            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.2"><output>4.2</output></label>
-            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="3.8"><output>3.8</output></label>
-            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.7"><output>3.7</output></label>
-            <div class="row"><button type="submit">Submit rating</button></div>
-          </form>
-          <p class="ratemsg" role="status"></p>
-        </div>
-        <div class="links">
-          <a href="https://maps.google.com/?q=-37.138370,174.754410" target="_blank" rel="noopener">Open in Google Maps</a>
-          <span class="coords">-37.13837, 174.75441</span>
-        </div>
-      </article>
-
       <article class="card" data-status="clear" data-spot="glenbrook">
         <div class="cardhead">
-          <div class="num ok">4</div>
+          <div class="num ok">3</div>
           <div class="titles">
             <h3>Glenbrook Beach</h3>
             <div class="meta">57 min from CBD &middot; 64.2 km &middot; quiet harbour beach</div>
@@ -225,6 +193,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#6b7889;font-s
           <div class="score"><strong>7.8</strong><span>/10</span></div>
         </div>
         <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="launch"><span>Launch from</span>End of Glenbrook Beach Rd; fly from the beach.</div>
         <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.3"><span>Seclusion</span><div class="track"><i class="good" style="width:86%"></i></div><b>4.3</b></div><div class="bar" data-metric="quiet" data-editorial="4.0"><span>Quiet</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="flying" data-editorial="3.5"><span>Flying</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div></div>
         <div class="quiet">
           <div><span>Quietest time</span><b>Weekday 09:00-15:00</b></div>
@@ -251,45 +220,9 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#6b7889;font-s
         </div>
       </article>
 
-      <article class="card" data-status="clear" data-spot="bombay">
-        <div class="cardhead">
-          <div class="num ok">5</div>
-          <div class="titles">
-            <h3>Bombay</h3>
-            <div class="meta">38 min from CBD &middot; 46.7 km &middot; hill country</div>
-          </div>
-          <div class="score"><strong>7.8</strong><span>/10</span></div>
-        </div>
-        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
-        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.5"><span>Seclusion</span><div class="track"><i class="good" style="width:90%"></i></div><b>4.5</b></div><div class="bar" data-metric="quiet" data-editorial="4.0"><span>Quiet</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="flying" data-editorial="3.4"><span>Flying</span><div class="track"><i class="good" style="width:68%"></i></div><b>3.4</b></div></div>
-        <div class="quiet">
-          <div><span>Quietest time</span><b>Any weekday 08:00-16:00</b></div>
-          <div><span>Quietest days</span><b>Tue-Fri</b></div>
-          <div class="avoid"><span>Avoid</span><b>Weekend afternoons (SH1 traffic)</b></div>
-        </div>
-        <p class="best"><strong>Best for:</strong> Rolling hill country, shelter belts and big views back to the Manukau - genuinely empty.</p>
-        <p class="haz"><strong>Hazards:</strong> State highway traffic, private farmland, stock.</p>
-        <p class="note">No permit on the domain. Everything around it is private - stay on the reserve or get permission.</p>
-        <div class="community" hidden><span class="cnote"></span></div>
-        <div class="ratebox">
-          <button class="ratebtn" type="button">Rate this spot</button>
-          <form class="rateform" hidden>
-            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.5"><output>4.5</output></label>
-            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
-            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.4"><output>3.4</output></label>
-            <div class="row"><button type="submit">Submit rating</button></div>
-          </form>
-          <p class="ratemsg" role="status"></p>
-        </div>
-        <div class="links">
-          <a href="https://maps.google.com/?q=-37.186830,174.991730" target="_blank" rel="noopener">Open in Google Maps</a>
-          <span class="coords">-37.18683, 174.99173</span>
-        </div>
-      </article>
-
       <article class="card" data-status="clear" data-spot="matakawau">
         <div class="cardhead">
-          <div class="num ok">6</div>
+          <div class="num ok">4</div>
           <div class="titles">
             <h3>Matakawau Point</h3>
             <div class="meta">93 min from CBD &middot; 95.5 km &middot; harbour point</div>
@@ -297,6 +230,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#6b7889;font-s
           <div class="score"><strong>7.7</strong><span>/10</span></div>
         </div>
         <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="launch"><span>Launch from</span>Awhitu Rd to Matakawau Point; fly from the reserve at the point.</div>
         <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.4"><span>Seclusion</span><div class="track"><i class="good" style="width:88%"></i></div><b>4.4</b></div><div class="bar" data-metric="quiet" data-editorial="4.0"><span>Quiet</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="flying" data-editorial="3.4"><span>Flying</span><div class="track"><i class="good" style="width:68%"></i></div><b>3.4</b></div></div>
         <div class="quiet">
           <div><span>Quietest time</span><b>Weekday 08:00-12:00</b></div>
@@ -323,81 +257,9 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#6b7889;font-s
         </div>
       </article>
 
-      <article class="card" data-status="clear" data-spot="clevedon">
-        <div class="cardhead">
-          <div class="num ok">7</div>
-          <div class="titles">
-            <h3>Clevedon</h3>
-            <div class="meta">37 min from CBD &middot; 39.9 km &middot; rural river valley</div>
-          </div>
-          <div class="score"><strong>7.6</strong><span>/10</span></div>
-        </div>
-        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
-        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.0"><span>Seclusion</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="quiet" data-editorial="3.5"><span>Quiet</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div><div class="bar" data-metric="flying" data-editorial="3.8"><span>Flying</span><div class="track"><i class="good" style="width:76%"></i></div><b>3.8</b></div></div>
-        <div class="quiet">
-          <div><span>Quietest time</span><b>Weekday 08:00-11:00</b></div>
-          <div><span>Quietest days</span><b>Tue-Fri</b></div>
-          <div class="avoid"><span>Avoid</span><b>Sat 08:00-13:00 (farmers market)</b></div>
-        </div>
-        <p class="best"><strong>Best for:</strong> Rolling farmland, the Wairoa river, bush remnants and the Hunua foothills - rural lines with real depth.</p>
-        <p class="haz"><strong>Hazards:</strong> Private farmland everywhere (don&#x27;t cross it), stock, river users, and Ardmore&#x27;s 4 km ring is 7 km away so you&#x27;re clear.</p>
-        <p class="note">No permit for the village reserves. For farmland you need the owner&#x27;s permission - Part 101 requires it anyway.</p>
-        <div class="community" hidden><span class="cnote"></span></div>
-        <div class="ratebox">
-          <button class="ratebtn" type="button">Rate this spot</button>
-          <form class="rateform" hidden>
-            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
-            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
-            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.8"><output>3.8</output></label>
-            <div class="row"><button type="submit">Submit rating</button></div>
-          </form>
-          <p class="ratemsg" role="status"></p>
-        </div>
-        <div class="links">
-          <a href="https://maps.google.com/?q=-36.991000,175.036870" target="_blank" rel="noopener">Open in Google Maps</a>
-          <span class="coords">-36.99100, 175.03687</span>
-        </div>
-      </article>
-
-      <article class="card" data-status="clear" data-spot="kingseat">
-        <div class="cardhead">
-          <div class="num ok">8</div>
-          <div class="titles">
-            <h3>Kingseat</h3>
-            <div class="meta">40 min from CBD &middot; 44.3 km &middot; village + open fields</div>
-          </div>
-          <div class="score"><strong>7.6</strong><span>/10</span></div>
-        </div>
-        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
-        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.3"><span>Seclusion</span><div class="track"><i class="good" style="width:86%"></i></div><b>4.3</b></div><div class="bar" data-metric="quiet" data-editorial="4.0"><span>Quiet</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="flying" data-editorial="3.3"><span>Flying</span><div class="track"><i class="good" style="width:66%"></i></div><b>3.3</b></div></div>
-        <div class="quiet">
-          <div><span>Quietest time</span><b>Weekday 09:00-15:00</b></div>
-          <div><span>Quietest days</span><b>Mon-Fri</b></div>
-          <div class="avoid"><span>Avoid</span><b>Weekends 10:00-15:00</b></div>
-        </div>
-        <p class="best"><strong>Best for:</strong> Former psychiatric hospital grounds turned village - mature trees, old buildings and open fields.</p>
-        <p class="haz"><strong>Hazards:</strong> Private land around the village, derelict buildings are not public access, stock.</p>
-        <p class="note">Clean airspace and quiet, but the interesting buildings are mostly private. Treat it as a rural open-space fly.</p>
-        <div class="community" hidden><span class="cnote"></span></div>
-        <div class="ratebox">
-          <button class="ratebtn" type="button">Rate this spot</button>
-          <form class="rateform" hidden>
-            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.3"><output>4.3</output></label>
-            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
-            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.3"><output>3.3</output></label>
-            <div class="row"><button type="submit">Submit rating</button></div>
-          </form>
-          <p class="ratemsg" role="status"></p>
-        </div>
-        <div class="links">
-          <a href="https://maps.google.com/?q=-37.125100,174.801680" target="_blank" rel="noopener">Open in Google Maps</a>
-          <span class="coords">-37.12510, 174.80168</span>
-        </div>
-      </article>
-
       <article class="card" data-status="clear" data-spot="clarks-beach">
         <div class="cardhead">
-          <div class="num ok">9</div>
+          <div class="num ok">5</div>
           <div class="titles">
             <h3>Clarks Beach</h3>
             <div class="meta">50 min from CBD &middot; 55.6 km &middot; harbour beach</div>
@@ -405,6 +267,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#6b7889;font-s
           <div class="score"><strong>7.5</strong><span>/10</span></div>
         </div>
         <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="launch"><span>Launch from</span>Beach reserve and boat ramp car park off Clarks Beach Rd.</div>
         <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.0"><span>Seclusion</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="quiet" data-editorial="3.2"><span>Quiet</span><div class="track"><i class="good" style="width:64%"></i></div><b>3.2</b></div><div class="bar" data-metric="flying" data-editorial="3.8"><span>Flying</span><div class="track"><i class="good" style="width:76%"></i></div><b>3.8</b></div></div>
         <div class="quiet">
           <div><span>Quietest time</span><b>Weekday 07:00-10:00</b></div>
@@ -431,369 +294,83 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#6b7889;font-s
         </div>
       </article>
 
-      <article class="card" data-status="clear" data-spot="karaka">
+      <article class="card" data-status="permit" data-spot="waharau">
         <div class="cardhead">
-          <div class="num ok">10</div>
+          <div class="num permit">6</div>
           <div class="titles">
-            <h3>Karaka</h3>
-            <div class="meta">33 min from CBD &middot; 36.8 km &middot; rural + sports park</div>
+            <h3>Waharau Regional Park</h3>
+            <div class="meta">88 min from CBD &middot; 90 km &middot; bush + coast park</div>
           </div>
           <div class="score"><strong>7.3</strong><span>/10</span></div>
         </div>
-        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
-        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.0"><span>Seclusion</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="quiet" data-editorial="3.5"><span>Quiet</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div><div class="bar" data-metric="flying" data-editorial="3.5"><span>Flying</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div></div>
+        <div class="badges"><span class="badge permit">Regional park - permit</span></div>
+        <div class="launch"><span>Launch from</span>Entrance car park off East Coast Rd; fly from the open grass between the road and the bush edge.</div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.4"><span>Seclusion</span><div class="track"><i class="good" style="width:88%"></i></div><b>4.4</b></div><div class="bar" data-metric="quiet" data-editorial="4.4"><span>Quiet</span><div class="track"><i class="good" style="width:88%"></i></div><b>4.4</b></div><div class="bar" data-metric="flying" data-editorial="3.6"><span>Flying</span><div class="track"><i class="good" style="width:72%"></i></div><b>3.6</b></div></div>
         <div class="quiet">
-          <div><span>Quietest time</span><b>Weekday 08:00-16:00</b></div>
-          <div><span>Quietest days</span><b>Tue-Fri</b></div>
-          <div class="avoid"><span>Avoid</span><b>Weekends (model aero club uses the danger area)</b></div>
-        </div>
-        <p class="best"><strong>Best for:</strong> Lifestyle blocks, horse country and open sky - room for long-range runs with few people.</p>
-        <p class="haz"><strong>Hazards:</strong> Inside the Auckland Model Aero Club danger area (NZ D225) - legal to fly, but watch for model traffic. Private land elsewhere.</p>
-        <p class="note">Danger areas are legal but shared. Stay on council land and keep your eyes up.</p>
-        <div class="community" hidden><span class="cnote"></span></div>
-        <div class="ratebox">
-          <button class="ratebtn" type="button">Rate this spot</button>
-          <form class="rateform" hidden>
-            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
-            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
-            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
-            <div class="row"><button type="submit">Submit rating</button></div>
-          </form>
-          <p class="ratemsg" role="status"></p>
-        </div>
-        <div class="links">
-          <a href="https://maps.google.com/?q=-37.099600,174.878990" target="_blank" rel="noopener">Open in Google Maps</a>
-          <span class="coords">-37.09960, 174.87899</span>
-        </div>
-      </article>
-
-      <article class="card" data-status="restricted" data-spot="kohekohe">
-        <div class="cardhead">
-          <div class="num warn">11</div>
-          <div class="titles">
-            <h3>Kohekohe</h3>
-            <div class="meta">70 min from CBD &middot; 76 km &middot; rural settlement</div>
-          </div>
-          <div class="score"><strong>7.1</strong><span>/10</span></div>
-        </div>
-        <div class="badges"><span class="badge warn">Restricted - cert / ATC / private</span></div>
-        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="5.0"><span>Seclusion</span><div class="track"><i class="good" style="width:100%"></i></div><b>5.0</b></div><div class="bar" data-metric="quiet" data-editorial="4.5"><span>Quiet</span><div class="track"><i class="good" style="width:90%"></i></div><b>4.5</b></div><div class="bar" data-metric="flying" data-editorial="3.5"><span>Flying</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div></div>
-        <div class="quiet">
-          <div><span>Quietest time</span><b>Sun 07:00-10:00</b></div>
-          <div><span>Quietest days</span><b>Sun</b></div>
-          <div class="avoid"><span>Avoid</span><b>Weekdays 06:00-17:00</b></div>
-        </div>
-        <p class="best"><strong>Best for:</strong> Deep rural Awhitu — hills, bush remnants and nobody for kilometres.</p>
-        <p class="haz"><strong>Hazards:</strong> Private land, stock, gravel, no phone coverage.</p>
-        <p class="note">The most remote spot on the Awhitu road; permission essential.</p>
-        <div class="community" hidden><span class="cnote"></span></div>
-        <div class="ratebox">
-          <button class="ratebtn" type="button">Rate this spot</button>
-          <form class="rateform" hidden>
-            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="5.0"><output>5.0</output></label>
-            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="4.5"><output>4.5</output></label>
-            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
-            <div class="row"><button type="submit">Submit rating</button></div>
-          </form>
-          <p class="ratemsg" role="status"></p>
-        </div>
-        <div class="links">
-          <a href="https://maps.google.com/?q=-37.191460,174.653290" target="_blank" rel="noopener">Open in Google Maps</a>
-          <span class="coords">-37.19146, 174.65329</span>
-        </div>
-      </article>
-
-      <article class="card" data-status="restricted" data-spot="ararimu">
-        <div class="cardhead">
-          <div class="num warn">12</div>
-          <div class="titles">
-            <h3>Ararimu</h3>
-            <div class="meta">39 min from CBD &middot; 47 km &middot; rural settlement</div>
-          </div>
-          <div class="score"><strong>6.8</strong><span>/10</span></div>
-        </div>
-        <div class="badges"><span class="badge warn">Restricted - cert / ATC / private</span></div>
-        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.5"><span>Seclusion</span><div class="track"><i class="good" style="width:90%"></i></div><b>4.5</b></div><div class="bar" data-metric="quiet" data-editorial="4.5"><span>Quiet</span><div class="track"><i class="good" style="width:90%"></i></div><b>4.5</b></div><div class="bar" data-metric="flying" data-editorial="3.5"><span>Flying</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div></div>
-        <div class="quiet">
-          <div><span>Quietest time</span><b>Sun 07:00-10:00</b></div>
-          <div><span>Quietest days</span><b>Sun</b></div>
-          <div class="avoid"><span>Avoid</span><b>Weekdays 06:00-17:00 (farm traffic)</b></div>
-        </div>
-        <p class="best"><strong>Best for:</strong> Rolling farmland and shelterbelts with long open lines in every direction.</p>
-        <p class="haz"><strong>Hazards:</strong> Private land, stock, farm machinery, narrow roads.</p>
-        <p class="note">Ask the landowner before launching — the whole valley is private farmland.</p>
-        <div class="community" hidden><span class="cnote"></span></div>
-        <div class="ratebox">
-          <button class="ratebtn" type="button">Rate this spot</button>
-          <form class="rateform" hidden>
-            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.5"><output>4.5</output></label>
-            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="4.5"><output>4.5</output></label>
-            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
-            <div class="row"><button type="submit">Submit rating</button></div>
-          </form>
-          <p class="ratemsg" role="status"></p>
-        </div>
-        <div class="links">
-          <a href="https://maps.google.com/?q=-37.140610,175.037810" target="_blank" rel="noopener">Open in Google Maps</a>
-          <span class="coords">-37.14061, 175.03781</span>
-        </div>
-      </article>
-
-      <article class="card" data-status="restricted" data-spot="pollok">
-        <div class="cardhead">
-          <div class="num warn">13</div>
-          <div class="titles">
-            <h3>Pollok</h3>
-            <div class="meta">80 min from CBD &middot; 86 km &middot; rural settlement</div>
-          </div>
-          <div class="score"><strong>6.8</strong><span>/10</span></div>
-        </div>
-        <div class="badges"><span class="badge warn">Restricted - cert / ATC / private</span></div>
-        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.5"><span>Seclusion</span><div class="track"><i class="good" style="width:90%"></i></div><b>4.5</b></div><div class="bar" data-metric="quiet" data-editorial="4.5"><span>Quiet</span><div class="track"><i class="good" style="width:90%"></i></div><b>4.5</b></div><div class="bar" data-metric="flying" data-editorial="3.5"><span>Flying</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div></div>
-        <div class="quiet">
-          <div><span>Quietest time</span><b>Sun 07:00-10:00</b></div>
-          <div><span>Quietest days</span><b>Sun</b></div>
-          <div class="avoid"><span>Avoid</span><b>Weekdays 06:00-17:00</b></div>
-        </div>
-        <p class="best"><strong>Best for:</strong> Hill country above the Manukau with big views and no people.</p>
-        <p class="haz"><strong>Hazards:</strong> Private farmland, stock, gravel roads, wind.</p>
-        <p class="note">Permission needed — this is working farmland, not reserve.</p>
-        <div class="community" hidden><span class="cnote"></span></div>
-        <div class="ratebox">
-          <button class="ratebtn" type="button">Rate this spot</button>
-          <form class="rateform" hidden>
-            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.5"><output>4.5</output></label>
-            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="4.5"><output>4.5</output></label>
-            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
-            <div class="row"><button type="submit">Submit rating</button></div>
-          </form>
-          <p class="ratemsg" role="status"></p>
-        </div>
-        <div class="links">
-          <a href="https://maps.google.com/?q=-37.137220,174.616160" target="_blank" rel="noopener">Open in Google Maps</a>
-          <span class="coords">-37.13722, 174.61616</span>
-        </div>
-      </article>
-
-      <article class="card" data-status="restricted" data-spot="mauku">
-        <div class="cardhead">
-          <div class="num warn">14</div>
-          <div class="titles">
-            <h3>Mauku</h3>
-            <div class="meta">49 min from CBD &middot; 53 km &middot; rural settlement</div>
-          </div>
-          <div class="score"><strong>6.8</strong><span>/10</span></div>
-        </div>
-        <div class="badges"><span class="badge warn">Restricted - cert / ATC / private</span></div>
-        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.5"><span>Seclusion</span><div class="track"><i class="good" style="width:90%"></i></div><b>4.5</b></div><div class="bar" data-metric="quiet" data-editorial="4.5"><span>Quiet</span><div class="track"><i class="good" style="width:90%"></i></div><b>4.5</b></div><div class="bar" data-metric="flying" data-editorial="3.5"><span>Flying</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div></div>
-        <div class="quiet">
-          <div><span>Quietest time</span><b>Sun 07:00-10:00</b></div>
-          <div><span>Quietest days</span><b>Sun</b></div>
-          <div class="avoid"><span>Avoid</span><b>Weekdays 05:00-17:00 (tankers)</b></div>
-        </div>
-        <p class="best"><strong>Best for:</strong> Quiet dairy country with drains, hedgerows and long flat lines.</p>
-        <p class="haz"><strong>Hazards:</strong> Stock, drains, private land, milk tankers on the road.</p>
-        <p class="note">Ask first — the paddocks are all in production.</p>
-        <div class="community" hidden><span class="cnote"></span></div>
-        <div class="ratebox">
-          <button class="ratebtn" type="button">Rate this spot</button>
-          <form class="rateform" hidden>
-            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.5"><output>4.5</output></label>
-            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="4.5"><output>4.5</output></label>
-            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
-            <div class="row"><button type="submit">Submit rating</button></div>
-          </form>
-          <p class="ratemsg" role="status"></p>
-        </div>
-        <div class="links">
-          <a href="https://maps.google.com/?q=-37.201330,174.816670" target="_blank" rel="noopener">Open in Google Maps</a>
-          <span class="coords">-37.20133, 174.81667</span>
-        </div>
-      </article>
-
-      <article class="card" data-status="clear" data-spot="waiuku">
-        <div class="cardhead">
-          <div class="num ok">15</div>
-          <div class="titles">
-            <h3>Waiuku</h3>
-            <div class="meta">57 min from CBD &middot; 63.3 km &middot; estuary + town</div>
-          </div>
-          <div class="score"><strong>6.7</strong><span>/10</span></div>
-        </div>
-        <div class="badges"><span class="badge ok">Clean - no permit</span></div>
-        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="3.4"><span>Seclusion</span><div class="track"><i class="good" style="width:68%"></i></div><b>3.4</b></div><div class="bar" data-metric="quiet" data-editorial="2.8"><span>Quiet</span><div class="track"><i class="good" style="width:56%"></i></div><b>2.8</b></div><div class="bar" data-metric="flying" data-editorial="3.6"><span>Flying</span><div class="track"><i class="good" style="width:72%"></i></div><b>3.6</b></div></div>
-        <div class="quiet">
-          <div><span>Quietest time</span><b>Weekday 08:00-11:00</b></div>
+          <div><span>Quietest time</span><b>Any day, early</b></div>
           <div><span>Quietest days</span><b>Mon-Thu</b></div>
-          <div class="avoid"><span>Avoid</span><b>Weekends 10:00-15:00</b></div>
+          <div class="avoid"><span>Avoid</span><b>Almost never busy - the quietest coast in Auckland</b></div>
         </div>
-        <p class="best"><strong>Best for:</strong> Estuary, moored boats, the old steel mill skyline and harbour flats - industrial-meets-coastal.</p>
-        <p class="haz"><strong>Hazards:</strong> Town traffic, boats, mudflats, shorebirds.</p>
-        <p class="note">No permit. Most useful as the staging town for Karioitahi 10 minutes away.</p>
+        <p class="best"><strong>Best for:</strong> The quietest coast in Auckland - bush behind, the Firth in front, and often not another person there. Long sight lines north and south.</p>
+        <p class="haz"><strong>Hazards:</strong> Dense bush limits recovery, steep drop to the water, isolated with no phone coverage, exposed to sea breeze.</p>
+        <p class="note">Regional park - permit required for drone use. Airspace clean, nearest aerodrome 24.6 km.</p>
         <div class="community" hidden><span class="cnote"></span></div>
         <div class="ratebox">
           <button class="ratebtn" type="button">Rate this spot</button>
           <form class="rateform" hidden>
-            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="3.4"><output>3.4</output></label>
-            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="2.8"><output>2.8</output></label>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.4"><output>4.4</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="4.4"><output>4.4</output></label>
             <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.6"><output>3.6</output></label>
             <div class="row"><button type="submit">Submit rating</button></div>
           </form>
           <p class="ratemsg" role="status"></p>
         </div>
         <div class="links">
-          <a href="https://maps.google.com/?q=-37.249190,174.730340" target="_blank" rel="noopener">Open in Google Maps</a>
-          <span class="coords">-37.24919, 174.73034</span>
+          <a href="https://maps.google.com/?q=-37.039352,175.294634" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-37.03935, 175.29463</span>
         </div>
       </article>
 
-      <article class="card" data-status="restricted" data-spot="ramarama">
+      <article class="card" data-status="permit" data-spot="tapapakanga">
         <div class="cardhead">
-          <div class="num warn">16</div>
+          <div class="num permit">7</div>
           <div class="titles">
-            <h3>Ramarama</h3>
-            <div class="meta">34 min from CBD &middot; 40 km &middot; rural settlement</div>
+            <h3>Tapapakanga Regional Park</h3>
+            <div class="meta">78 min from CBD &middot; 82 km &middot; coastal farm park</div>
           </div>
-          <div class="score"><strong>6.3</strong><span>/10</span></div>
+          <div class="score"><strong>7.1</strong><span>/10</span></div>
         </div>
-        <div class="badges"><span class="badge warn">Restricted - cert / ATC / private</span></div>
-        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.0"><span>Seclusion</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="quiet" data-editorial="4.0"><span>Quiet</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="flying" data-editorial="3.5"><span>Flying</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div></div>
+        <div class="badges"><span class="badge permit">Regional park - permit</span></div>
+        <div class="launch"><span>Launch from</span>Park entrance car park off Orere-Matingarahi Rd; fly from the open paddocks above the beach.</div>
+        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.2"><span>Seclusion</span><div class="track"><i class="good" style="width:84%"></i></div><b>4.2</b></div><div class="bar" data-metric="quiet" data-editorial="3.8"><span>Quiet</span><div class="track"><i class="good" style="width:76%"></i></div><b>3.8</b></div><div class="bar" data-metric="flying" data-editorial="3.8"><span>Flying</span><div class="track"><i class="good" style="width:76%"></i></div><b>3.8</b></div></div>
         <div class="quiet">
-          <div><span>Quietest time</span><b>Sun 07:00-10:00</b></div>
-          <div><span>Quietest days</span><b>Sun</b></div>
-          <div class="avoid"><span>Avoid</span><b>Weekdays 06:00-17:00</b></div>
-        </div>
-        <p class="best"><strong>Best for:</strong> Market gardens and open flats with the Bombay hills behind.</p>
-        <p class="haz"><strong>Hazards:</strong> Greenhouses and polythene, orchard netting, highway traffic, private land.</p>
-        <p class="note">Greenhouse country — watch for netting and stay off the crops.</p>
-        <div class="community" hidden><span class="cnote"></span></div>
-        <div class="ratebox">
-          <button class="ratebtn" type="button">Rate this spot</button>
-          <form class="rateform" hidden>
-            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
-            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
-            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
-            <div class="row"><button type="submit">Submit rating</button></div>
-          </form>
-          <p class="ratemsg" role="status"></p>
-        </div>
-        <div class="links">
-          <a href="https://maps.google.com/?q=-37.146530,174.958840" target="_blank" rel="noopener">Open in Google Maps</a>
-          <span class="coords">-37.14653, 174.95884</span>
-        </div>
-      </article>
-
-      <article class="card" data-status="restricted" data-spot="paerata">
-        <div class="cardhead">
-          <div class="num warn">17</div>
-          <div class="titles">
-            <h3>Paerata</h3>
-            <div class="meta">40 min from CBD &middot; 45 km &middot; rural settlement</div>
-          </div>
-          <div class="score"><strong>6.3</strong><span>/10</span></div>
-        </div>
-        <div class="badges"><span class="badge warn">Restricted - cert / ATC / private</span></div>
-        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.0"><span>Seclusion</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="quiet" data-editorial="4.0"><span>Quiet</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="flying" data-editorial="3.5"><span>Flying</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div></div>
-        <div class="quiet">
-          <div><span>Quietest time</span><b>Sun 07:00-10:00</b></div>
-          <div><span>Quietest days</span><b>Sun</b></div>
-          <div class="avoid"><span>Avoid</span><b>Weekdays 06:00-17:00</b></div>
-        </div>
-        <p class="best"><strong>Best for:</strong> Open farmland with the Drury hills and the harbour beyond.</p>
-        <p class="haz"><strong>Hazards:</strong> Earthworks and new subdivisions, highway, private land.</p>
-        <p class="note">Changing fast with the Drury development — check the ground before you go.</p>
-        <div class="community" hidden><span class="cnote"></span></div>
-        <div class="ratebox">
-          <button class="ratebtn" type="button">Rate this spot</button>
-          <form class="rateform" hidden>
-            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
-            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
-            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
-            <div class="row"><button type="submit">Submit rating</button></div>
-          </form>
-          <p class="ratemsg" role="status"></p>
-        </div>
-        <div class="links">
-          <a href="https://maps.google.com/?q=-37.156100,174.898150" target="_blank" rel="noopener">Open in Google Maps</a>
-          <span class="coords">-37.15610, 174.89815</span>
-        </div>
-      </article>
-
-      <article class="card" data-status="restricted" data-spot="patumahoe">
-        <div class="cardhead">
-          <div class="num warn">18</div>
-          <div class="titles">
-            <h3>Patumahoe</h3>
-            <div class="meta">46 min from CBD &middot; 51 km &middot; village + farmland</div>
-          </div>
-          <div class="score"><strong>6.3</strong><span>/10</span></div>
-        </div>
-        <div class="badges"><span class="badge warn">Restricted - cert / ATC / private</span></div>
-        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.0"><span>Seclusion</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="quiet" data-editorial="4.0"><span>Quiet</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="flying" data-editorial="3.5"><span>Flying</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div></div>
-        <div class="quiet">
-          <div><span>Quietest time</span><b>Weekday 09:00-15:00</b></div>
+          <div><span>Quietest time</span><b>Any weekday</b></div>
           <div><span>Quietest days</span><b>Tue-Thu</b></div>
-          <div class="avoid"><span>Avoid</span><b>Weekends 10:00-15:00</b></div>
+          <div class="avoid"><span>Avoid</span><b>Summer weekends 10:00-16:00 (campers)</b></div>
         </div>
-        <p class="best"><strong>Best for:</strong> Village domain and surrounding farmland — easy access, open skies.</p>
-        <p class="haz"><strong>Hazards:</strong> Village traffic, private paddocks, sport on the domain.</p>
-        <p class="note">Launch from the domain and fly the edges; ask before crossing into paddocks.</p>
+        <p class="best"><strong>Best for:</strong> Farm parkland rolling down to a long Pohutukawa coast. Big open grass, almost nobody midweek, and a clean horizon out over the Firth.</p>
+        <p class="haz"><strong>Hazards:</strong> Farm stock and electric fences, steep coastal drops, no shelter from the nor&#x27;west, poor phone coverage.</p>
+        <p class="note">Regional park - drone use needs an Auckland Council permit. Airspace clean, nearest aerodrome 24 km.</p>
         <div class="community" hidden><span class="cnote"></span></div>
         <div class="ratebox">
           <button class="ratebtn" type="button">Rate this spot</button>
           <form class="rateform" hidden>
-            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
-            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
-            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
+            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.2"><output>4.2</output></label>
+            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="3.8"><output>3.8</output></label>
+            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.8"><output>3.8</output></label>
             <div class="row"><button type="submit">Submit rating</button></div>
           </form>
           <p class="ratemsg" role="status"></p>
         </div>
         <div class="links">
-          <a href="https://maps.google.com/?q=-37.187740,174.828230" target="_blank" rel="noopener">Open in Google Maps</a>
-          <span class="coords">-37.18774, 174.82823</span>
-        </div>
-      </article>
-
-      <article class="card" data-status="restricted" data-spot="puni">
-        <div class="cardhead">
-          <div class="num warn">19</div>
-          <div class="titles">
-            <h3>Puni</h3>
-            <div class="meta">52 min from CBD &middot; 57 km &middot; rural settlement</div>
-          </div>
-          <div class="score"><strong>6.3</strong><span>/10</span></div>
-        </div>
-        <div class="badges"><span class="badge warn">Restricted - cert / ATC / private</span></div>
-        <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="4.0"><span>Seclusion</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="quiet" data-editorial="4.0"><span>Quiet</span><div class="track"><i class="good" style="width:80%"></i></div><b>4.0</b></div><div class="bar" data-metric="flying" data-editorial="3.5"><span>Flying</span><div class="track"><i class="good" style="width:70%"></i></div><b>3.5</b></div></div>
-        <div class="quiet">
-          <div><span>Quietest time</span><b>Sun 07:00-10:00</b></div>
-          <div><span>Quietest days</span><b>Sun</b></div>
-          <div class="avoid"><span>Avoid</span><b>Weekdays 06:00-17:00</b></div>
-        </div>
-        <p class="best"><strong>Best for:</strong> Flat farmland on the Puni flats — open airspace and nothing to hit.</p>
-        <p class="haz"><strong>Hazards:</strong> Private land, stock, State Highway 1 nearby.</p>
-        <p class="note">Simple open-country flying; permission needed.</p>
-        <div class="community" hidden><span class="cnote"></span></div>
-        <div class="ratebox">
-          <button class="ratebtn" type="button">Rate this spot</button>
-          <form class="rateform" hidden>
-            <label><span>Seclusion</span><input type="range" name="seclusion" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
-            <label><span>Quiet</span><input type="range" name="quiet" min="0" max="5" step="0.5" value="4.0"><output>4.0</output></label>
-            <label><span>Flying</span><input type="range" name="flying" min="0" max="5" step="0.5" value="3.5"><output>3.5</output></label>
-            <div class="row"><button type="submit">Submit rating</button></div>
-          </form>
-          <p class="ratemsg" role="status"></p>
-        </div>
-        <div class="links">
-          <a href="https://maps.google.com/?q=-37.231090,174.856340" target="_blank" rel="noopener">Open in Google Maps</a>
-          <span class="coords">-37.23109, 174.85634</span>
+          <a href="https://maps.google.com/?q=-36.980202,175.258902" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-36.98020, 175.25890</span>
         </div>
       </article>
 
       <article class="card" data-status="clear" data-spot="pukekohe">
         <div class="cardhead">
-          <div class="num ok">20</div>
+          <div class="num ok">8</div>
           <div class="titles">
             <h3>Pukekohe</h3>
             <div class="meta">45 min from CBD &middot; 49.7 km &middot; town parks</div>
@@ -801,6 +378,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#6b7889;font-s
           <div class="score"><strong>6.0</strong><span>/10</span></div>
         </div>
         <div class="badges"><span class="badge ok">Clean - no permit</span></div>
+        <div class="launch"><span>Launch from</span>Bledisloe Park car park, Pukekohe; fly from the sports fields.</div>
         <div class="bars"><div class="bar" data-metric="seclusion" data-editorial="3.0"><span>Seclusion</span><div class="track"><i class="good" style="width:60%"></i></div><b>3.0</b></div><div class="bar" data-metric="quiet" data-editorial="2.5"><span>Quiet</span><div class="track"><i class="good" style="width:50%"></i></div><b>2.5</b></div><div class="bar" data-metric="flying" data-editorial="3.2"><span>Flying</span><div class="track"><i class="good" style="width:64%"></i></div><b>3.2</b></div></div>
         <div class="quiet">
           <div><span>Quietest time</span><b>Weekday 09:00-15:00</b></div>
@@ -822,8 +400,8 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#6b7889;font-s
           <p class="ratemsg" role="status"></p>
         </div>
         <div class="links">
-          <a href="https://maps.google.com/?q=-37.200640,174.903690" target="_blank" rel="noopener">Open in Google Maps</a>
-          <span class="coords">-37.20064, 174.90369</span>
+          <a href="https://maps.google.com/?q=-37.206170,174.902430" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="coords">-37.20617, 174.90243</span>
         </div>
       </article>
   </main>
@@ -841,7 +419,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#6b7889;font-s
   </section>
 
   <footer>
-    South Auckland &middot; 20 spots &middot; numbers are ranked within this region by overall score.
+    South Auckland &middot; 8 spots &middot; numbers are ranked within this region by overall score.
     Scores weight flying quality and seclusion; read the sub-scores for your own priorities.
     Basemap imagery &copy; Esri, Maxar, Earthstar Geographics. Airspace data &copy; AirShare / Airways NZ.
   </footer>
@@ -887,7 +465,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:#6b7889;font-s
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-const SPOTS = [{"tier": 1, "name": "Karioitahi Beach", "short": "Karioitahi", "lat": -37.283218, "lon": 174.654776, "secl": 5.0, "traffic": 0.5, "fly": 4.7, "land": "Council reserve / beach + Crown foreshore", "access": "Karioitahi Rd off Waiuku-Karioitahi Rd, ~1 h 20 from CBD. Car park at the surf club.", "best": "Black sand surf beach backed by 60 m cliffs and dunes - the most dramatic flying in Auckland, north or south.", "hazards": "Active paraglider and hang-glider site (give way and stay well clear), strong onshore wind, surf and rips, soft sand kills motors.", "note": "Airspace is completely clean - 24 km from the nearest aerodrome. This is the best single spot in South Auckland by a distance. Pin is the main beach access off Karioitahi Road; the sand runs about 5 km south from here.", "status": "clear", "dist_cbd_km": 49.6, "merit": 9.5, "fpv_score": 9.5, "maps_url": "https://maps.google.com/?q=-37.283218,174.654776", "drive_min": 79, "drive_km": 71.7, "num": 1, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.283218,174.654776", "id": "karioitahi", "kind": "black sand surf beach", "quiet_time": "Weekday 07:00-10:00 (before thermals)", "quiet_days": "Mon-Thu", "avoid": "Weekends 09:00-16:00 (surfers); midday thermals bring paragliders"}, {"tier": 1, "name": "Orere Point", "short": "Orere Point", "lat": -36.957, "lon": 175.248, "secl": 4.5, "traffic": 1.0, "fly": 4.3, "land": "Council reserve / beach + regional park nearby", "access": "Orere Point Rd off Kawakawa-Orere Rd, ~1 h 05 from CBD. Beach reserve at the end.", "best": "Rocky coast, pohutukawa, bush and the Hauraki Gulf - cliffs and reefs give you lines you don't get on a flat beach.", "hazards": "Rocks and tide, boat ramp traffic, shorebirds, the regional park north of the point needs a permit.", "note": "Clean airspace. The reserve is local council land; the bush north is regional park, so keep to the coast strip.", "status": "clear", "dist_cbd_km": 44.2, "merit": 8.6, "fpv_score": 8.6, "maps_url": "https://maps.google.com/?q=-36.957000,175.248000", "drive_min": 67, "drive_km": 67.9, "num": 2, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.957000,175.248000", "id": "orere-point", "kind": "rocky coast", "quiet_time": "Weekday 07:00-10:00", "quiet_days": "Mon-Thu", "avoid": "Summer weekends 09:00-16:00"}, {"tier": 2, "name": "Waiau Pa", "short": "Waiau Pa", "lat": -37.13837, "lon": 174.75441, "secl": 4.2, "traffic": 1.2, "fly": 3.7, "land": "Council reserve / beach + wharf", "access": "Waiau Pa Rd to the wharf, ~50 min from CBD.", "best": "Quiet Manukau Harbour settlement with a wharf, tidal flats and shell banks - flat water and big skies.", "hazards": "Mudflats at low tide, shorebirds on the shell banks, wharf fishermen.", "note": "No permit. One of the quietest accessible spots in the south.", "status": "clear", "dist_cbd_km": 32.2, "merit": 7.8, "fpv_score": 7.8, "maps_url": "https://maps.google.com/?q=-37.138370,174.754410", "drive_min": 46, "drive_km": 50.8, "num": 3, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.138370,174.754410", "id": "waiau-pa", "kind": "harbour wharf", "quiet_time": "Weekday 08:00-11:00", "quiet_days": "Mon-Fri", "avoid": "Weekends 09:00-15:00 (wharf fishermen)"}, {"tier": 2, "name": "Glenbrook Beach", "short": "Glenbrook", "lat": -37.16167, "lon": 174.71126, "secl": 4.3, "traffic": 1.0, "fly": 3.5, "land": "Council reserve / beach", "access": "Glenbrook Beach Rd, ~55 min from CBD.", "best": "Small quiet beach on the harbour with bush and farmland behind - you'll often be alone.", "hazards": "Narrow road, mudflats, no facilities, NZ Steel works nearby (industrial backdrop).", "note": "No permit, clean airspace. Combine with Clarks Beach and Waiuku in one run.", "status": "clear", "dist_cbd_km": 35.1, "merit": 7.8, "fpv_score": 7.8, "maps_url": "https://maps.google.com/?q=-37.161670,174.711260", "drive_min": 57, "drive_km": 64.2, "num": 4, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.161670,174.711260", "id": "glenbrook", "kind": "quiet harbour beach", "quiet_time": "Weekday 09:00-15:00", "quiet_days": "Mon-Fri", "avoid": "Weekends 10:00-15:00"}, {"tier": 2, "name": "Bombay", "short": "Bombay", "lat": -37.18683, "lon": 174.99173, "secl": 4.5, "traffic": 1.0, "fly": 3.4, "land": "Council reserve / rural", "access": "Bombay off SH1, ~40 min from CBD. Domain and hall reserve.", "best": "Rolling hill country, shelter belts and big views back to the Manukau - genuinely empty.", "hazards": "State highway traffic, private farmland, stock.", "note": "No permit on the domain. Everything around it is private - stay on the reserve or get permission.", "status": "clear", "dist_cbd_km": 42.6, "merit": 7.8, "fpv_score": 7.8, "maps_url": "https://maps.google.com/?q=-37.186830,174.991730", "drive_min": 38, "drive_km": 46.7, "num": 5, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.186830,174.991730", "id": "bombay", "kind": "hill country", "quiet_time": "Any weekday 08:00-16:00", "quiet_days": "Tue-Fri", "avoid": "Weekend afternoons (SH1 traffic)"}, {"tier": 2, "name": "Matakawau Point", "short": "Matakawau", "lat": -37.10984, "lon": 174.66361, "secl": 4.4, "traffic": 1.0, "fly": 3.4, "land": "Council reserve / beach + wharf", "access": "Awhitu Rd to Matakawau Point, ~1 h 30 from CBD.", "best": "Tiny harbour settlement with a wharf and tidal creek - the quietest water in the south.", "hazards": "Mudflats, one-lane road, no phone coverage in patches.", "note": "No permit. Pairs with Awhitu Regional Park if you're doing the peninsula.", "status": "clear", "dist_cbd_km": 30.4, "merit": 7.7, "fpv_score": 7.7, "maps_url": "https://maps.google.com/?q=-37.109840,174.663610", "drive_min": 93, "drive_km": 95.5, "num": 6, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.109840,174.663610", "id": "matakawau", "kind": "harbour point", "quiet_time": "Weekday 08:00-12:00", "quiet_days": "Mon-Thu", "avoid": "Weekends 10:00-15:00"}, {"tier": 2, "name": "Clevedon", "short": "Clevedon", "lat": -36.991, "lon": 175.03687, "secl": 4.0, "traffic": 1.5, "fly": 3.8, "land": "Council reserve / village + rural", "access": "Clevedon village, ~40 min from CBD. Domain and river reserve.", "best": "Rolling farmland, the Wairoa river, bush remnants and the Hunua foothills - rural lines with real depth.", "hazards": "Private farmland everywhere (don't cross it), stock, river users, and Ardmore's 4 km ring is 7 km away so you're clear.", "note": "No permit for the village reserves. For farmland you need the owner's permission - Part 101 requires it anyway.", "status": "clear", "dist_cbd_km": 28.9, "merit": 7.6, "fpv_score": 7.6, "maps_url": "https://maps.google.com/?q=-36.991000,175.036870", "drive_min": 37, "drive_km": 39.9, "num": 7, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.991000,175.036870", "id": "clevedon", "kind": "rural river valley", "quiet_time": "Weekday 08:00-11:00", "quiet_days": "Tue-Fri", "avoid": "Sat 08:00-13:00 (farmers market)"}, {"tier": 3, "name": "Kingseat", "short": "Kingseat", "lat": -37.1251, "lon": 174.80168, "secl": 4.3, "traffic": 1.0, "fly": 3.3, "land": "Council reserve / rural", "access": "Kingseat Rd, ~50 min from CBD.", "best": "Former psychiatric hospital grounds turned village - mature trees, old buildings and open fields.", "hazards": "Private land around the village, derelict buildings are not public access, stock.", "note": "Clean airspace and quiet, but the interesting buildings are mostly private. Treat it as a rural open-space fly.", "status": "clear", "dist_cbd_km": 30.9, "merit": 7.6, "fpv_score": 7.6, "maps_url": "https://maps.google.com/?q=-37.125100,174.801680", "drive_min": 40, "drive_km": 44.3, "num": 8, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.125100,174.801680", "id": "kingseat", "kind": "village + open fields", "quiet_time": "Weekday 09:00-15:00", "quiet_days": "Mon-Fri", "avoid": "Weekends 10:00-15:00"}, {"tier": 2, "name": "Clarks Beach", "short": "Clarks Beach", "lat": -37.134049, "lon": 174.703718, "secl": 4.0, "traffic": 1.8, "fly": 3.8, "land": "Council reserve / beach", "access": "Clarks Beach Rd, ~50 min from CBD. Beach reserve and boat ramp.", "best": "Harbour beach with a long tidal flat, boats and the Awhitu hills across the water.", "hazards": "Boat ramp traffic in summer, mudflats, shorebirds.", "note": "No permit. Good at high tide; at low tide you're flying over mud.", "status": "clear", "dist_cbd_km": 32.5, "merit": 7.5, "fpv_score": 7.5, "maps_url": "https://maps.google.com/?q=-37.134049,174.703718", "drive_min": 50, "drive_km": 55.6, "num": 9, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.134049,174.703718", "id": "clarks-beach", "kind": "harbour beach", "quiet_time": "Weekday 07:00-10:00", "quiet_days": "Mon-Thu", "avoid": "Summer weekends 09:00-16:00 (boat ramp)"}, {"tier": 2, "name": "Karaka", "short": "Karaka", "lat": -37.0996, "lon": 174.87899, "secl": 4.0, "traffic": 1.5, "fly": 3.5, "land": "Council reserve / rural + sports park", "access": "Karaka, ~35 min from CBD. Karaka Sports Park or the waterfront reserve.", "best": "Lifestyle blocks, horse country and open sky - room for long-range runs with few people.", "hazards": "Inside the Auckland Model Aero Club danger area (NZ D225) - legal to fly, but watch for model traffic. Private land elsewhere.", "note": "Danger areas are legal but shared. Stay on council land and keep your eyes up.", "status": "clear", "dist_cbd_km": 29.7, "merit": 7.3, "fpv_score": 7.3, "maps_url": "https://maps.google.com/?q=-37.099600,174.878990", "drive_min": 33, "drive_km": 36.8, "num": 10, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.099600,174.878990", "id": "karaka", "kind": "rural + sports park", "quiet_time": "Weekday 08:00-16:00", "quiet_days": "Tue-Fri", "avoid": "Weekends (model aero club uses the danger area)"}, {"short": "Kohekohe", "name": "Kohekohe", "region": "south", "lat": -37.19146, "lon": 174.65329, "secl": 5.0, "traffic": 0.5, "fly": 3.5, "status": "restricted", "kind": "rural settlement", "land": "Private farmland - permission required", "access": "Kohekohe Rd, off Awhitu Rd; verge parking.", "best": "Deep rural Awhitu — hills, bush remnants and nobody for kilometres.", "hazards": "Private land, stock, gravel, no phone coverage.", "note": "The most remote spot on the Awhitu road; permission essential.", "quiet_time": "Sun 07:00-10:00", "quiet_days": "Sun", "avoid": "Weekdays 06:00-17:00", "drive_min": 70, "drive_km": 76, "dist_cbd_km": 39.4, "fpv_score": 7.1, "maps_url": "https://maps.google.com/?q=-37.191460,174.653290", "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.191460,174.653290", "num": 11, "id": "kohekohe"}, {"short": "Ararimu", "name": "Ararimu", "region": "south", "lat": -37.14061, "lon": 175.03781, "secl": 4.5, "traffic": 0.5, "fly": 3.5, "status": "restricted", "kind": "rural settlement", "land": "Private farmland - permission required", "access": "Ararimu Rd, off Paparimu Rd; park on the verge and don't block gates.", "best": "Rolling farmland and shelterbelts with long open lines in every direction.", "hazards": "Private land, stock, farm machinery, narrow roads.", "note": "Ask the landowner before launching — the whole valley is private farmland.", "quiet_time": "Sun 07:00-10:00", "quiet_days": "Sun", "avoid": "Weekdays 06:00-17:00 (farm traffic)", "drive_min": 39, "drive_km": 47, "dist_cbd_km": 40.5, "fpv_score": 6.8, "maps_url": "https://maps.google.com/?q=-37.140610,175.037810", "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.140610,175.037810", "num": 12, "id": "ararimu"}, {"short": "Pollok", "name": "Pollok", "region": "south", "lat": -37.13722, "lon": 174.61616, "secl": 4.5, "traffic": 0.5, "fly": 3.5, "status": "restricted", "kind": "rural settlement", "land": "Private farmland - permission required", "access": "Pollok Rd, off Awhitu Rd; verge parking only.", "best": "Hill country above the Manukau with big views and no people.", "hazards": "Private farmland, stock, gravel roads, wind.", "note": "Permission needed — this is working farmland, not reserve.", "quiet_time": "Sun 07:00-10:00", "quiet_days": "Sun", "avoid": "Weekdays 06:00-17:00", "drive_min": 80, "drive_km": 86, "dist_cbd_km": 34.7, "fpv_score": 6.8, "maps_url": "https://maps.google.com/?q=-37.137220,174.616160", "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.137220,174.616160", "num": 13, "id": "pollok"}, {"short": "Mauku", "name": "Mauku", "region": "south", "lat": -37.20133, "lon": 174.81667, "secl": 4.5, "traffic": 0.5, "fly": 3.5, "status": "restricted", "kind": "rural settlement", "land": "Private farmland - permission required", "access": "Mauku Rd, off Glenbrook Rd; park at the hall.", "best": "Quiet dairy country with drains, hedgerows and long flat lines.", "hazards": "Stock, drains, private land, milk tankers on the road.", "note": "Ask first — the paddocks are all in production.", "quiet_time": "Sun 07:00-10:00", "quiet_days": "Sun", "avoid": "Weekdays 05:00-17:00 (tankers)", "drive_min": 49, "drive_km": 53, "dist_cbd_km": 39.5, "fpv_score": 6.8, "maps_url": "https://maps.google.com/?q=-37.201330,174.816670", "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.201330,174.816670", "num": 14, "id": "mauku"}, {"tier": 2, "name": "Waiuku", "short": "Waiuku", "lat": -37.24919, "lon": 174.73034, "secl": 3.4, "traffic": 2.2, "fly": 3.6, "land": "Council reserve / estuary + town", "access": "Waiuku town, ~55 min from CBD. Estuary reserve at the wharf.", "best": "Estuary, moored boats, the old steel mill skyline and harbour flats - industrial-meets-coastal.", "hazards": "Town traffic, boats, mudflats, shorebirds.", "note": "No permit. Most useful as the staging town for Karioitahi 10 minutes away.", "status": "clear", "dist_cbd_km": 44.6, "merit": 6.7, "fpv_score": 6.7, "maps_url": "https://maps.google.com/?q=-37.249190,174.730340", "drive_min": 57, "drive_km": 63.3, "num": 15, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.249190,174.730340", "id": "waiuku", "kind": "estuary + town", "quiet_time": "Weekday 08:00-11:00", "quiet_days": "Mon-Thu", "avoid": "Weekends 10:00-15:00"}, {"short": "Ramarama", "name": "Ramarama", "region": "south", "lat": -37.14653, "lon": 174.95884, "secl": 4.0, "traffic": 1.0, "fly": 3.5, "status": "restricted", "kind": "rural settlement", "land": "Private farmland - permission required", "access": "Ramarama Rd, off State Highway 1; park at the hall.", "best": "Market gardens and open flats with the Bombay hills behind.", "hazards": "Greenhouses and polythene, orchard netting, highway traffic, private land.", "note": "Greenhouse country — watch for netting and stay off the crops.", "quiet_time": "Sun 07:00-10:00", "quiet_days": "Sun", "avoid": "Weekdays 06:00-17:00", "drive_min": 34, "drive_km": 40, "dist_cbd_km": 37.3, "fpv_score": 6.3, "maps_url": "https://maps.google.com/?q=-37.146530,174.958840", "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.146530,174.958840", "num": 16, "id": "ramarama"}, {"short": "Paerata", "name": "Paerata", "region": "south", "lat": -37.1561, "lon": 174.89815, "secl": 4.0, "traffic": 1.0, "fly": 3.5, "status": "restricted", "kind": "rural settlement", "land": "Private farmland - permission required", "access": "Paerata Rd, off Great South Rd.", "best": "Open farmland with the Drury hills and the harbour beyond.", "hazards": "Earthworks and new subdivisions, highway, private land.", "note": "Changing fast with the Drury development — check the ground before you go.", "quiet_time": "Sun 07:00-10:00", "quiet_days": "Sun", "avoid": "Weekdays 06:00-17:00", "drive_min": 40, "drive_km": 45, "dist_cbd_km": 36.1, "fpv_score": 6.3, "maps_url": "https://maps.google.com/?q=-37.156100,174.898150", "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.156100,174.898150", "num": 17, "id": "paerata"}, {"short": "Patumahoe", "name": "Patumahoe", "region": "south", "lat": -37.18774, "lon": 174.82823, "secl": 4.0, "traffic": 1.0, "fly": 3.5, "status": "restricted", "kind": "village + farmland", "land": "Private farmland - permission required", "access": "Patumahoe Rd; park at the domain.", "best": "Village domain and surrounding farmland — easy access, open skies.", "hazards": "Village traffic, private paddocks, sport on the domain.", "note": "Launch from the domain and fly the edges; ask before crossing into paddocks.", "quiet_time": "Weekday 09:00-15:00", "quiet_days": "Tue-Thu", "avoid": "Weekends 10:00-15:00", "drive_min": 46, "drive_km": 51, "dist_cbd_km": 38.1, "fpv_score": 6.3, "maps_url": "https://maps.google.com/?q=-37.187740,174.828230", "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.187740,174.828230", "num": 18, "id": "patumahoe"}, {"short": "Puni", "name": "Puni", "region": "south", "lat": -37.23109, "lon": 174.85634, "secl": 4.0, "traffic": 1.0, "fly": 3.5, "status": "restricted", "kind": "rural settlement", "land": "Private farmland - permission required", "access": "Puni Rd, off Great South Rd.", "best": "Flat farmland on the Puni flats — open airspace and nothing to hit.", "hazards": "Private land, stock, State Highway 1 nearby.", "note": "Simple open-country flying; permission needed.", "quiet_time": "Sun 07:00-10:00", "quiet_days": "Sun", "avoid": "Weekdays 06:00-17:00", "drive_min": 52, "drive_km": 57, "dist_cbd_km": 43.3, "fpv_score": 6.3, "maps_url": "https://maps.google.com/?q=-37.231090,174.856340", "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.231090,174.856340", "num": 19, "id": "puni"}, {"tier": 3, "name": "Pukekohe", "short": "Pukekohe", "lat": -37.20064, "lon": 174.90369, "secl": 3.0, "traffic": 2.5, "fly": 3.2, "land": "Council reserve / town parks", "access": "Pukekohe, ~45 min from CBD. Domain or the showgrounds.", "best": "Town parks, the racecourse and market gardens - utility flying rather than scenery.", "hazards": "6.5 km from Pukekohe aerodrome so you're outside the 4 km ring, but light aircraft are active in the area.", "note": "Only worth it if you're local. Franklin's coast is a much better use of the drive.", "status": "clear", "dist_cbd_km": 41.0, "merit": 6.0, "fpv_score": 6.0, "maps_url": "https://maps.google.com/?q=-37.200640,174.903690", "drive_min": 45, "drive_km": 49.7, "num": 20, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.200640,174.903690", "id": "pukekohe", "kind": "town parks", "quiet_time": "Weekday 09:00-15:00", "quiet_days": "Tue-Thu", "avoid": "Sat morning (market, sport)"}];
+const SPOTS = [{"tier": 1, "name": "Karioitahi Beach", "short": "Karioitahi", "lat": -37.283218, "lon": 174.654776, "secl": 5.0, "traffic": 0.5, "fly": 4.7, "land": "Council reserve / beach + Crown foreshore", "access": "Karioitahi Rd off Waiuku-Karioitahi Rd, ~1 h 20 from CBD. Car park at the surf club.", "best": "Black sand surf beach backed by 60 m cliffs and dunes - the most dramatic flying in Auckland, north or south.", "hazards": "Active paraglider and hang-glider site (give way and stay well clear), strong onshore wind, surf and rips, soft sand kills motors.", "note": "Airspace is completely clean - 24 km from the nearest aerodrome. This is the best single spot in South Auckland by a distance. Pin is the main beach access off Karioitahi Road; the sand runs about 5 km south from here.", "status": "clear", "dist_cbd_km": 49.6, "merit": 9.5, "fpv_score": 9.5, "maps_url": "https://maps.google.com/?q=-37.283218,174.654776", "drive_min": 79, "drive_km": 71.7, "num": 1, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.283218,174.654776", "launch": "Surf club car park at the end of Karioitahi Rd.", "id": "karioitahi", "kind": "black sand surf beach", "quiet_time": "Weekday 07:00-10:00 (before thermals)", "quiet_days": "Mon-Thu", "avoid": "Weekends 09:00-16:00 (surfers); midday thermals bring paragliders"}, {"tier": 1, "name": "Orere Point", "short": "Orere Point", "lat": -36.957, "lon": 175.248, "secl": 4.5, "traffic": 1.0, "fly": 4.3, "land": "Council reserve / beach + regional park nearby", "access": "Orere Point Rd off Kawakawa-Orere Rd, ~1 h 05 from CBD. Beach reserve at the end.", "best": "Rocky coast, pohutukawa, bush and the Hauraki Gulf - cliffs and reefs give you lines you don't get on a flat beach.", "hazards": "Rocks and tide, boat ramp traffic, shorebirds, the regional park north of the point needs a permit.", "note": "Clean airspace. The reserve is local council land; the bush north is regional park, so keep to the coast strip.", "status": "clear", "dist_cbd_km": 44.2, "merit": 8.6, "fpv_score": 8.6, "maps_url": "https://maps.google.com/?q=-36.957000,175.248000", "drive_min": 67, "drive_km": 67.9, "num": 2, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.957000,175.248000", "launch": "Beach reserve at the end of Orere Point Rd.", "id": "orere-point", "kind": "rocky coast", "quiet_time": "Weekday 07:00-10:00", "quiet_days": "Mon-Thu", "avoid": "Summer weekends 09:00-16:00"}, {"tier": 2, "name": "Glenbrook Beach", "short": "Glenbrook", "lat": -37.16167, "lon": 174.71126, "secl": 4.3, "traffic": 1.0, "fly": 3.5, "land": "Council reserve / beach", "access": "Glenbrook Beach Rd, ~55 min from CBD.", "best": "Small quiet beach on the harbour with bush and farmland behind - you'll often be alone.", "hazards": "Narrow road, mudflats, no facilities, NZ Steel works nearby (industrial backdrop).", "note": "No permit, clean airspace. Combine with Clarks Beach and Waiuku in one run.", "status": "clear", "dist_cbd_km": 35.1, "merit": 7.8, "fpv_score": 7.8, "maps_url": "https://maps.google.com/?q=-37.161670,174.711260", "drive_min": 57, "drive_km": 64.2, "num": 3, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.161670,174.711260", "launch": "End of Glenbrook Beach Rd; fly from the beach.", "id": "glenbrook", "kind": "quiet harbour beach", "quiet_time": "Weekday 09:00-15:00", "quiet_days": "Mon-Fri", "avoid": "Weekends 10:00-15:00"}, {"tier": 2, "name": "Matakawau Point", "short": "Matakawau", "lat": -37.10984, "lon": 174.66361, "secl": 4.4, "traffic": 1.0, "fly": 3.4, "land": "Council reserve / beach + wharf", "access": "Awhitu Rd to Matakawau Point, ~1 h 30 from CBD.", "best": "Tiny harbour settlement with a wharf and tidal creek - the quietest water in the south.", "hazards": "Mudflats, one-lane road, no phone coverage in patches.", "note": "No permit. Pairs with Awhitu Regional Park if you're doing the peninsula.", "status": "clear", "dist_cbd_km": 30.4, "merit": 7.7, "fpv_score": 7.7, "maps_url": "https://maps.google.com/?q=-37.109840,174.663610", "drive_min": 93, "drive_km": 95.5, "num": 4, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.109840,174.663610", "launch": "Awhitu Rd to Matakawau Point; fly from the reserve at the point.", "id": "matakawau", "kind": "harbour point", "quiet_time": "Weekday 08:00-12:00", "quiet_days": "Mon-Thu", "avoid": "Weekends 10:00-15:00"}, {"tier": 2, "name": "Clarks Beach", "short": "Clarks Beach", "lat": -37.134049, "lon": 174.703718, "secl": 4.0, "traffic": 1.8, "fly": 3.8, "land": "Council reserve / beach", "access": "Clarks Beach Rd, ~50 min from CBD. Beach reserve and boat ramp.", "best": "Harbour beach with a long tidal flat, boats and the Awhitu hills across the water.", "hazards": "Boat ramp traffic in summer, mudflats, shorebirds.", "note": "No permit. Good at high tide; at low tide you're flying over mud.", "status": "clear", "dist_cbd_km": 32.5, "merit": 7.5, "fpv_score": 7.5, "maps_url": "https://maps.google.com/?q=-37.134049,174.703718", "drive_min": 50, "drive_km": 55.6, "num": 5, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.134049,174.703718", "launch": "Beach reserve and boat ramp car park off Clarks Beach Rd.", "id": "clarks-beach", "kind": "harbour beach", "quiet_time": "Weekday 07:00-10:00", "quiet_days": "Mon-Thu", "avoid": "Summer weekends 09:00-16:00 (boat ramp)"}, {"region": "south", "name": "Waharau Regional Park", "short": "Waharau", "lat": -37.039352, "lon": 175.294634, "secl": 4.4, "traffic": 0.6, "fly": 3.6, "kind": "bush + coast park", "status": "permit", "land": "Auckland Council regional park", "access": "Waharau Regional Park, off East Coast Rd, ~1 h 25 from CBD. Car park at the park entrance.", "launch": "Entrance car park off East Coast Rd; fly from the open grass between the road and the bush edge.", "best": "The quietest coast in Auckland - bush behind, the Firth in front, and often not another person there. Long sight lines north and south.", "hazards": "Dense bush limits recovery, steep drop to the water, isolated with no phone coverage, exposed to sea breeze.", "note": "Regional park - permit required for drone use. Airspace clean, nearest aerodrome 24.6 km.", "drive_min": 88, "drive_km": 90, "dist_cbd_km": 51.6, "fpv_score": 7.3, "merit": 7.3, "tier": 2, "maps_url": "https://maps.google.com/?q=-37.039352,175.294634", "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.039352,175.294634", "num": 6, "id": "waharau", "quiet_time": "Any day, early", "quiet_days": "Mon-Thu", "avoid": "Almost never busy - the quietest coast in Auckland"}, {"region": "south", "name": "Tapapakanga Regional Park", "short": "Tapapakanga", "lat": -36.980202, "lon": 175.258902, "secl": 4.2, "traffic": 1.2, "fly": 3.8, "kind": "coastal farm park", "status": "permit", "land": "Auckland Council regional park", "access": "Tapapakanga Regional Park, off Orere-Matingarahi Rd, ~1 h 15 from CBD. Gravel car park at the park entrance.", "launch": "Park entrance car park off Orere-Matingarahi Rd; fly from the open paddocks above the beach.", "best": "Farm parkland rolling down to a long Pohutukawa coast. Big open grass, almost nobody midweek, and a clean horizon out over the Firth.", "hazards": "Farm stock and electric fences, steep coastal drops, no shelter from the nor'west, poor phone coverage.", "note": "Regional park - drone use needs an Auckland Council permit. Airspace clean, nearest aerodrome 24 km.", "drive_min": 78, "drive_km": 82, "dist_cbd_km": 46.3, "fpv_score": 7.1, "merit": 7.1, "tier": 2, "maps_url": "https://maps.google.com/?q=-36.980202,175.258902", "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.980202,175.258902", "num": 7, "id": "tapapakanga", "quiet_time": "Any weekday", "quiet_days": "Tue-Thu", "avoid": "Summer weekends 10:00-16:00 (campers)"}, {"tier": 3, "name": "Pukekohe", "short": "Pukekohe", "lat": -37.20617, "lon": 174.90243, "secl": 3.0, "traffic": 2.5, "fly": 3.2, "land": "Council reserve / town parks", "access": "Bledisloe Park, Pukekohe, ~45 min from CBD. Car park off the park entrance.", "best": "Town parks, the racecourse and market gardens - utility flying rather than scenery.", "hazards": "6.5 km from Pukekohe aerodrome so you're outside the 4 km ring, but light aircraft are active in the area.", "note": "Only worth it if you're local. Franklin's coast is a much better use of the drive.", "status": "clear", "dist_cbd_km": 41.0, "merit": 6.0, "fpv_score": 6.0, "maps_url": "https://maps.google.com/?q=-37.206170,174.902430", "drive_min": 45, "drive_km": 49.7, "num": 8, "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.206170,174.902430", "launch": "Bledisloe Park car park, Pukekohe; fly from the sports fields.", "id": "pukekohe", "kind": "town parks", "quiet_time": "Weekday 09:00-15:00", "quiet_days": "Tue-Thu", "avoid": "Sat morning (market, sport)"}];
 const COL = {clear:"#1fb35a", permit:"#2f6fd0", restricted:"#e08a00"};
 const map = L.map('map', {scrollWheelZoom:true});
 const topo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {maxZoom:19, attribution:'Basemap &copy; Esri, HERE, Garmin, OpenStreetMap'}).addTo(map);
