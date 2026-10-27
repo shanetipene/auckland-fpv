@@ -31,7 +31,7 @@ DATASETS = {
 }
 REQUIRED = [
     "short", "name", "region", "lat", "lon", "secl", "traffic", "fly",
-    "status", "kind", "best", "hazards", "note", "access", "land",
+    "status", "kind", "best", "hazards", "note", "access", "launch", "land",
     "quiet_time", "quiet_days", "avoid",
 ]
 

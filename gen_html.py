@@ -217,7 +217,7 @@ def cards_html(spots):
           <div class="score"><strong>{s['fpv_score']}</strong><span>/10</span></div>
         </div>
         <div class="badges"><span class="badge {STATUS_CLASS[s['status']]}">{STATUS_LABEL[s['status']]}</span></div>
-        <div class="launch"><span>Launch from</span>{html.escape(s['launch'])}</div>
+        <div class="launch"><span>Launch from</span>{html.escape(s.get('launch') or s.get('access',''))}</div>
         <div class="bars">{bars}</div>
         <div class="quiet">
           <div><span>Quietest time</span><b>{html.escape(s['quiet_time'])}</b></div>
