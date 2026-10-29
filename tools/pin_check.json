@@ -1,10 +1,24 @@
 {
  "Algies Bay": {
-  "km": 0.0,
+  "km": 0.54,
   "osm": "Algies Bay, Rodney, Auckland, 0982, New Zealand / Aotearoa",
   "lat": -36.4326772,
   "lon": 174.7369479,
   "type": "village"
+ },
+ "Arkles Bay": {
+  "km": 0.06,
+  "osm": "Arkles Bay Beach, Little Manly, Arkles Bay, Whangapar\u0101oa, Hibiscus and Bays, Auckland, New Zealand / Aotearoa",
+  "lat": -36.6412227,
+  "lon": 174.7477519,
+  "type": "beach"
+ },
+ "Army Bay": {
+  "km": 1.06,
+  "osm": "Army Bay, Hibiscus Coast, Hibiscus and Bays, Auckland, 0930, New Zealand / Aotearoa",
+  "lat": -36.6038369,
+  "lon": 174.802399,
+  "type": "suburb"
  },
  "Awhitu": {
   "km": 0.0,
@@ -20,33 +34,33 @@
   "lon": 174.705823,
   "type": "park"
  },
- "Bombay": {
-  "km": 0.0,
-  "osm": "Bombay, Franklin, Auckland, 2675, New Zealand / Aotearoa",
-  "lat": -37.1868291,
-  "lon": 174.9917291,
-  "type": "village"
- },
  "Browns Bay": {
-  "km": 0.18,
+  "km": 0.16,
   "osm": "Browns Bay, Hibiscus Coast, Hibiscus and Bays, Auckland, 0630, New Zealand / Aotearoa",
   "lat": -36.7156283,
   "lon": 174.7481983,
   "type": "suburb"
  },
+ "Ceramco Park": {
+  "km": 0.03,
+  "osm": "\u014ckaurirahi / Ceramco Park, Glen Eden, Wait\u0101kere Ranges, Auckland, New Zealand / Aotearoa",
+  "lat": -36.9208361,
+  "lon": 174.650507,
+  "type": "park"
+ },
  "Clarks Beach": {
-  "km": 0.0,
+  "km": 0.32,
   "osm": "Clarks Beach, Franklin, Auckland, 2122, New Zealand / Aotearoa",
   "lat": -37.1368737,
   "lon": 174.7044928,
   "type": "town"
  },
- "Clevedon": {
-  "km": 0.0,
-  "osm": "Clevedon, Franklin, Auckland, 2582, New Zealand / Aotearoa",
-  "lat": -36.9910022,
-  "lon": 175.0368658,
-  "type": "village"
+ "Cockle Bay": {
+  "km": 1.2,
+  "osm": "Cockle Bay Scouts, Shelly Beach Parade, Cockle Bay, Howick, Auckland, 2014, New Zealand / Aotearoa",
+  "lat": -36.9014257,
+  "lon": 174.9514174,
+  "type": "scout"
  },
  "Coyle Park": {
   "km": 0.0,
@@ -55,12 +69,12 @@
   "lon": 174.7046508,
   "type": "park"
  },
- "Devonport": {
+ "Duder": {
   "km": 0.0,
-  "osm": "Devonport, Devonport-Takapuna, Auckland, 0624, New Zealand / Aotearoa",
-  "lat": -36.8297309,
-  "lon": 174.7975377,
-  "type": "suburb"
+  "osm": "Duder Regional Park, Maraetai, Franklin, Auckland, New Zealand / Aotearoa",
+  "lat": -36.9074808,
+  "lon": 175.0808178,
+  "type": "park"
  },
  "Eastern Beach": {
   "km": 0.0,
@@ -68,6 +82,13 @@
   "lat": -36.8735655,
   "lon": 174.9145418,
   "type": "beach"
+ },
+ "Eric Armishaw": {
+  "km": 0.0,
+  "osm": "Eric Armishaw Park, Waterview, Albert-Eden, Auckland, New Zealand / Aotearoa",
+  "lat": -36.8692334,
+  "lon": 174.6976571,
+  "type": "park"
  },
  "Fearon Park": {
   "km": 0.0,
@@ -77,7 +98,7 @@
   "type": "park"
  },
  "French Bay": {
-  "km": 0.0,
+  "km": 0.4,
   "osm": "French Bay, Titirangi Beach, Wait\u0101kere Ranges, Auckland, 0643, New Zealand / Aotearoa",
   "lat": -36.9477714,
   "lon": 174.6615039,
@@ -98,46 +119,46 @@
   "type": "park"
  },
  "Green Bay": {
-  "km": 0.13,
+  "km": 0.12,
   "osm": "Green Bay, Whau, Auckland, 0643, New Zealand / Aotearoa",
   "lat": -36.9322614,
   "lon": 174.6891618,
   "type": "bay"
  },
  "Hatfields": {
-  "km": 0.0,
-  "osm": "Hatfields Beach, \u014crewa, Hibiscus and Bays, Auckland, 0931, New Zealand / Aotearoa",
-  "lat": -36.5709944,
-  "lon": 174.6892499,
-  "type": "suburb"
+  "km": 0.26,
+  "osm": "\u014ct\u0101nerua / Hatfields Beach, Hatfields Beach, \u014crewa, Hibiscus and Bays, Auckland, New Zealand / Aotearoa",
+  "lat": -36.5662044,
+  "lon": 174.6948577,
+  "type": "beach"
  },
- "Karaka": {
+ "Howick Beach": {
   "km": 0.0,
-  "osm": "Karaka, Franklin, Auckland, 2580, New Zealand / Aotearoa",
-  "lat": -37.0995979,
-  "lon": 174.8789863,
-  "type": "suburb"
+  "osm": "Howick Beach, Granger Road, Howick East, Cockle Bay, Howick, Auckland, 2014, New Zealand / Aotearoa",
+  "lat": -36.8930078,
+  "lon": 174.941688,
+  "type": "bus_stop"
  },
  "Karioitahi": {
-  "km": 2.87,
+  "km": 3.34,
   "osm": "Karioitahi Beach, Franklin, Waikato District, Waikato, New Zealand / Aotearoa",
   "lat": -37.31134,
   "lon": 174.6679365,
   "type": "beach"
  },
  "Kawakawa Bay": {
-  "km": 0.0,
+  "km": 0.9,
   "osm": "Kawakawa Bay, Franklin, Auckland, New Zealand / Aotearoa",
   "lat": -36.9441798,
   "lon": 175.1612799,
   "type": "bay"
  },
- "Kingseat": {
-  "km": 0.0,
-  "osm": "Kingseat, Franklin, Auckland, 2679, New Zealand / Aotearoa",
-  "lat": -37.1251034,
-  "lon": 174.8016788,
-  "type": "village"
+ "Keith Hay Park": {
+  "km": 0.08,
+  "osm": "Keith Hay Park, 63, Mount Roskill, Puket\u0101papa, Auckland, New Zealand / Aotearoa",
+  "lat": -36.9183029,
+  "lon": 174.7428926,
+  "type": "park"
  },
  "Laingholm": {
   "km": 0.0,
@@ -147,11 +168,18 @@
   "type": "beach"
  },
  "Leigh": {
-  "km": 0.0,
+  "km": 0.72,
   "osm": "Leigh, Rodney, Auckland, 0986, New Zealand / Aotearoa",
   "lat": -36.2904243,
   "lon": 174.8042744,
   "type": "village"
+ },
+ "Little Manly": {
+  "km": 0.0,
+  "osm": "Little Manly Beach, Little Manly, Matakatia Bay, Whangapar\u0101oa, Hibiscus and Bays, Auckland, New Zealand / Aotearoa",
+  "lat": -36.6370918,
+  "lon": 174.7621237,
+  "type": "beach"
  },
  "Lloyd Elsmore": {
   "km": 0.0,
@@ -167,15 +195,36 @@
   "lon": 174.7527308,
   "type": "bay"
  },
+ "Lynfield Cove": {
+  "km": 0.15,
+  "osm": "Lynfield Cove, Lynfield, Puket\u0101papa, Auckland, 0600, New Zealand / Aotearoa",
+  "lat": -36.9285387,
+  "lon": 174.7105969,
+  "type": "bay"
+ },
+ "Macleans Park": {
+  "km": 0.73,
+  "osm": "Macleans Park, MacLeans Road, Eastern Beach, Howick, Auckland, 2014, New Zealand / Aotearoa",
+  "lat": -36.8850145,
+  "lon": 174.918028,
+  "type": "board"
+ },
  "Mahurangi West": {
-  "km": 0.0,
+  "km": 0.82,
   "osm": "Mahurangi West, Rodney, Auckland, 0983, New Zealand / Aotearoa",
   "lat": -36.498163,
   "lon": 174.7128897,
   "type": "village"
  },
+ "Mangemangeroa": {
+  "km": 0.22,
+  "osm": "Mangemangeroa Reserve, Shamrock Park, Howick, Auckland, New Zealand / Aotearoa",
+  "lat": -36.9185595,
+  "lon": 174.9364576,
+  "type": "park"
+ },
  "Manly": {
-  "km": 0.0,
+  "km": 0.02,
   "osm": "Big Manly Beach, Matakatia Bay, Whangapar\u0101oa, Hibiscus and Bays, Auckland, New Zealand / Aotearoa",
   "lat": -36.626185,
   "lon": 174.7648664,
@@ -188,12 +237,40 @@
   "lon": 175.0168232,
   "type": "park"
  },
+ "Martins Bay": {
+  "km": 0.01,
+  "osm": "Martins Bay Beach, Snells Beach, Rodney, Auckland, New Zealand / Aotearoa",
+  "lat": -36.4497407,
+  "lon": 174.7642717,
+  "type": "beach"
+ },
+ "Matakatia": {
+  "km": 0.21,
+  "osm": "Matakatia Bay, Whangapar\u0101oa, Hibiscus and Bays, Auckland, 0930, New Zealand / Aotearoa",
+  "lat": -36.6237188,
+  "lon": 174.7698144,
+  "type": "suburb"
+ },
  "Matakawau": {
   "km": 0.18,
   "osm": "Matakawau Point, Clarks Beach, Franklin, Auckland, 2684, New Zealand / Aotearoa",
   "lat": -37.1094787,
   "lon": 174.6615842,
   "type": "hamlet"
+ },
+ "Mellons Bay": {
+  "km": 0.0,
+  "osm": "Mellons Bay Beach, Mellons Bay, Howick, Auckland, New Zealand / Aotearoa",
+  "lat": -36.8845127,
+  "lon": 174.9326236,
+  "type": "beach"
+ },
+ "Meola Reef": {
+  "km": 0.16,
+  "osm": "Meola Reef Reserve, Westmere, Auckland, Waitemat\u0101, Auckland, New Zealand / Aotearoa",
+  "lat": -36.8567846,
+  "lon": 174.7104828,
+  "type": "park"
  },
  "Monte Cecilia": {
   "km": 0.0,
@@ -204,10 +281,17 @@
  },
  "Musick Point": {
   "km": 0.0,
-  "osm": "Musick Point / Te Naupata, Howick, Auckland, 1074, New Zealand / Aotearoa",
+  "osm": "Musick Point / Te Naupata, Howick, Auckland, 2012, New Zealand / Aotearoa",
   "lat": -36.8463582,
   "lon": 174.9010348,
   "type": "cape"
+ },
+ "Narrow Neck": {
+  "km": 0.0,
+  "osm": "Narrow Neck Beach, Narrow Neck, Devonport-Takapuna, Auckland, New Zealand / Aotearoa",
+  "lat": -36.8120143,
+  "lon": 174.8008057,
+  "type": "beach"
  },
  "Olympic Park": {
   "km": 0.0,
@@ -217,7 +301,7 @@
   "type": "park"
  },
  "Omaha": {
-  "km": 0.0,
+  "km": 0.47,
   "osm": "\u014cmaha Beach, \u014cmaha, Rodney, Auckland, New Zealand / Aotearoa",
   "lat": -36.3351131,
   "lon": 174.779834,
@@ -231,25 +315,25 @@
   "type": "beach"
  },
  "Orakei Basin": {
-  "km": 0.18,
-  "osm": "\u014cr\u0101kei Basin, \u014cr\u0101kei, Auckland, 1050, New Zealand / Aotearoa",
+  "km": 0.66,
+  "osm": "\u014cr\u0101kei Basin, \u014cr\u0101kei, Auckland, 1074, New Zealand / Aotearoa",
   "lat": -36.8665302,
   "lon": 174.8136961,
   "type": "volcano"
  },
  "Orere Point": {
-  "km": 0.0,
+  "km": 0.49,
   "osm": "\u014crere Point, Franklin, Auckland, New Zealand / Aotearoa",
   "lat": -36.9589811,
   "lon": 175.2431304,
   "type": "village"
  },
  "Orewa": {
-  "km": 0.0,
-  "osm": "Orewa Beach, \u014crewa Square, Hatfields Beach, \u014crewa, Hibiscus and Bays, Auckland, 0931, New Zealand / Aotearoa",
-  "lat": -36.5858892,
-  "lon": 174.6953175,
-  "type": "travel_agency"
+  "km": 0.39,
+  "osm": "\u014crewa Beach, Hatfields Beach, \u014crewa, Hibiscus and Bays, Auckland, New Zealand / Aotearoa",
+  "lat": -36.5867878,
+  "lon": 174.6973976,
+  "type": "beach"
  },
  "Pakiri": {
   "km": 0.0,
@@ -259,7 +343,7 @@
   "type": "beach"
  },
  "Panmure Basin": {
-  "km": 0.25,
+  "km": 0.34,
   "osm": "Te Kopua Kai-a-Hiku / Panmure Basin, Maungakiekie-T\u0101maki, Auckland, 1741, New Zealand / Aotearoa",
   "lat": -36.9045439,
   "lon": 174.8498967,
@@ -272,15 +356,16 @@
   "lon": 174.6305959,
   "type": "park"
  },
+ "Pt England": null,
  "Puhoi": {
-  "km": 0.0,
+  "km": 0.39,
   "osm": "P\u016bhoi, Rodney, Auckland, 0951, New Zealand / Aotearoa",
   "lat": -36.5120922,
   "lon": 174.6611196,
   "type": "village"
  },
  "Pukekohe": {
-  "km": 0.0,
+  "km": 0.63,
   "osm": "Pukekohe, Franklin, Auckland, 2120, New Zealand / Aotearoa",
   "lat": -37.2006384,
   "lon": 174.9036875,
@@ -293,12 +378,56 @@
   "lon": 174.727582,
   "type": "village"
  },
- "Sunkist Bay": {
+ "Scandrett": {
+  "km": 0.54,
+  "osm": "Scandrett Regional Park, Snells Beach, Rodney, Auckland, New Zealand / Aotearoa",
+  "lat": -36.4417206,
+  "lon": 174.7765638,
+  "type": "park"
+ },
+ "Shakespear": {
   "km": 0.0,
+  "osm": "Te H\u0101ruhi / Shakespear Regional Park, Hibiscus Coast, Hibiscus and Bays, Auckland, New Zealand / Aotearoa",
+  "lat": -36.6099478,
+  "lon": 174.8266912,
+  "type": "park"
+ },
+ "Shelly Park": {
+  "km": 0.0,
+  "osm": "Shelly Park Beach, Shelly Park, Howick, Auckland, 2571, New Zealand / Aotearoa",
+  "lat": -36.909944,
+  "lon": 174.952667,
+  "type": "beach"
+ },
+ "Stanmore Bay": {
+  "km": 0.27,
+  "osm": "Stanmore Bay, Whangapar\u0101oa, Hibiscus and Bays, Auckland, 0930, New Zealand / Aotearoa",
+  "lat": -36.6202005,
+  "lon": 174.7350172,
+  "type": "bay"
+ },
+ "Stonefields": null,
+ "Sunkist Bay": {
+  "km": 0.15,
   "osm": "Sunkist Bay, Beachlands, Franklin, Auckland, 2018, New Zealand / Aotearoa",
   "lat": -36.8800618,
   "lon": 174.9915925,
   "type": "bay"
+ },
+ "Tapapakanga": {
+  "km": 0.33,
+  "osm": "T\u0101papakanga Regional Park, \u014crere Point, Franklin, Auckland, New Zealand / Aotearoa",
+  "lat": -36.978424,
+  "lon": 175.2559953,
+  "type": "park"
+ },
+ "Te Arai": null,
+ "Ti Point": {
+  "km": 1.21,
+  "osm": "T\u012b Point, Rodney, Auckland, 0986, New Zealand / Aotearoa",
+  "lat": -36.3150389,
+  "lon": 174.7856991,
+  "type": "locality"
  },
  "Tindalls": {
   "km": 0.0,
@@ -308,11 +437,25 @@
   "type": "suburb"
  },
  "Titirangi Beach": {
-  "km": 0.0,
-  "osm": "Titirangi Beach, Wait\u0101kere Ranges, Auckland, 0604, New Zealand / Aotearoa",
-  "lat": -36.9507921,
-  "lon": 174.6568036,
-  "type": "suburb"
+  "km": 0.02,
+  "osm": "Titirangi Beach, French Bay, Titirangi Beach, Wait\u0101kere Ranges, Auckland, New Zealand / Aotearoa",
+  "lat": -36.9514367,
+  "lon": 174.6591528,
+  "type": "beach"
+ },
+ "Umupuia": {
+  "km": 0.06,
+  "osm": "Umupuia Beach, Maraetai, Franklin, Auckland, New Zealand / Aotearoa",
+  "lat": -36.903104,
+  "lon": 175.0673337,
+  "type": "beach"
+ },
+ "Waharau": {
+  "km": 1.87,
+  "osm": "Waharau Regional Park, Hauraki District, Waikato, New Zealand / Aotearoa",
+  "lat": -37.0452847,
+  "lon": 175.2748864,
+  "type": "park"
  },
  "Waiatarua": {
   "km": 0.0,
@@ -321,19 +464,12 @@
   "lon": 174.8263317,
   "type": "park"
  },
- "Waiau Pa": {
-  "km": 0.0,
-  "osm": "Waiau P\u0101, Franklin, Auckland, 2679, New Zealand / Aotearoa",
-  "lat": -37.1383706,
-  "lon": 174.7544117,
-  "type": "village"
- },
  "Waikowhai": {
-  "km": 0.41,
-  "osm": "Waik\u014dwhai Park, Waik\u014dwhai Road, Waik\u014dwhai, Puket\u0101papa, Auckland, 1042, New Zealand / Aotearoa",
-  "lat": -36.9308346,
-  "lon": 174.7378697,
-  "type": "bus_stop"
+  "km": 0.17,
+  "osm": "Waik\u014dwhai Park, Waik\u014dwhai, Puket\u0101papa, Auckland, New Zealand / Aotearoa",
+  "lat": -36.9347406,
+  "lon": 174.7344234,
+  "type": "park"
  },
  "Waitawa": {
   "km": 0.0,
@@ -342,19 +478,19 @@
   "lon": 175.1388454,
   "type": "park"
  },
- "Waiuku": {
-  "km": 0.0,
-  "osm": "Waiuku, Franklin, Auckland, 2123, New Zealand / Aotearoa",
-  "lat": -37.2491946,
-  "lon": 174.7303353,
-  "type": "town"
- },
  "Waiwera": {
-  "km": 0.2,
+  "km": 0.14,
   "osm": "Waiwera, Hibiscus and Bays, Auckland, 8073, New Zealand / Aotearoa",
   "lat": -36.5448557,
   "lon": 174.7069809,
   "type": "village"
+ },
+ "Wattle Bay": {
+  "km": 8.88,
+  "osm": "Wattle Bay / Taunahi, Lynfield, Puket\u0101papa, Auckland, 1042, New Zealand / Aotearoa",
+  "lat": -36.9357858,
+  "lon": 174.7262188,
+  "type": "bay"
  },
  "Wenderholm": {
   "km": 0.0,
@@ -363,12 +499,12 @@
   "lon": 174.7015442,
   "type": "park"
  },
- "Whitford": {
+ "Western Springs": {
   "km": 0.0,
-  "osm": "Whitford, Franklin, Auckland, 2571, New Zealand / Aotearoa",
-  "lat": -36.9454682,
-  "lon": 174.9637778,
-  "type": "hamlet"
+  "osm": "Western Springs Park, Great North Road, Grey Lynn, Auckland, Waitemat\u0101, Auckland, 1022, New Zealand / Aotearoa",
+  "lat": -36.868063,
+  "lon": 174.7249197,
+  "type": "bus_stop"
  },
  "Woodhill": {
   "km": 0.0,
@@ -376,28 +512,5 @@
   "lat": -36.7198729,
   "lon": 174.381998,
   "type": "forest"
- },
- "Lynfield Cove": {
-  "km": 0.17,
-  "osm": "Lynfield Cove, Lynfield, Puket\u0101papa, Auckland, 0600, New Zealand / Aotearoa",
-  "lat": -36.9285387,
-  "lon": 174.7105969,
-  "type": "bay"
- },
- "Mangemangeroa": {
-  "km": 1.74,
-  "osm": "Mangemangeroa Reserve, Shamrock Park, Howick, Auckland, New Zealand / Aotearoa",
-  "lat": -36.9185595,
-  "lon": 174.9364576,
-  "type": "park"
- },
- "Pt England": null,
- "Stanmore Bay": {
-  "km": 0.1,
-  "osm": "Stanmore Bay, Whangapar\u0101oa, Hibiscus and Bays, Auckland, 0930, New Zealand / Aotearoa",
-  "lat": -36.6273281,
-  "lon": 174.7372035,
-  "type": "suburb"
- },
- "Stonefields": null
+ }
 }

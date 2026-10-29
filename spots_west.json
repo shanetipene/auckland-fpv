@@ -3,8 +3,8 @@
   "tier": 1,
   "name": "French Bay, Titirangi",
   "short": "French Bay",
-  "lat": -36.951039,
-  "lon": 174.660549,
+  "lat": -36.94874344106298,
+  "lon": 174.6658606549472,
   "secl": 4.2,
   "traffic": 2.0,
   "fly": 4.0,
@@ -17,11 +17,11 @@
   "dist_cbd_km": 14.3,
   "merit": 7.7,
   "fpv_score": 7.7,
-  "maps_url": "https://maps.google.com/?q=-36.951039,174.660549",
+  "maps_url": "https://maps.google.com/?q=-36.948743,174.665861",
   "drive_min": 26,
   "drive_km": 17.8,
   "num": 3,
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.951039,174.660549",
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.948743,174.665861",
   "launch": "Car park at the end of Otitori Bay Rd; fly from the beach."
  },
  {
@@ -305,8 +305,8 @@
   "short": "Wattle Bay",
   "name": "Wattle Bay",
   "region": "west",
-  "lat": -36.97185,
-  "lon": 174.637,
+  "lat": -36.9722,
+  "lon": 174.6356,
   "secl": 4.5,
   "traffic": 1.5,
   "fly": 3.5,
@@ -324,8 +324,8 @@
   "drive_km": 22,
   "dist_cbd_km": 17.8,
   "fpv_score": 7.9,
-  "maps_url": "https://maps.google.com/?q=-36.971850,174.637000",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.971850,174.637000",
+  "maps_url": "https://maps.google.com/?q=-36.972200,174.635600",
+  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.972200,174.635600",
   "launch": "Reserve at the end of Wattle Bay Rd; fly from the grass above the bay."
  }
 ]

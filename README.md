@@ -2,7 +2,7 @@
 
 **Live site:** https://auckland-fpv.pages.dev
 
-A guide to 76 legally flyable FPV drone locations across Auckland, split into five regions: Central, East, North, West and South. Every entry is a real launch point - a car park, beach access, reserve entrance or road end - and every card names where to set up.
+A guide to 75 legally flyable FPV drone locations across Auckland, split into five regions: Central, East, North, West and South. Every entry is a real launch point - a car park, beach access, reserve entrance or road end - and every card names where to set up.
 
 Every location was checked against live AirShare airspace data — control zones (CTR), 4 km aerodrome and helipad buffers, restricted areas, danger areas and VFR transit lanes — rather than copied from a "best drone spots" listicle. Sites inside a control zone are included only where a legitimate authorisation path exists, and are marked accordingly.
 
@@ -50,7 +50,7 @@ central.html    13 spots
 east.html       16 spots
 north.html      26 spots
 west.html       13 spots
-south.html       8 spots
+south.html       7 spots
 
 gen_html.py          builds all six pages from the spot data
 spots*.json          the source data — one file per region

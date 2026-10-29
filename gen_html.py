@@ -81,7 +81,6 @@ QUIET = {
 "Pukekohe": ("Weekday 09:00-15:00","Tue-Thu","Sat morning (market, sport)"),
 "Martins Bay": ("Weekday 06:30-09:30","Mon-Thu","Summer weekends and school holidays (holiday park)"),
 "Tapapakanga": ("Any weekday","Tue-Thu","Summer weekends 10:00-16:00 (campers)"),
-"Waharau": ("Any day, early","Mon-Thu","Almost never busy - the quietest coast in Auckland"),
 }
 
 META = {

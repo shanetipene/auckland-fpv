@@ -174,31 +174,5 @@
   "tier": 2,
   "maps_url": "https://maps.google.com/?q=-36.980202,175.258902",
   "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-36.980202,175.258902"
- },
- {
-  "region": "south",
-  "name": "Waharau Regional Park",
-  "short": "Waharau",
-  "lat": -37.039352,
-  "lon": 175.294634,
-  "secl": 4.4,
-  "traffic": 0.6,
-  "fly": 3.6,
-  "kind": "bush + coast park",
-  "status": "permit",
-  "land": "Auckland Council regional park",
-  "access": "Waharau Regional Park, off East Coast Rd, ~1 h 25 from CBD. Car park at the park entrance.",
-  "launch": "Entrance car park off East Coast Rd; fly from the open grass between the road and the bush edge.",
-  "best": "The quietest coast in Auckland - bush behind, the Firth in front, and often not another person there. Long sight lines north and south.",
-  "hazards": "Dense bush limits recovery, steep drop to the water, isolated with no phone coverage, exposed to sea breeze.",
-  "note": "Regional park - permit required for drone use. Airspace clean, nearest aerodrome 24.6 km.",
-  "drive_min": 88,
-  "drive_km": 90,
-  "dist_cbd_km": 51.6,
-  "fpv_score": 7.3,
-  "merit": 7.3,
-  "tier": 2,
-  "maps_url": "https://maps.google.com/?q=-37.039352,175.294634",
-  "sv_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-37.039352,175.294634"
  }
 ]
